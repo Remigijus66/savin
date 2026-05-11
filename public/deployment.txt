@@ -26,6 +26,9 @@ git push origin deploy
 # switch back to main for development
 git checkout main
 
+#restore
+ npm i --save-dev @types/react  
+
 
 
 Plesk:

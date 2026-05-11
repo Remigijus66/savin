@@ -3,7 +3,7 @@
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // import HomePage from "./pages/HomePage";
 // import TherapistPage from "./pages/TherapistPage";
-import seaImage from "./assets/sea.jpg";
+// import seaImage from "./assets/sea.jpg";
 import "./App.css"; // import global CSS
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
 
   style={{
     // backgroundImage: "url('/mist.jpg')",
-    backgroundImage: `url(${seaImage})`,
+    // backgroundImage: `url(${seaImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     minHeight: "100vh", // full viewport height
