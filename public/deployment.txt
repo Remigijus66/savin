@@ -34,3 +34,10 @@ Git settings → set branch = deploy
 Deployment path = /httpdocs
 
 Click Pull Now
+
+
+# Po deploymento gali tekti taisyti dependancies: 
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+Remove-Item -Recurse -Force .vite
+npm install
