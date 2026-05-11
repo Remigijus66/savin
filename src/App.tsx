@@ -15,7 +15,9 @@ export default function App() {
   return (
     // <Router>
  <>
+ {/* <div className="container"> */}
       <Navbar />
+
 
       <section id="hero">
         <Hero />
@@ -36,6 +38,7 @@ export default function App() {
       <section id="contact">
         <Contact />
       </section>
+ {/* </div> */}
     </>
     // </Router>
   );
