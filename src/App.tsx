@@ -12,7 +12,7 @@ export default function App() {
       <section
 
   style={{
-    // backgroundImage: "url('/mist.jpg')",
+    backgroundImage: "url('/mist.jpg')",
     // backgroundImage: `url(${seaImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
