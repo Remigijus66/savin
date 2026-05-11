@@ -1,47 +1,5 @@
 Jolitos puslapio deploymentas: 
 
-bash: 
-# make sure you’re on main
-git checkout main
-
-# build the site
-npm run build
-
-# switch to deploy branch
-git checkout deploy
-
-# remove old deploy files
-git rm -rf .
-
-# copy fresh build files
-cp -r dist/* .
-
-# commit changes
-git add .
-git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')"
-
-# push to GitHub
-git push origin deploy
-
-# switch back to main for development
-git checkout main
-
-#restore
- npm i --save-dev @types/react  
-
-
-
-Plesk:
-
-Git settings → set branch = deploy
-
-Deployment path = /httpdocs
-
-Click Pull Now
-
-
-
-#alternative 
 
 git checkout main
 
@@ -64,3 +22,15 @@ git commit -m "Deploy $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 git push origin deploy
 
 git checkout main
+
+
+
+# Plesk:  ( jungtis prei J telia po to prisijungti prie https://hosting.telia.lt/
+ po prie plesk  )
+
+
+Git settings → set branch = deploy
+
+Deployment path = /httpdocs
+
+Click Pull Now
