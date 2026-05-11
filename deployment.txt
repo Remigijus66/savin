@@ -1,0 +1,43 @@
+Jolitos puslapio deploymentas: 
+
+
+git checkout main
+
+npm install
+npm run build
+
+git add .
+git commit -m "Latest changes"
+
+git checkout deploy
+
+git rm -rf .
+
+Copy-Item -Path dist\* -Destination . -Recurse -Force
+
+git add .
+
+git commit -m "Deploy $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+
+git push origin deploy
+
+git checkout main
+
+
+
+# Plesk:  ( jungtis prei J telia po to prisijungti prie https://hosting.telia.lt/
+ po prie plesk  )
+
+
+Git settings → set branch = deploy
+
+Deployment path = /httpdocs
+
+Click Pull Now
+
+
+# Po deploymento gali tekti taisyti dependancies: 
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+Remove-Item -Recurse -Force .vite
+npm install
