@@ -1,8 +1,7 @@
 
 
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-// import HomePage from "./pages/HomePage";
-// import TherapistPage from "./pages/TherapistPage";
+
 // import seaImage from "./assets/sea.jpg";
 import "./App.css"; // import global CSS
 

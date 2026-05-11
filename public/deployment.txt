@@ -39,58 +39,28 @@ Deployment path = /httpdocs
 
 Click Pull Now
 
-#!/bin/bash
-# to start dev run: npm run dev
-# to start run:  ./deploy.sh 
 
-set -e  # exit on error
 
-# Make sure we start on main
+#alternative 
+
 git checkout main
 
-echo "📦 Installing dependencies..."
 npm install
-
-echo "🏗️  Building project..."
 npm run build
 
-echo "🚀 Switching to deploy branch..."
+git add .
+git commit -m "Latest changes"
+
 git checkout deploy
 
-echo "🧹 Cleaning old files..."
 git rm -rf .
 
-echo "📂 Copying new build..."
-cp -r dist/* .
+Copy-Item -Path dist\* -Destination . -Recurse -Force
 
-echo "📝 Committing changes..."
 git add .
-git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')" || echo "⚠️ Nothing to commit"
 
-echo "⬆️  Pushing to GitHub..."
+git commit -m "Deploy $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+
 git push origin deploy
 
-echo "🔙 Switching back to main..."
 git checkout main
-
-echo "✅ Deployment finished! Go to Plesk and click 'Pull Now'."
-
-
-
-return safe to main 
-# discard any uncommitted changes in deploy
-git reset --hard
-
-# switch to main
-git checkout main
-If git checkout main gives an error about local changes, run:
-
-bash
-Copy code
-git stash
-git checkout main
-git stash pop  # optional, only if you want to recover staged changes
-
-# start dev
-npm install 
-npm run dev
