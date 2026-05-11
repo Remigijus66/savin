@@ -34,20 +34,14 @@ export default function App() {
   {/* color: '#A23D01' */}
   {/* color: '#624621' */}
   <div >
-    {/* <h2 style={ {color: 'black'} } >Tinklapis šuo metu tvarkomas</h2> */}
+   
 
     <h1 style={ { color: '#22352C'} } >Geštaltinė psichoterapija</h1>
   
     <p style={ {fontSize: '40px', color: '#A23D01', marginBottom: '0'} } >Jolita Palekaitė</p>
     <p style={ {fontSize: '40px' , color: '#A23D01', margin: '0'} }> +370 650 11233</p>
     <p style={ {fontSize: '40px', color: '#A23D01', margin: '0'} }> jolita@savin.lt</p>
-    {/* <p className="subtitle text-lg">Psichologė, terapeutė</p>
-    <p>
-      Esu Jolita Palekaitė, specializuojanti individualioje psichoterapijoje,
-      emocinės sveikatos stiprinime bei gyvenimo kokybės gerinime.
-      Dirbu padėdama žmonėms atrasti vidinę ramybę, įveikti iššūkius
-      ir geriau suprasti save.
-    </p> */}
+
   </div>
 </section>
     // </Router>
