@@ -11,8 +11,8 @@ export default function App() {
       <section
 
   style={{
-    // backgroundImage: "url('/sea.jpg')",
-    // backgroundSize: "cover",
+    backgroundImage: "url('/sea.jpg')",
+    backgroundSize: "cover",
     backgroundPosition: "center",
     minHeight: "100vh", // full viewport height
     display: "flex",
