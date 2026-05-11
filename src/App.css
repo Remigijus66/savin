@@ -13,6 +13,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+.pallette1
+{
+  background-color: #242424;
+}
+.pallette2
+{
+  background-color: #927420;
+}
+.pallette3
+{
+  background-color: #A23D01;
+}
+.pallette4
+{
+  background-color: #624621;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;

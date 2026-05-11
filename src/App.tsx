@@ -4,45 +4,39 @@
 
 // import seaImage from "./assets/sea.jpg";
 import "./App.css"; // import global CSS
+import Navbar from "./components/Navbar";
+import About from "./sections/About";
+import Contact from "./sections/Contacts";
+import Hero from "./sections/Hero";
+import Pricing from "./sections/Pricing";
+import Services from "./sections/Services";
 
 export default function App() {
   return (
     // <Router>
-      <section
+ <>
+      <Navbar />
 
-  style={{
-    backgroundImage: "url('/sea.jpg')",
-    // backgroundImage: `url(${seaImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "100vh", // full viewport height
-    display: "flex",
-    // alignItems: "center",
-      alignItems: "top",
-    justifyContent: "center",
-   
-    color: "white", // adjust for readability
-    textAlign: "center",
-    // textAlign: "top",
-    // padding: "2rem",
-    width:" 100vw"
-  }}
->
-  {/* color: '#22352C' */}
-  {/* color: '#927420' */}
-  {/* color: '#A23D01' */}
-  {/* color: '#624621' */}
-  <div >
-   
+      <section id="hero">
+        <Hero />
+      </section>
 
-    <h1 style={ { color: '#22352C'} } >Geštaltinė psichoterapija</h1>
-  
-    <p style={ {fontSize: '40px', color: '#A23D01', marginBottom: '0'} } >Jolita Palekaitė</p>
-    <p style={ {fontSize: '40px' , color: '#A23D01', margin: '0'} }> +370 650 11233</p>
-    <p style={ {fontSize: '40px', color: '#A23D01', margin: '0'} }> jolita@savin.lt</p>
+      <section id="about">
+        <About />
+      </section>
 
-  </div>
-</section>
+      <section id="services">
+        <Services />
+      </section>
+
+      <section id="pricing">
+        <Pricing />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+    </>
     // </Router>
   );
 }
