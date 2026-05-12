@@ -2,7 +2,10 @@ import Section from "../components/Section";
 
 export default function About() {
   return (
-    <Section id="about" background="light">
+    <Section id="about" background="light"    
+     justifyContent="center"
+  alignItems="flex-end"
+  >
       <div style={{ maxWidth: 800 }}>
         <h2>Apie mane</h2>
 

@@ -36,11 +36,12 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="nav-links">
-          <a href="#hero" onClick={handleClick}>Home</a>
-          <a href="#about" onClick={handleClick}>About</a>
-          <a href="#services" onClick={handleClick}>Services</a>
-          <a href="#pricing" onClick={handleClick}>Pricing</a>
-          <a href="#contact" onClick={handleClick}>Contact</a>
+          <a href="#hero" onClick={handleClick}>Pradžia</a>
+          <a href="#about" onClick={handleClick}>Apie mane</a>
+          <a href="#services" onClick={handleClick}>Paslaugos</a>
+          <a href="#gestalt" onClick={handleClick}>Apie Geštalto psichoterapiją</a>
+          <a href="#duk" onClick={handleClick}>D.U.K.</a>
+          <a href="#contact" onClick={handleClick}>Kontaktai</a>
         </div>
 
         {/* Mobile button */}
@@ -55,11 +56,12 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="mobile-menu">
-          <a href="#hero" onClick={handleClick}>Home</a>
-          <a href="#about" onClick={handleClick}>About</a>
-          <a href="#services" onClick={handleClick}>Services</a>
-          <a href="#pricing" onClick={handleClick}>Pricing</a>
-          <a href="#contact" onClick={handleClick}>Contact</a>
+          <a href="#hero" onClick={handleClick}>Pradžia</a>
+          <a href="#about" onClick={handleClick}>Apie mane</a>
+          <a href="#services" onClick={handleClick}>Paslaugos</a>
+          <a href="#pricing" onClick={handleClick}>Apie Geštalto psichoterapiją</a>
+          <a href="#duk" onClick={handleClick}>D.U.K.</a>
+          <a href="#contact" onClick={handleClick}>Kontaktai</a>
         </div>
       )}
 

@@ -3,6 +3,9 @@ type SectionProps = {
   children: React.ReactNode;
   background?: "white" | "light" | "image";
   imageUrl?: string;
+
+  justifyContent?: React.CSSProperties["justifyContent"];
+  alignItems?: React.CSSProperties["alignItems"];
 };
 
 export default function Section({
@@ -10,6 +13,8 @@ export default function Section({
   children,
   background = "white",
   imageUrl,
+  justifyContent = "center",
+  alignItems = "center",
 }: SectionProps) {
   const backgroundStyle =
     background === "light"
@@ -23,19 +28,40 @@ export default function Section({
       id={id}
       style={{
         minHeight: "100vh",
-              //  width: "100%",  
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
+
         padding: "3rem",
-        backgroundImage: background === "image" ? backgroundStyle : undefined,
-        backgroundColor: background !== "image" ? backgroundStyle : undefined,
+
+        backgroundImage:
+          background === "image"
+            ? backgroundStyle
+            : undefined,
+
+        backgroundColor:
+          background !== "image"
+            ? backgroundStyle
+            : undefined,
+
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {children}
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "1400px",
+          margin: "0 auto",
+
+          display: "flex",
+          flexDirection: "column",
+
+          justifyContent,
+          alignItems,
+
+          minHeight: "100vh",
+        }}
+      >
+        {children}
+      </div>
     </section>
   );
 }

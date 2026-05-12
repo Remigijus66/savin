@@ -1,44 +1,26 @@
 
-
 // import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-// import seaImage from "./assets/sea.jpg";
 import "./App.css"; // import global CSS
 import Navbar from "./components/Navbar";
 import About from "./sections/About";
-import Contact from "./sections/Contacts";
+import Contact from "./sections/Contact";
 import Hero from "./sections/Hero";
-import Pricing from "./sections/Pricing";
+import Gestalt from "./sections/Gestalt";
 import Services from "./sections/Services";
+import Duk from "./sections/Duk";
 
 export default function App() {
   return (
     // <Router>
  <>
- {/* <div className="container"> */}
       <Navbar />
-
-
-      <section id="hero">
         <Hero />
-      </section>
-
-      <section id="about">
         <About />
-      </section>
-
-      <section id="services">
         <Services />
-      </section>
-
-      <section id="pricing">
-        <Pricing />
-      </section>
-
-      <section id="contact">
+        <Gestalt />
+        <Duk />
         <Contact />
-      </section>
- {/* </div> */}
     </>
     // </Router>
   );

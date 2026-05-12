@@ -10,7 +10,7 @@ export default function Services() {
           <li>Individuali psichoterapija</li>
           <li>Emocinės savijautos stiprinimas</li>
           <li>Santykių konsultavimas</li>
-          <li>Krizių palaikymas</li>
+          <li>Krizių palaikymas ir gilinimas</li>
         </ul>
       </div>
     </Section>
