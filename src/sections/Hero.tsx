@@ -37,20 +37,20 @@ import Section from "../components/Section";
 export default function Hero() {
   return (
     <Section id="hero" background="image" imageUrl="/sea.jpg" justifyContent="flex-start" alignItems="center">
-    <div  style={{ padding: "3rem", border: "1px solid rgb(236, 10, 10)"}}>
-        <h1 style={{ color: "#22352C" }}>
+    <div  style={{ padding: "3rem"}}>
+        <h1 style={{ color: "var(--color-primary)" }}>
           Geštaltinė psichoterapija
         </h1>
 
-        <p style={{ fontSize: "40px", color: "#A23D01" }}>
+        <p style={{ fontSize: "40px", color: "var(--color-accent)" }}>
           Jolita Palekaitė
         </p>
 
-        <p style={{ fontSize: "40px", color: "#A23D01" }}>
+        <p style={{ fontSize: "40px", color: "var(--color-accent)" }}>
           +370 650 11233
         </p>
 
-        <p style={{ fontSize: "40px", color: "#A23D01" }}>
+        <p style={{ fontSize: "40px", color: "var(--color-accent)" }}>
           jolita@savin.lt
         </p>
     

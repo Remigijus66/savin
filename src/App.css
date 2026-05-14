@@ -118,21 +118,25 @@ button:focus-visible {
 
 }
 
+
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    /* color:#A23D01; */
-    background-color: #ffffff;
-  }
+  
+  /* :root { */
+   /* color: #213547; */
+   /* color:#A23D01; */
+   /* background-color: #ffffff; } */
+
   a:hover {
     color: #747bff;
   }
+ 
   button {
     background-color: #f9f9f9;
   }
 }
 
 :root {
+  /* --color-primary: #232E20; */
   --color-primary: #232E20;
   --color-secondary: #D2A16E;
   --color-accent: #B55E28;

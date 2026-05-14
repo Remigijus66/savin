@@ -13,8 +13,8 @@ export default function Navbar() {
         left: 0,
         width: "100%",
         zIndex: 1000,
-        backdropFilter: "blur(12px)",
-        background: "rgba(255,255,255,0.6)",
+        backdropFilter: "blur(8px)",
+        background: "rgba(255,255,255,0.3)",
         borderBottom: "1px solid rgba(0,0,0,0.08)",
       }}
     >
@@ -29,7 +29,7 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <div style={{ fontWeight: 600, color: "#22352C" }}>
+        <div style={{ fontWeight: 600, color: "var(--color-primary)" }}>
          Logo 
       
         </div>
@@ -74,13 +74,15 @@ export default function Navbar() {
 
         .nav-links a {
           text-decoration: none;
-          color: #22352C;
+          // color: #22352C;
+          color: var(--color-primary);
           font-weight: 500;
           transition: 0.2s;
         }
 
         .nav-links a:hover {
-          color: #A23D01;
+          // color: #A23D01;
+          color: var(--color-accent);
           transform: translateY(-1px);
         }
 
@@ -90,7 +92,8 @@ export default function Navbar() {
           background: none;
           border: none;
           cursor: pointer;
-          color: #22352C;
+          // color: #22352C;
+          color: var(--color-primary);
         }
 
         .mobile-menu {
@@ -117,7 +120,8 @@ export default function Navbar() {
 
           .mobile-menu a {
             text-decoration: none;
-            color: #22352C;
+            // color: var(--color-primary);
+            color: var(--color-primary);
             font-weight: 500;
           }
         }
