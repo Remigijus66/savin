@@ -15,7 +15,9 @@ import Themes from "./sections/Themes";
 export default function App() {
   return (
     // <Router>
- <>
+
+    <div className="theme-first">
+  
       <Navbar />
         <Hero />
         <About />
@@ -24,7 +26,8 @@ export default function App() {
         <Duk />
         <Contact />
         <Themes />
-    </>
+    </div>
+   
     // </Router>
   );
 }

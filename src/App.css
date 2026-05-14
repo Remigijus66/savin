@@ -168,3 +168,10 @@ button:focus-visible {
   --color-secondary: #cccccc;
   --color-accent: #666666;
 }
+
+.theme-first {
+  --color-primary: #242424;
+  --color-secondary: #927420;
+  --color-accent: #A23D01;
+    --color-muted: #624621;
+}
