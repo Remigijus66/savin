@@ -37,7 +37,7 @@ import Section from "../components/Section";
 export default function Hero() {
   return (
     <Section id="hero" background="image" imageUrl="/sea.jpg" justifyContent="flex-start" alignItems="center">
-    
+    <div  style={{ padding: "3rem", border: "1px solid rgb(236, 10, 10)"}}>
         <h1 style={{ color: "#22352C" }}>
           Geštaltinė psichoterapija
         </h1>
@@ -54,6 +54,7 @@ export default function Hero() {
           jolita@savin.lt
         </p>
     
+      </div >
     </Section>
   );
 }

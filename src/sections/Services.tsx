@@ -3,7 +3,7 @@ import Section from "../components/Section";
 export default function Services() {
   return (
     <Section id="services">
-      <div>
+   <div  style={{ padding: "3rem", border: "1px solid rgb(236, 10, 10)"}}>
         <h2>Paslaugos</h2>
 
         <ul style={{ fontSize: 22, listStyle: "none" }}>

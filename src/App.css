@@ -3,32 +3,78 @@ html {
   scroll-behavior: smooth;
 }
 
-.pallette1
+.p0c1
 {
   background-color: #242424;
+  /* background-color: #363233; */
 }
-.pallette2
+.p0c2
 {
   background-color: #927420;
+  /* background-color: #613708; */
 }
-.pallette3
+.p0c3
 {
   background-color: #A23D01;
+  /* background-color: #895C20; */
 }
-.pallette4
+.p0c4
 {
   background-color: #624621;
+  /* background-color: #A38976; */
 }
 
-/* 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+
+.p1c1
+{
+  /* background-color: #242424; */
+  background-color: #363233;
 }
-a:hover {
-  color: #535bf2;
-} */
+.p1c2
+{
+  /* background-color: #927420; */
+  background-color: #613708;
+}
+.p1c3
+{
+  /* background-color: #A23D01; */
+  background-color: #895C20;
+}
+.p1c4
+{
+  /* background-color: #624621; */
+  background-color: #A38976;
+}
+.p1c4
+{
+  background-color: #CABCAC;
+
+}
+
+.p2c1
+{
+  background-color: #232E20
+}
+.p2c2
+{
+  background-color: #D2A16E
+}
+.p2c3
+{
+  background-color: #B55E28
+}
+.p2c4
+{
+  background-color: #4F4B40;
+}
+.p2c5
+{
+  background-color: #3F2512;
+}
+
+
+
+
 
 body {
   margin: 0;
@@ -75,6 +121,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
+    /* color:#A23D01; */
     background-color: #ffffff;
   }
   a:hover {
@@ -83,4 +130,37 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+:root {
+  --color-primary: #232E20;
+  --color-secondary: #D2A16E;
+  --color-accent: #B55E28;
+  --color-muted: #4F4B40;
+  --color-dark: #3F2512;
+
+  --text-primary: #232E20;
+  --text-light: #ffffff;
+
+  --background-main: #ffffff;
+  --background-section: #f5f1ea;
+
+  --border-color: #D2A16E;
+}
+.theme-forest {
+  --color-primary: #232E20;
+  --color-secondary: #D2A16E;
+  --color-accent: #B55E28;
+}
+
+.theme-ocean {
+  --color-primary: #123456;
+  --color-secondary: #5DA9E9;
+  --color-accent: #FFB703;
+}
+
+.theme-minimal {
+  --color-primary: #111111;
+  --color-secondary: #cccccc;
+  --color-accent: #666666;
 }

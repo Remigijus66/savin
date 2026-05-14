@@ -29,7 +29,7 @@ export default function Section({
       style={{
         minHeight: "100vh",
 
-        padding: "3rem",
+        // padding: "3rem",
 
         backgroundImage:
           background === "image"
@@ -47,17 +47,19 @@ export default function Section({
     >
       <div
         style={{
-          width: "100%",
+          border: "1px solid rgba(0,0,0,1)",
+          // width: "100% ",
           maxWidth: "1400px",
           margin: "0 auto",
-
+// height:"100%",
+height:"100vh",
+    //  padding: "3rem",
           display: "flex",
           flexDirection: "column",
 
           justifyContent,
           alignItems,
-
-          minHeight: "100vh",
+         
         }}
       >
         {children}
