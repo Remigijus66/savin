@@ -90,6 +90,26 @@ export default function Themes() {
 
         </div>
         <h2>themes</h2>
+        <div className="theme-first" style={{display: "flex", gap: "1rem", margin: "2rem 0"}}>
+          <span style={{minWidth: "10rem"}}>theme-first</span>
+<ColorSample
+    variable="--color-primary"
+    label="primary"
+  />
+    <ColorSample
+    variable="--color-secondary"
+    label="secondary"
+  />
+
+  <ColorSample
+    variable="--color-accent"
+    label="accent"
+  />
+  <ColorSample
+    variable="--color-muted"
+    label="muted"
+  />
+</div>
         <div className="theme-forest" style={{display: "flex", gap: "1rem", margin: "2rem 0"}}>
           <span style={{minWidth: "10rem"}}>theme-forest</span>
 <ColorSample
@@ -121,6 +141,19 @@ export default function Themes() {
     variable="--color-accent"
     label="accent"
   />
+<ColorSample
+    variable="--color-muted"
+    label="muted"
+  />
+    <ColorSample
+    variable="--text-primary"
+    label="text-primary"
+  />
+
+  <ColorSample
+    variable="--border-color"
+    label="border"
+  />
 </div>
         <div className="theme-minimal" style={{display: "flex", gap: "1rem", margin: "2rem 0"}}>
           <span style={{minWidth: "10rem"}}>theme-minimal</span>
@@ -136,6 +169,19 @@ export default function Themes() {
   <ColorSample
     variable="--color-accent"
     label="accent"
+  />
+  <ColorSample
+    variable="--color-muted"
+    label="muted"
+  />
+    <ColorSample
+    variable="--text-primary"
+    label="text-primary"
+  />
+
+  <ColorSample
+    variable="--border-color"
+    label="border"
   />
 
         </div>

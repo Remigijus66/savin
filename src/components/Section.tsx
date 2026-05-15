@@ -6,6 +6,7 @@ type SectionProps = {
 
   justifyContent?: React.CSSProperties["justifyContent"];
   alignItems?: React.CSSProperties["alignItems"];
+  height?: React.CSSProperties["height"];
 };
 
 export default function Section({
@@ -15,6 +16,7 @@ export default function Section({
   imageUrl,
   justifyContent = "center",
   alignItems = "center",
+  height= "",
 }: SectionProps) {
   const backgroundStyle =
     background === "light"
@@ -47,12 +49,13 @@ export default function Section({
     >
       <div
         style={{
-          border: "1px solid rgba(0,0,0,1)",
+          // border: "1px solid rgba(0,0,0,1)",
           // width: "100% ",
           maxWidth: "1400px",
           margin: "0 auto",
 // height:"100%",
-height:"100vh",
+// height:"100vh",
+height,
     //  padding: "3rem",
           display: "flex",
           flexDirection: "column",

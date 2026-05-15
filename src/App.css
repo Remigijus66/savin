@@ -3,78 +3,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.p0c1
-{
-  background-color: #242424;
-  /* background-color: #363233; */
-}
-.p0c2
-{
-  background-color: #927420;
-  /* background-color: #613708; */
-}
-.p0c3
-{
-  background-color: #A23D01;
-  /* background-color: #895C20; */
-}
-.p0c4
-{
-  background-color: #624621;
-  /* background-color: #A38976; */
-}
-
-
-.p1c1
-{
-  /* background-color: #242424; */
-  background-color: #363233;
-}
-.p1c2
-{
-  /* background-color: #927420; */
-  background-color: #613708;
-}
-.p1c3
-{
-  /* background-color: #A23D01; */
-  background-color: #895C20;
-}
-.p1c4
-{
-  /* background-color: #624621; */
-  background-color: #A38976;
-}
-.p1c4
-{
-  background-color: #CABCAC;
-
-}
-
-.p2c1
-{
-  background-color: #232E20
-}
-.p2c2
-{
-  background-color: #D2A16E
-}
-.p2c3
-{
-  background-color: #B55E28
-}
-.p2c4
-{
-  background-color: #4F4B40;
-}
-.p2c5
-{
-  background-color: #3F2512;
-}
-
-
-
-
 
 body {
   margin: 0;
@@ -89,7 +17,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+/* button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -102,38 +30,29 @@ button {
 }
 button:hover {
   border-color: #646cff;
-}
-button:focus,
+} */
+/* button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.container {
-  min-height: 30px;
-  background-color: green;
-  width: 100%;
-  max-width: 1700px;
-  margin: auto;
+  outline: 4px auto var(--color-dark);
+} */
 
 
-}
 
-
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) { */
   
   /* :root { */
    /* color: #213547; */
    /* color:#A23D01; */
    /* background-color: #ffffff; } */
 
-  a:hover {
+  /* a:hover {
     color: #747bff;
   }
  
   button {
     background-color: #f9f9f9;
-  }
-}
+  } */
+/* } */
 
 :root {
   /* --color-primary: #232E20; */
@@ -161,12 +80,18 @@ button:focus-visible {
   --color-primary: #123456;
   --color-secondary: #5DA9E9;
   --color-accent: #FFB703;
+  --color-muted: #5F7186;
+  --text-primary: #0F2233;
+  --border-color: #C9D6E4;
 }
 
 .theme-minimal {
   --color-primary: #111111;
   --color-secondary: #cccccc;
   --color-accent: #666666;
+   --color-muted: #8A8A8A;
+  --text-primary: #1A1A1A;
+  --border-color: #E6E6E6;
 }
 
 .theme-first {
