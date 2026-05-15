@@ -11,15 +11,24 @@ import Gestalt from "./sections/Gestalt";
 import Services from "./sections/Services";
 import Duk from "./sections/Duk";
 import Themes from "./sections/Themes";
+import { useState } from "react";
+
+type Theme = "theme-first" | "theme-forest" |"theme-ocean" | "theme-dark";
+
 
 export default function App() {
+    const [theme, setTheme] = useState<Theme>("theme-first");
+
+  const toggleTheme = (newTheme: Theme) => {
+    setTheme(newTheme);
+  };
   return (
     // <Router>
 
-    <div className="theme-first">
-    {/* <div > */}
+    // <div className="theme-first">
+    <div className={theme} >
   
-      <Navbar />
+      <Navbar onThemeChange={toggleTheme} />
         <Hero />
         <About />
         <Services />

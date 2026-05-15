@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Navbar() {
+export default function Navbar({ onThemeChange }: any) {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => setOpen(false);
@@ -31,7 +31,12 @@ export default function Navbar() {
         {/* Logo */}
         <div style={{ fontWeight: 600, color: "var(--color-primary)" }}>
          Logo 
-      
+      <select  style={{ marginLeft: "20px" }} onChange={(e) => onThemeChange(e.target.value)}>
+  <option value="theme-first">Natural</option>
+  <option value="theme-forest">Forest</option>
+  <option value="theme-ocean">Ocean</option>
+  <option value="theme-minimal">Minimal</option>
+</select>
         </div>
 
         {/* Desktop links */}

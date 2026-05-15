@@ -146,6 +146,10 @@ export default function Themes() {
     label="muted"
   />
     <ColorSample
+    variable="--color-dark"
+    label="dark"
+  />
+    <ColorSample
     variable="--text-primary"
     label="text-primary"
   />
@@ -173,6 +177,10 @@ export default function Themes() {
   <ColorSample
     variable="--color-muted"
     label="muted"
+  />
+  <ColorSample
+    variable="--color-dark"
+    label="dark"
   />
     <ColorSample
     variable="--text-primary"
