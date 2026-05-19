@@ -14,7 +14,13 @@ const gestaltText = [
 
 export default function Gestalt() {
   return (
-    <Section id="gestalt" background="light" height="100vh">
+    <Section id="gestalt" background="light" height="100vh"   gradientStops={
+  [
+ 
+  { color: "var(--background-main-alt1)", stop: "80%" },
+  { color: "var(--background-main-alt2)", stop: "100%" },
+]
+}>
 <div
   style={{
     minHeight: "100vh",

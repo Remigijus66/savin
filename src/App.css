@@ -66,7 +66,12 @@ button:focus-visible {
   --text-light: #ffffff;
 
   --background-main: #ffffff;
-  --background-section: #f5f1ea;
+  --background-main-alt1: #9DADA3;
+  --background-main-alt2: #CFD8DF;
+  --background-main-s3: #5B6972;
+  --background-main-s4: #D0D8DA;
+
+    --background-section: #A6B6BA;
 
   --border-color: #D2A16E;
 }

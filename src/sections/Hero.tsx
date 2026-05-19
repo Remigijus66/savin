@@ -39,7 +39,7 @@ export default function Hero() {
     <Section id="hero" background="image" imageUrl="/sea.jpg" justifyContent="flex-start" alignItems="center">
     <div  style={{ padding: "3rem"}}>
         <h1 style={{ color: "var(--color-primary)" }}>
-   
+          Geštaltinė psichoterapija
         </h1>
 
         <p style={{ fontSize: "40px", color: "var(--color-accent)" }}>

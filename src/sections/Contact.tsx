@@ -23,6 +23,13 @@ export default function Contact() {
       imageUrl="/liepyno.png"
       justifyContent="flex-end"
       alignItems="flex-end"
+   gradientStops={
+  [
+ 
+  { color: "var(--background-main-alt1)", stop: "80%" },
+  { color: "var(--background-main-alt2)", stop: "100%" },
+]
+}
     >
       <div
         // className="theme-ocean"

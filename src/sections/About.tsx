@@ -10,7 +10,28 @@ const aboutText = [
 
 export default function About() {
   return (
-    <Section id="about" background="light">
+    <Section id="about" background="light" 
+  //     gradientStops={[
+  //   { color: "#12242e", stop: "0%" },
+
+  //   // quick transition to own color
+  //   { color: "var(--background-main-s1)", stop: "10%" },
+
+  //   // keep own color through most of section
+  //   { color: "var(--background-main-s1)", stop: "10%" },
+
+  //   // transition to next sectioncolor
+  //   { color: "var(--background-main-s2)", stop: "10%" },
+  // ]}
+gradientStops={
+  [
+  { color: "#687a84", stop: "0%" },   // A
+  { color: "var(--background-main-alt1)", stop: "20%" },   // A
+  { color: "var(--background-main-alt1)", stop: "80%" },
+  { color: "var(--background-main-alt2)", stop: "100%" }, // B (boundary)
+]
+}
+  >
       <div
         style={{
           maxWidth: "1100px",

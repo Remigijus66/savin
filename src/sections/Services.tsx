@@ -20,7 +20,15 @@ const services = [
 
 export default function Services() {
   return (
-    <Section id="services" background="light">
+    <Section id="services" background="light" 
+ gradientStops={
+  [
+ 
+  { color: "var(--background-main-alt2)", stop: "80%" },
+  { color: "var(--background-main-alt1)", stop: "100%" },
+]
+}
+  >
       <div
         style={{
           maxWidth: "1200px",

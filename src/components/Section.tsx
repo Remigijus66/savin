@@ -1,12 +1,27 @@
 type SectionProps = {
   id: string;
   children: React.ReactNode;
+
   background?: "white" | "light" | "image";
   imageUrl?: string;
 
   justifyContent?: React.CSSProperties["justifyContent"];
   alignItems?: React.CSSProperties["alignItems"];
   height?: React.CSSProperties["height"];
+
+  /**
+   * Example:
+   * [
+   *   { color: "#ffffff", stop: "0%" },
+   *   { color: "#ff0000", stop: "10%" },
+   *   { color: "#ff0000", stop: "90%" },
+   *   { color: "#0000ff", stop: "100%" },
+   * ]
+   */
+  gradientStops?: {
+    color: string;
+    stop: string;
+  }[];
 };
 
 export default function Section({
@@ -16,7 +31,8 @@ export default function Section({
   imageUrl,
   justifyContent = "center",
   alignItems = "center",
-  height= "",
+  height = "",
+  gradientStops,
 }: SectionProps) {
   const backgroundStyle =
     background === "light"
@@ -25,18 +41,25 @@ export default function Section({
       ? `url(${imageUrl})`
       : "#ffffff";
 
+  const gradient =
+    gradientStops && gradientStops.length > 0
+      ? `linear-gradient(to bottom, ${gradientStops
+          .map((g) => `${g.color} ${g.stop}`)
+          .join(", ")})`
+      : undefined;
+
   return (
     <section
       id={id}
       style={{
         minHeight: "100vh",
 
-        // padding: "3rem",
-
         backgroundImage:
           background === "image"
-            ? backgroundStyle
-            : undefined,
+            ? gradient
+              ? `${gradient}, ${backgroundStyle}`
+              : backgroundStyle
+            : gradient,
 
         backgroundColor:
           background !== "image"
@@ -49,20 +72,17 @@ export default function Section({
     >
       <div
         style={{
-          // border: "1px solid rgba(0,0,0,1)",
-          // width: "100% ",
           maxWidth: "1400px",
           margin: "0 auto",
-// height:"100%",
-// height:"100vh",
-height,
-    //  padding: "3rem",
+
+          height,
+
           display: "flex",
           flexDirection: "column",
 
           justifyContent,
           alignItems,
-         
+          border: "1px solid black",
         }}
       >
         {children}
