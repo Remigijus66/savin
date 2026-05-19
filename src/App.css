@@ -10,100 +10,32 @@ body {
   /* place-items: center; */
   min-width: 320px;
   /* min-height: 100vh; */
+    font-family: "Inter", sans-serif;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: -0.02em;
 }
-
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-} */
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto var(--color-dark);
-} */
-
-
-
-/* @media (prefers-color-scheme: light) { */
-  
-  /* :root { */
-   /* color: #213547; */
-   /* color:#A23D01; */
-   /* background-color: #ffffff; } */
-
-  /* a:hover {
-    color: #747bff;
-  }
- 
-  button {
-    background-color: #f9f9f9;
-  } */
-/* } */
 
 :root {
-  /* --color-primary: #232E20; */
-  --color-primary: #232E20;
-  --color-secondary: #D2A16E;
-  --color-accent: #B55E28;
-  --color-muted: #4F4B40;
-  --color-dark: #3F2512;
+  --bg-main: #f6f1ea;
+  --bg-section: #efe7dc;
+  --bg-card: #ffffff;
 
-  --text-primary: #232E20;
-  --text-light: #ffffff;
+  --text-main: #2d2a26;
+  --text-muted: #6f6a63;
 
-  --background-main: #ffffff;
-  --background-main-alt1: #9DADA3;
-  --background-main-alt2: #CFD8DF;
-  --background-main-s3: #5B6972;
-  --background-main-s4: #D0D8DA;
+  --accent: #c89b7b;
+  --accent-soft: #d8b59b;
 
-    --background-section: #A6B6BA;
+  --border-soft: rgba(80, 60, 40, 0.08);
 
-  --border-color: #D2A16E;
-}
-.theme-forest {
-  --color-primary: #232E20;
-  --color-secondary: #D2A16E;
-  --color-accent: #B55E28;
-}
+  --shadow-soft:
+    0 10px 30px rgba(0,0,0,0.05);
 
-.theme-ocean {
-  --color-primary: #123456;
-  --color-secondary: #5DA9E9;
-  --color-accent: #FFB703;
-  --color-muted: #5F7186;
-    --color-dark: #081826;
-  --text-primary: #0F2233;
-  --border-color: #C9D6E4;
-}
+  --radius-xl: 32px;
+  --radius-lg: 24px;
 
-.theme-minimal {
-  --color-primary: #111111;
-  --color-secondary: #cccccc;
-  --color-accent: #666666;
-   --color-muted: #8A8A8A;
-     --color-dark: #050505;
-  --text-primary: #1A1A1A;
-  --border-color: #E6E6E6;
-}
-
-.theme-first {
-  --color-primary: #242424;
-  --color-secondary: #927420;
-  --color-accent: #A23D01;
-    --color-muted: #624621;
+  --container: 1280px;
 }

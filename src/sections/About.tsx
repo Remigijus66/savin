@@ -11,44 +11,29 @@ const aboutText = [
 export default function About() {
   return (
     <Section id="about" background="light" 
-  //     gradientStops={[
-  //   { color: "#12242e", stop: "0%" },
 
-  //   // quick transition to own color
-  //   { color: "var(--background-main-s1)", stop: "10%" },
-
-  //   // keep own color through most of section
-  //   { color: "var(--background-main-s1)", stop: "10%" },
-
-  //   // transition to next sectioncolor
-  //   { color: "var(--background-main-s2)", stop: "10%" },
-  // ]}
 gradientStops={
   [
-  { color: "#687a84", stop: "0%" },   // A
-  { color: "var(--background-main-alt1)", stop: "20%" },   // A
-  { color: "var(--background-main-alt1)", stop: "80%" },
-  { color: "var(--background-main-alt2)", stop: "100%" }, // B (boundary)
+  { color: "#f6f1ea", stop: "0%" },
+  { color: "#efe7dc", stop: "100%" },
 ]
 }
   >
-      <div
-        style={{
-          maxWidth: "1100px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "380px 1fr",
-          gap: "4rem",
-          alignItems: "center",
-          padding: "5rem 2rem",
-        }}
-      >
+    <div
+  style={{
+    background: "rgba(255,255,255,0.72)",
+    backdropFilter: "blur(8px)",
+    borderRadius: "32px",
+    padding: "5rem",
+    boxShadow: "var(--shadow-soft)",
+  }}
+>
         <div>
           <img
             src="/jo.jpg"
             alt="Psichoterapeutė"
             style={{
-              width: "100%",
+        maxWidth: "560px",
               display: "block",
               borderRadius: "24px",
               objectFit: "cover",
@@ -72,7 +57,19 @@ gradientStops={
           >
             Apie mane
           </h2>
-
+<div
+  style={{
+    position: "absolute",
+    width: "500px",
+    height: "500px",
+    borderRadius: "50%",
+    background: "rgba(200,155,123,0.12)",
+    filter: "blur(80px)",
+    top: "-150px",
+    right: "-100px",
+    zIndex: 0,
+  }}
+/><div/>
           <div
             style={{
               display: "flex",

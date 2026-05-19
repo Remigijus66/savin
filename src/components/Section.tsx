@@ -1,23 +1,35 @@
+// type SectionProps = {
+//   id: string;
+//   children: React.ReactNode;
+
+//   background?: "white" | "light" | "image";
+//   imageUrl?: string;
+
+//   justifyContent?: React.CSSProperties["justifyContent"];
+//   alignItems?: React.CSSProperties["alignItems"];
+//   height?: React.CSSProperties["height"];
+
+ 
+//   gradientStops?: {
+//     color: string;
+//     stop: string;
+//   }[];
+// };
+
 type SectionProps = {
   id: string;
   children: React.ReactNode;
 
-  background?: "white" | "light" | "image";
-  imageUrl?: string;
+  background?: string;
 
-  justifyContent?: React.CSSProperties["justifyContent"];
-  alignItems?: React.CSSProperties["alignItems"];
-  height?: React.CSSProperties["height"];
+  contentWidth?: string;
 
-  /**
-   * Example:
-   * [
-   *   { color: "#ffffff", stop: "0%" },
-   *   { color: "#ff0000", stop: "10%" },
-   *   { color: "#ff0000", stop: "90%" },
-   *   { color: "#0000ff", stop: "100%" },
-   * ]
-   */
+  rounded?: boolean;
+
+  overlapTop?: boolean;
+
+  padding?: string;
+
   gradientStops?: {
     color: string;
     stop: string;
@@ -28,18 +40,16 @@ export default function Section({
   id,
   children,
   background = "white",
-  imageUrl,
-  justifyContent = "center",
-  alignItems = "center",
-  height = "",
+  // imageUrl,
+  // justifyContent = "center",
+  // alignItems = "center",
+  // height = "",
   gradientStops,
 }: SectionProps) {
-  const backgroundStyle =
-    background === "light"
-      ? "#f5f1ea"
-      : background === "image"
-      ? `url(${imageUrl})`
-      : "#ffffff";
+  const backgroundStyle = 
+
+    background ?
+      background :"#f5f1ea";
 
   const gradient =
     gradientStops && gradientStops.length > 0
@@ -74,15 +84,17 @@ export default function Section({
         style={{
           maxWidth: "1400px",
           margin: "0 auto",
-
-          height,
+// maxWidth: "560px",
+lineHeight: 1.95, 
+fontSize: "1.05rem",
+          // height,
 
           display: "flex",
           flexDirection: "column",
 
-          justifyContent,
-          alignItems,
-          border: "1px solid black",
+          // justifyContent,
+          // alignItems,
+          // border: "1px solid black",
         }}
       >
         {children}
