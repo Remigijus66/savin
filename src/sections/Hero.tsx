@@ -36,7 +36,34 @@ import Section from "../components/Section";
 
 export default function Hero() {
   return (
-    <Section id="hero" background="image" imageUrl="/sea.jpg" justifyContent="flex-start" alignItems="center">
+    // <Section id="hero" background="image" imageUrl="/sea.jpg" justifyContent="flex-start" alignItems="center">
+    <Section id="hero" background="light" >
+              <div  style={{
+        // maxWidth: "560px",
+        height: "300px",
+        maxWidth: "90%",
+              display: "block",
+              borderRadius: "24px",
+              objectFit: "cover",
+              boxShadow: "0 10px 30px rgba(35, 46, 32, 0.12)",
+              border: "1px solid var(--border-color)",
+              backgroundColor: "green"
+            }}>
+          {/* <img
+            src="/sea.jpg"
+            alt="Jura"
+             style={{
+        // maxWidth: "560px",
+        height: "300px",
+        maxWidth: "90%",
+              display: "block",
+              borderRadius: "24px",
+              objectFit: "cover",
+              boxShadow: "0 10px 30px rgba(35, 46, 32, 0.12)",
+              border: "1px solid var(--border-color)",
+            }}
+          /> */}
+        </div>
     <div  style={{ padding: "3rem"}}>
         <h1 style={{ color: "var(--color-primary)" }}>
           Geštaltinė psichoterapija
