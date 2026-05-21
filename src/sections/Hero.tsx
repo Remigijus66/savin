@@ -32,42 +32,61 @@
 //     </div>
 //   );
 // }
-import Section from "../components/Section";
+
 
 export default function Hero() {
   return (
-    // <Section id="hero" background="image" imageUrl="/sea.jpg" justifyContent="flex-start" alignItems="center">
-    <Section id="hero" background="light" >
+      <section
+      style={{
+        minHeight: "100vh",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1400px",
+          margin: "0 auto",
+          lineHeight: 1.95, 
+          fontSize: "1.05rem",
+          display: "flex",
+          flexDirection: "column",
+          paddingTop: "4rem"
+        }}
+      >
+  
+  
+
               <div  style={{
-        // maxWidth: "560px",
-        height: "300px",
-        maxWidth: "90%",
-              display: "block",
-              borderRadius: "24px",
-              objectFit: "cover",
-              boxShadow: "0 10px 30px rgba(35, 46, 32, 0.12)",
-              border: "1px solid var(--border-color)",
-              backgroundColor: "green"
-            }}>
+                height: "400px",
+                maxWidth: "100%",
+                display: "block",
+                borderRadius: "24px",
+                objectFit: "cover",
+                boxShadow: "0 10px 30px rgba(35, 46, 32, 0.12)",
+                border: "1px solid var(--border-color)",
+                backgroundColor: "green",
+           
+              }}>
           {/* <img
             src="/sea.jpg"
             alt="Jura"
-             style={{
-        // maxWidth: "560px",
-        height: "300px",
-        maxWidth: "90%",
+            style={{
+              // maxWidth: "560px",
+              height: "300px",
+              maxWidth: "90%",
               display: "block",
               borderRadius: "24px",
               objectFit: "cover",
               boxShadow: "0 10px 30px rgba(35, 46, 32, 0.12)",
               border: "1px solid var(--border-color)",
-            }}
-          /> */}
-        </div>
-    <div  style={{ padding: "3rem"}}>
+              }}
+              /> */}
         <h1 style={{ color: "var(--color-primary)" }}>
           Geštaltinė psichoterapija
         </h1>
+        </div>
+    <div  style={{ padding: "3rem"}}>
 
         <p style={{ fontSize: "40px", color: "var(--color-accent)" }}>
           Jolita Palekaitė
@@ -82,6 +101,9 @@ export default function Hero() {
         </p>
     
       </div >
-    </Section>
+    {/* </Section> */}
+           
+            </div>
+          </section>
   );
 }
