@@ -12,6 +12,7 @@ import Services from "./sections/Services";
 import Duk from "./sections/Duk";
 import Themes from "./sections/Themes";
 import { useState } from "react";
+import Navbar1 from "./components/navbar1";
 
 type Theme = "theme-first" | "theme-forest" |"theme-ocean" | "theme-dark";
 
@@ -28,16 +29,19 @@ export default function App() {
     // <div className="theme-first">
     <div className={theme} >
   
-      <Navbar onThemeChange={toggleTheme} />
+      <Navbar  />
+{/*   
+      <Navbar1 onThemeChange={toggleTheme} /> */}
         <Hero />
         <About />
-        <Services />
+        {/* <Services />
         <Gestalt />
         <Duk />
         <Contact />
-        <Themes />
+        <Themes /> */}
     </div>
    
     // </Router>
   );
 }
+

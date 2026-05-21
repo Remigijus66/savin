@@ -17,6 +17,10 @@ h1, h2, h3 {
   font-family: "Cormorant Garamond", serif;
   letter-spacing: -0.02em;
 }
+.nav-links a {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
 
 :root {
   --bg-main: #f6f1ea;
@@ -25,6 +29,7 @@ h1, h2, h3 {
 
   --text-main: #2d2a26;
   --text-muted: #6f6a63;
+  --text-accent: #A23D01;
 
   --accent: #c89b7b;
   --accent-soft: #d8b59b;

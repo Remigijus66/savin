@@ -1,0 +1,169 @@
+/* SECTION BASE */
+.about-section {
+  background: #f7f4f1;
+  padding: 100px 24px;
+  color: #2c2c2c;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* CONTAINER */
+.about-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  position: relative;
+  z-index: 1;
+}
+
+/* background image layer */
+.about-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./Savin-logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  opacity: 0.08; 
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* INTRO */
+.about-intro {
+  text-align: center;
+  /* max-width: 800px; */
+  margin: 0 auto;
+display: flex;
+    justify-content: space-between;
+  gap: 24px;
+      /* background-image: url(./Savin-logo.png);
+     background-size: "cover";
+       background-repeat: no-repeat;
+              background-position: "left"; */
+}
+
+.about-moto  {
+    max-width: 600px;
+    height:600px;
+    
+}
+.about-title-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+          
+
+}
+.about-title {
+
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+
+}
+
+.about-lead {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.about-text {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.max-width {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* CENTER SECTION */
+.about-center {
+  text-align: center;
+}
+
+.about-subtitle {
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+/* GRID */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.about-card {
+  background: #ffffff;
+  border: 1px solid #e8e2dc;
+  border-radius: 18px;
+  padding: 32px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover lift effect */
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* subtle top accent line */
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  background: #c9a27e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.about-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* CARD TEXT */
+.about-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.about-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.about-card span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c9a27e;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+}

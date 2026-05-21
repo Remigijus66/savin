@@ -1,98 +1,74 @@
-import Section from "../components/Section";
-
-const aboutText = [
-  `A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. `,
-
-  ` I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath`,
-
-  `I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing, Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God! O my friend -- but`
-];
+import "./About.css";
 
 export default function About() {
   return (
-    <Section id="about" background="light" 
+    <section className="about-section">
 
-gradientStops={
-  [
-  { color: "#f6f1ea", stop: "0%" },
-  { color: "#efe7dc", stop: "100%" },
-]
-}
-  >
-    <div
-  style={{
-    background: "rgba(255,255,255,0.72)",
-    backdropFilter: "blur(8px)",
-    borderRadius: "32px",
-    padding: "5rem",
-    boxShadow: "var(--shadow-soft)",
-  }}
->
-        <div>
-          <img
-            src="/jo.jpg"
-            alt="Psichoterapeutė"
-            style={{
-        maxWidth: "560px",
-              display: "block",
-              borderRadius: "24px",
-              objectFit: "cover",
-              boxShadow: "0 10px 30px rgba(35, 46, 32, 0.12)",
-              border: "1px solid var(--border-color)",
-            }}
-          />
-        </div>
+      <div className="about-container">
 
-        <div
-          style={{
-            maxWidth: "680px",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "2.5rem",
-              marginBottom: "2rem",
-              color: "var(--color-primary)",
-            }}
-          >
-            Apie mane
-          </h2>
-<div
-  style={{
-    position: "absolute",
-    width: "500px",
-    height: "500px",
-    borderRadius: "50%",
-    background: "rgba(200,155,123,0.12)",
-    filter: "blur(80px)",
-    top: "-150px",
-    right: "-100px",
-    zIndex: 0,
-  }}
-/><div/>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "1.5rem",
-            }}
-          >
-            {aboutText.map((text, index) => (
-              <p
-                key={index}
-                style={{
-                  margin: 0,
-                  fontSize: "1.08rem",
-                  lineHeight: 1.9,
-                  color: "var(--color-muted)",
-                }}
-              >
-                {text}
-              </p>
-            ))}
+        {/* INTRO */}
+        <div className="about-intro">
+          <div className="about-title-wrapper">
+
+          <h1 className="about-title">
+            We’ll Do Our Best to Support You
+          </h1>
           </div>
+<div className="about-moto">
+
+          <p className="about-lead">
+            It’s important to remember that mental health is a fundamental aspect of overall health.
+          </p>
+
+          <p className="about-text">
+            Taking care of one’s mental well-being is just as important as taking care of one’s physical health.
+            If you or someone you know is struggling, don’t hesitate to seek help from a qualified professional or helpline.
+          </p>
+</div>
+
         </div>
+
+        {/* ABOUT US */}
+        <div className="about-center">
+          <h2 className="about-subtitle">About Us</h2>
+
+          <p className="about-text max-width">
+            We are dedicated to providing compassionate mental health care for individuals, families, and organizations.
+            Our mission is to create a safe space for healing, growth, and emotional well-being.
+          </p>
+        </div>
+
+        {/* SERVICES */}
+        <div className="about-grid">
+
+          <div className="about-card">
+            <h3>For Adults</h3>
+            <p>
+              Our services for adults encompass anxiety, depression, relationships, stress management, and personal growth.
+            </p>
+            <span>What We Do</span>
+          </div>
+
+          <div className="about-card">
+            <h3>For Children</h3>
+            <p>
+              We support children facing ADHD, anxiety, behavioral issues, academic stress, and emotional regulation challenges.
+            </p>
+            <span>What We Do</span>
+          </div>
+
+          <div className="about-card">
+            <h3>For Business</h3>
+            <p>
+              We offer EAP programs, leadership support, and workplace mental health training to improve employee well-being.
+            </p>
+            <span>What We Do</span>
+          </div>
+
+        </div>
+
       </div>
-    </Section>
+
+    </section>
   );
 }
