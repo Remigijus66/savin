@@ -24,7 +24,7 @@ export default function Gestalt() {
       
         <div
           className="gestalt-image"
-          style={{ backgroundImage: "url('./mountain3.jpg')" }}
+          style={{ backgroundImage: "url('./sunrise-shore.jpg')" }}
         ></div>
       </div>
       {/* //        gradientStops={ */}

@@ -1,4 +1,4 @@
-import Section from "../components/Section";
+import "./Contact.css";
 
 const contactItems = [
   {
@@ -11,87 +11,48 @@ const contactItems = [
   },
   {
     label: "Adresas",
-    value: "Liepyno g. 12, Vilnius",
+    value: "Liepyno g. 11, Vilnius",
   },
 ];
 
 export default function Contact() {
   return (
-    <Section
-      id="contact"
-      background="image"
-      imageUrl="/liepyno.png"
-      justifyContent="flex-end"
-      alignItems="flex-end"
-   gradientStops={
-  [
- 
-  { color: "var(--background-main-alt1)", stop: "80%" },
-  { color: "var(--background-main-alt2)", stop: "100%" },
-]
-}
-    >
-      <div
-        // className="theme-ocean"
-        style={{
-          margin: "3rem",
-          marginTop: "30rem",
-          padding: "3rem",
-          maxWidth: "520px",
-          borderRadius: "28px",
-          background: "rgba(255, 255, 255, 0.88)",
-          backdropFilter: "blur(10px)",
-          border: "1px solid rgba(210, 161, 110, 0.45)",
-          boxShadow: "0 10px 40px rgba(35, 46, 32, 0.18)",
-        }}
-      >
-        <h2
-          style={{
-            marginTop: 0,
-            marginBottom: "2rem",
-            fontSize: "2.6rem",
-            color: "var(--color-primary)",
-          }}
-        >
-          Kontaktai
-        </h2>
+    <section id="contact" className="contact-section">
+      <div className="contact-grid">
+        {/* LEFT LARGE CARD */}
+        <div className="contact-card contact-info-card">
+          <h2 className="contact-title">Kontaktai</h2>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.8rem",
-          }}
-        >
-          {contactItems.map((item, index) => (
-            <div key={index}>
-              <p
-                style={{
-                  margin: 0,
-                  marginBottom: "0.4rem",
-                  fontSize: "0.95rem",
-                  letterSpacing: "0.04em",
-                  textTransform: "uppercase",
-                  color: "var(--color-accent)",
-                }}
-              >
-                {item.label}
-              </p>
+          <div className="contact-items">
+            {contactItems.map((item, index) => (
+              <div key={index} className="contact-item">
+                <p className="contact-label">{item.label}</p>
 
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: "1.3rem",
-                  lineHeight: 1.6,
-                  color: "var(--color-dark)",
-                }}
-              >
-                {item.value}
-              </p>
-            </div>
-          ))}
+                <p className="contact-value">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN */}
+        <div className="contact-right-column">
+          <div className="contact-card contact-map">
+           <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4611.266684297889!2d25.251247273950863!3d54.698479616052495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dd93fbb168e61b%3A0xffe685a8cff3e4df!2sLiepyno%20g.%2011%2C%20Vilnius%2C%2008108%20Vilniaus%20m.%20sav.!5e0!3m2!1sen!2slt!4v1779457659623!5m2!1sen!2slt"
+       
+              loading="lazy"
+           
+            ></iframe>
+          </div>
+
+          <div
+            className="contact-card contact-image"
+            style={{
+              backgroundImage: "url('./liepyno11.png')",
+            }}
+          />
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

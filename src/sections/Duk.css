@@ -1,0 +1,93 @@
+.duk-section {
+  padding: 120px 32px;
+}
+
+.duk-container {
+    padding:24px;
+         background-color: 
+    var(--bg-card2);
+
+    border-radius: 18px;
+
+}
+
+.duk-title {
+    
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
+    letter-spacing: -2.5px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(26, 24, 27);
+    font-weight: 400;
+    text-align: center;
+}
+
+.duk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 60px;
+
+  max-width: 1200px;
+  margin: 80px auto 0;
+}
+
+.duk-item {
+  border-bottom: 1px solid var(--accent-active);
+  padding-bottom: 24px;
+}
+
+.duk-question {
+  width: 100%;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.duk-question span:first-child {
+  font-size: 24px;
+  line-height: 36px;
+
+  color: var(--accent-active);
+
+  font-family: "Noto Sans", sans-serif;
+
+  margin-bottom: 16px;
+}
+
+.duk-answer {
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.duk-answer-inner {
+  padding-top: 8px;
+}
+
+.duk-answer p {
+  margin: 0;
+
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+
+  color: rgb(26, 24, 27);
+
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .duk-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Section from "../components/Section";
+import "./Duk.css";
 
 const faqItems = [
   {
@@ -55,126 +55,68 @@ const faqItems = [
 ];
 
 export default function Duk() {
-  const [openIndex, setOpenIndex] = useState<number | null>(1);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <Section
+    <section
       id="duk"
-      justifyContent="flex-start"
-      alignItems="flex-start"
-      background="light"
-   gradientStops={
-  [
+   className="duk-section"
+  
+//    gradientStops={
+//   [
  
-  { color: "var(--background-main-alt2)", stop: "80%" },
-  { color: "var(--background-main-alt1)", stop: "100%" },
-]
-}
+//   { color: "var(--background-main-alt2)", stop: "80%" },
+//   { color: "var(--background-main-alt1)", stop: "100%" },
+// ]
+// }
 
     >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "950px",
-          margin: "0 auto",
-          padding: "5rem 2rem",
-        }}
-      >
+      <div className="duk-container" >
         <h2
-          style={{
-            fontSize: "2.8rem",
-            marginBottom: "1rem",
-            color: "var(--color-primary)",
-          }}
+       className="duk-title"
         >
           Dažniausiai užduodami klausimai
         </h2>
 
-        <p
-          style={{
-            marginBottom: "3rem",
-            color: "var(--color-muted)",
-            lineHeight: 1.8,
-            fontSize: "1.05rem",
-            maxWidth: "700px",
-          }}
-        >
-          Atsakymai į dažniausiai kylančius klausimus apie terapijos procesą,
-          konsultacijas ir registraciją.
-        </p>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "1rem",
-          }}
-        >
+<div className="duk-grid">
+      
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
 
             return (
               <div
                 key={index}
-                style={{
-                  border: "1px solid var(--border-color)",
-                  borderRadius: "20px",
-                  overflow: "hidden",
-                  background: "var(--background-main)",
-                  transition: "all 0.3s ease",
-                }}
+            className="duk-item"
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  style={{
-                    width: "100%",
-                    background: "transparent",
-                    border: "none",
-                    padding: "1.5rem 2rem",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    fontSize: "1.1rem",
-                    color: "var(--color-dark)",
-                    textAlign: "left",
-                  }}
+              className="duk-question"
                 >
                   <span>{item.question}</span>
 
-                  <span
+                  {/* <span
                     style={{
                       fontSize: "1.5rem",
                       color: "var(--color-accent)",
                     }}
                   >
                     {isOpen ? "−" : "+"}
-                  </span>
+                  </span> */}
                 </button>
 
-                <div
-                  style={{
-                    maxHeight: isOpen ? "300px" : "0",
-                    overflow: "hidden",
-                    transition: "max-height 0.35s ease",
-                  }}
-                >
-                  <div
-                    style={{
-                      padding: "0 2rem 1.8rem",
-                    }}
-                  >
-                    <p
-                      style={{
-                        margin: 0,
-                        lineHeight: 1.9,
-                        color: "var(--color-muted)",
-                      }}
-                    >
+             <div
+  className="duk-answer"
+  style={{
+    maxHeight: isOpen ? "300px" : "0",
+  }}
+>
+              <div className="duk-answer-inner">
+                    <p>
                       {item.answer}
                     </p>
                   </div>
@@ -184,6 +126,6 @@ export default function Duk() {
           })}
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

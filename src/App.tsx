@@ -36,8 +36,8 @@ export default function App() {
         <About />
         <Services />
         <Gestalt />
-        {/* <Duk /> */}
-        {/* <Contact /> */}
+        <Duk />
+        <Contact />
         {/* <Themes /> */}
     </div>
    
