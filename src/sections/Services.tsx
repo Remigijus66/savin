@@ -1,4 +1,6 @@
 import Section from "../components/Section";
+import "./Services.css";
+
 const intro = `Geštaltinė psichoterapija yra unikalus požiūris į psichoterapiją, kuris pabrėžia sąmoningumą, atsakomybę ir dabarties patirtį. Ši terapijos forma skatina žmones būti sąmoningais savo jausmų, minčių ir elgesio atžvilgiu, taip pat skatinti atsakomybę už savo gyvenimą ir santykius. Geštaltinė psichoterapija siekia padėti žmonėms atrasti savo autentiškumą, išlaisvinti kūrybiškumą ir kurti prasmingus santykius su savimi ir kitais.`;
 const services = [
   {
@@ -20,16 +22,47 @@ const services = [
 
 export default function Services() {
   return (
-    <Section id="services" background="light" 
- gradientStops={
-  [
- 
-  { color: "var(--background-main-alt2)", stop: "80%" },
-  { color: "var(--background-main-alt1)", stop: "100%" },
-]
-}
-  >
-      <div
+    <section
+      id="services"
+      className="services-section"
+      //  gradientStops={
+      //   [
+
+      //   { color: "var(--background-main-alt2)", stop: "80%" },
+      //   { color: "var(--background-main-alt1)", stop: "100%" },
+      // ]
+      // }
+    >
+      <></>
+      <div className="services-grid">
+        <div
+          className="services-image"
+          style={{ backgroundImage: "url('./mountain1.jpg')" }}
+        ></div>
+        <div className="services-card">
+          <h3>Paslaugos</h3>
+          <p>{intro}</p>
+        </div>
+      </div>
+      <div className="services-container">
+
+    
+          <div className="services-title-wrapper">
+            <h1 className="services-title">Terapijų rūsys</h1>
+          </div>
+        
+          <div className="services-list">
+           {services.map((service, index) => (
+              <div key={index} className="service-card">
+                <h3 className="service-title" >{service.title}</h3>
+                <p className="service-text">{service.description}</p>
+              </div>
+            ))}
+          </div>
+      
+      </div>
+
+      {/* <div
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
@@ -38,15 +71,8 @@ export default function Services() {
           flexDirection: "column",
           gap: "3rem",
         }}
-      >
-        {/* Top Images */}
-        <div
-          // style={{
-          //   display: "grid",
-          //   gridTemplateColumns: "1fr 1fr",
-          //   gap: "1.5rem",
-          // }}
-        >
+      > */}
+      {/* <div     >
           <img
             src="/mountain1.jpg"
             alt="Psichoterapijos konsultacija"
@@ -59,23 +85,10 @@ export default function Services() {
               boxShadow: "0 10px 30px rgba(35, 46, 32, 0.08)",
             }}
           />
-{/* 
-          <img
-            src="/mountain2.jpg"
-            alt="Rami terapinė aplinka"
-            style={{
-              width: "100%",
-              height: "320px",
-              objectFit: "cover",
-              borderRadius: "24px",
-              border: "1px solid var(--border-color)",
-              boxShadow: "0 10px 30px rgba(35, 46, 32, 0.08)",
-            }}
-          /> */}
-        </div>
+        </div> */}
 
-        {/* Heading */}
-        <div
+      {/* Heading */}
+      {/* <div
           style={{
             maxWidth: "700px",
           }}
@@ -100,10 +113,10 @@ export default function Services() {
           >
    {intro}
           </p>
-        </div>
+        </div> */}
 
-        {/* Service Cards */}
-        <div
+      {/* Service Cards */}
+      {/* <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -143,8 +156,8 @@ export default function Services() {
               </p>
             </div>
           ))}
-        </div>
-      </div>
-    </Section>
+        </div> */}
+      {/* </div> */}
+    </section>
   );
 }

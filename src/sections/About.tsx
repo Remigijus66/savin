@@ -2,73 +2,61 @@ import "./About.css";
 
 export default function About() {
   return (
-    <section className="about-section">
-
+    <section className="about-section" id="about">
       <div className="about-container">
-
-        {/* INTRO */}
         <div className="about-intro">
           <div className="about-title-wrapper">
-
-          <h1 className="about-title">
-            We’ll Do Our Best to Support You
-          </h1>
+            <h1 className="about-title">Jolita Palekaitė</h1>
           </div>
-<div className="about-moto">
+          <div className="about-moto">
+            <p className="about-lead">
+              Jolitos moto pavadinimas. It’s important to remember that mental
+              health is a fundamental aspect of overall health.
+            </p>
 
-          <p className="about-lead">
-            It’s important to remember that mental health is a fundamental aspect of overall health.
-          </p>
-
-          <p className="about-text">
-            Taking care of one’s mental well-being is just as important as taking care of one’s physical health.
-            If you or someone you know is struggling, don’t hesitate to seek help from a qualified professional or helpline.
-          </p>
-</div>
-
+            <p className="about-text">
+              Jolitos moto tekstas. Taking care of one’s mental well-being is
+              just as important as taking care of one’s physical health. If you
+              or someone you know is struggling, don’t hesitate to seek help
+              from a qualified professional or helpline.
+            </p>
+          </div>
         </div>
 
-        {/* ABOUT US */}
-        <div className="about-center">
-          <h2 className="about-subtitle">About Us</h2>
-
-          <p className="about-text max-width">
-            We are dedicated to providing compassionate mental health care for individuals, families, and organizations.
-            Our mission is to create a safe space for healing, growth, and emotional well-being.
-          </p>
-        </div>
-
-        {/* SERVICES */}
         <div className="about-grid">
-
-          <div className="about-card">
-            <h3>For Adults</h3>
+          <div className="about-card bg1">
+            <h3>Studijos</h3>
             <p>
-              Our services for adults encompass anxiety, depression, relationships, stress management, and personal growth.
+              Apie studijas Vilniaus universitete, psichologijos bakalauro ir
+              magistro laipsnius. Studijos suteikė tvirtą teorinį pagrindą ir
+              praktinius įgūdžius, reikalingus dirbti su įvairiais klientais ir
+              problemomis. geštalto terapijos studijos. Geštaltinė
+              psichoterapija, kognityvinė elgesio terapija, psichodinaminė
+              terapija, sisteminė terapija, ir kt.
             </p>
-            <span>What We Do</span>
           </div>
 
-          <div className="about-card">
-            <h3>For Children</h3>
+          <div className="about-card bg2">
+            <h3>Praktika</h3>
             <p>
-              We support children facing ADHD, anxiety, behavioral issues, academic stress, and emotional regulation challenges.
+              Specializuojuosi suaugusiųjų psichoterapijoje, dirbu su įvairiomis
+              problemomis, įskaitant nerimą, depresiją, santykius, streso
+              valdymą ir asmeninį augimą.
             </p>
-            <span>What We Do</span>
+            {/* <span>What We Do</span> */}
           </div>
 
-          <div className="about-card">
-            <h3>For Business</h3>
+          <div className="about-card bg3">
+            <h3>Savanorystė</h3>
             <p>
-              We offer EAP programs, leadership support, and workplace mental health training to improve employee well-being.
+              Apie savanorystę Vaikų linijoje. Volunteering can provide a sense
+              of purpose, connection, and fulfillment, which can positively
+              impact mental health.
             </p>
-            <span>What We Do</span>
+            {/* <span>What We Do</span> */}
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

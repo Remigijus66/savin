@@ -34,11 +34,11 @@ export default function App() {
       <Navbar1 onThemeChange={toggleTheme} /> */}
         <Hero />
         <About />
-        {/* <Services />
+        <Services />
         <Gestalt />
-        <Duk />
-        <Contact />
-        <Themes /> */}
+        {/* <Duk /> */}
+        {/* <Contact /> */}
+        {/* <Themes /> */}
     </div>
    
     // </Router>

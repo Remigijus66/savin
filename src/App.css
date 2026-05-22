@@ -13,6 +13,10 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+p {
+  font-family: "Inter", sans-serif;
+}
+
 h1, h2, h3 {
   font-family: "Cormorant Garamond", serif;
   letter-spacing: -0.02em;
@@ -27,12 +31,17 @@ h1, h2, h3 {
   --bg-section: #efe7dc;
   --bg-card: #ffffff;
 
+  --bg-card1: #665c96;
+  --bg-card2: #dbeff2;
+  --bg-card3: #f9f7f4;
+
   --text-main: #2d2a26;
   --text-muted: #6f6a63;
   --text-accent: #A23D01;
 
   --accent: #c89b7b;
   --accent-soft: #d8b59b;
+  --accent-active: #5aaab7;
 
   --border-soft: rgba(80, 60, 40, 0.08);
 

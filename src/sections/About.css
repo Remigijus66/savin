@@ -1,9 +1,9 @@
 /* SECTION BASE */
 .about-section {
   background: #f7f4f1;
-  padding: 100px 24px;
+  padding: 0px 24px 72px 24px;
   color: #2c2c2c;
-  font-family: "Georgia", "Times New Roman", serif;
+  /* font-family: "Georgia", "Times New Roman", serif; */
 }
 
 /* CONTAINER */
@@ -11,111 +11,135 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 90px;
-  position: relative;
+  gap:1rem;
   z-index: 1;
 }
 
 /* background image layer */
-.about-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("./Savin-logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
-  opacity: 0.08; 
-  z-index: -1;
-  pointer-events: none;
-}
 
 /* INTRO */
 .about-intro {
-  text-align: center;
-  /* max-width: 800px; */
-  margin: 0 auto;
-display: flex;
+    text-align: center;
+    /* max-width: 800px; */
+    margin: 0 auto;
+    display: flex;
     justify-content: space-between;
-  gap: 24px;
-      /* background-image: url(./Savin-logo.png);
-     background-size: "cover";
-       background-repeat: no-repeat;
-              background-position: "left"; */
+    gap: 250px;
+    /* background-image: url(./Savin-logo.png);
+    background-size: "cover";
+    background-repeat: no-repeat;
+    background-position: "left"; */
 }
 
+
+
 .about-moto  {
-    max-width: 600px;
-    height:600px;
+    max-width: 500px;
+    /* padding-top: 80px; */
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
     
 }
 .about-title-wrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
-          
-
+    position: relative;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    min-width: 500px;
+    min-height: 500px;
 }
+
+/* .about-container::before { */
+.about-title-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("./Savin-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+    /* background-size: 40%; */
+
+    opacity: 0.08; 
+    /* z-index: 1; */
+    pointer-events: none;
+}
+
+
+
 .about-title {
-
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
-
+    
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
+    letter-spacing: -2.5px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(26, 24, 27);
+    font-weight: 400;
 }
 
 .about-lead {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 16px;
+    /* margin-top: 100px; */
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--accent-active);
+    margin-bottom: 16px;
+    font-family: "Noto Sans", sans-serif;
+    text-align: left;
+    
 }
 
 .about-text {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.8;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgb(26, 24, 27);
+    text-align: left;
+    /* line-height: 1.8; */
 }
 
 .max-width {
-  max-width: 700px;
-  margin: 0 auto;
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 /* CENTER SECTION */
 .about-center {
-  text-align: center;
+    text-align: center;
 }
 
 .about-subtitle {
-  font-size: 34px;
-  margin-bottom: 16px;
+    font-size: 34px;
+    margin-bottom: 16px;
 }
 
 /* GRID */
 .about-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 /* CARD */
 .about-card {
-  background: #ffffff;
-  border: 1px solid #e8e2dc;
-  border-radius: 18px;
-  padding: 32px;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
+    /* background: #ffffff; */
+    border: 1px solid #e8e2dc;
+    border-radius: 18px;
+    padding: 32px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 /* hover lift effect */
 .about-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* subtle top accent line */
@@ -126,29 +150,29 @@ display: flex;
   left: 24px;
   right: 24px;
   height: 2px;
-  background: #c9a27e;
+  /* background: rgb(90, 171, 183); */
+  background:var(--accent-active);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
 }
 
 .about-card:hover::before {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 /* CARD TEXT */
 .about-card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
+    font-size: 20px;
+    margin-bottom: 12px;
 }
 
 .about-card p {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 18px;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 18px;
 }
-
 .about-card span {
   font-size: 12px;
   letter-spacing: 1px;
@@ -156,6 +180,25 @@ display: flex;
   color: #c9a27e;
   font-weight: 600;
 }
+.bg1 {
+    background-color: 
+var(--bg-card1);
+color: var(--bg-main);
+}
+
+.bg1 * {
+    color: inherit !important;
+}
+
+.bg2 {
+    background-color: 
+    var(--bg-card2);
+}
+.bg3 {
+    background-color: 
+    var(--bg-card3);
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {

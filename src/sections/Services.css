@@ -1,0 +1,168 @@
+.services-section{
+  background: #f7f4f1;
+  padding: 0px 24px 72px 24px;
+  color: #2c2c2c;
+  /* font-family: "Georgia", "Times New Roman", serif; */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 48px 24px;
+}
+
+/* CARD */
+.services-image {
+    /* background: #ffffff; */
+    border: 1px solid #e8e2dc;
+    border-radius: 18px;
+    transition: all 0.4s ease;
+background-size: cover;
+    overflow: hidden;
+}
+.services-card {
+    /* background: #ffffff; */
+    border: 1px solid #e8e2dc;
+    border-radius: 18px;
+    padding: 32px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* hover lift effect */
+.services-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* subtle top accent line */
+.services-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 2px;
+  /* background: rgb(90, 171, 183); */
+  background:var(--accent-active);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.services-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* CARD TEXT */
+.services-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.services-card p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+.services-card span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #c9a27e;
+  font-weight: 600;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 48px 24px;
+    margin: 0 24px;
+      background-color: 
+    var(--bg-card2);
+
+    border-radius: 18px;
+  
+}
+.services-title-wrapper{
+    position: relative;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    min-width: 500px;
+    min-height: 500px;
+}
+
+/* .about-container::before { */
+.services-title-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("./Savin-logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 400px;
+    /* background-size: 40%; */
+    
+    opacity: 0.08; 
+    /* z-index: 1; */
+    pointer-events: none;
+}
+
+
+
+.services-title {
+    
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
+    letter-spacing: -2.5px;
+    font-family: "Noto Serif Display", serif;
+    color: rgb(26, 24, 27);
+    font-weight: 400;
+}
+
+
+
+
+.service-card {
+    border-bottom: 1px solid var(--accent-active);
+}
+
+
+
+.services-list {
+    max-width: 500px;
+    /* padding-top: 80px; */
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: green; */
+    
+}
+.service-title {
+    /* margin-top: 100px; */
+    font-size: 24px;
+    line-height: 36px;
+    color: var(--accent-active);
+    margin-bottom: 16px;
+    font-family: "Noto Sans", sans-serif;
+    text-align: left;
+    
+}
+
+.service-text {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgb(26, 24, 27);
+    text-align: left;
+    /* line-height: 1.8; */
+}
+
