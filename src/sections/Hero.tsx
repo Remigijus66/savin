@@ -24,118 +24,43 @@ export default function Hero() {
     <section
       id="hero"
       className="hero-section"
-      style={{
-        // minHeight: "100vh",
-        display: "flex",
-        // alignItems: "center",
-        justifyContent: "center",
-      //  paddingTop:"7rem",
-        padding: "6rem 2rem 2rem 2rem", 
-        // background: "var(--bg-section)",
-      }}
-    >
-      <div
-        style={{
-          position: "relative",
-          width: "100%",
-          // maxWidth: "1400px",
-          height: "500px",
-          borderRadius: "32px",
-          overflow: "hidden",
-          boxShadow: "0 20px 50px rgba(35, 46, 32, 0.18)",
-        }}
-      >
+     >
+      <div className="hero-container"
+       >
         {/* Background image carousel */}
         {images.map((image, index) => (
           <div
             key={image}
+            className="hero-bg"
             style={{
-              position: "absolute",
-              inset: 0,
-              backgroundImage: `url(${image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              transition: "opacity 1.2s ease-in-out",
-              opacity: current === index ? 1 : 0,
-              // transform: current === index ? "scale(1)" : "scale(1.05)",
+            backgroundImage: `url(${image})`,
+            opacity: current === index ? 1 : 0,
             }}
           />
         ))}
 
         {/* Dark overlay */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.35))",
-          }}
-        />
+        <div className="hero-overlay"/>
 
         {/* Content */}
-        <div
-          style={{
-            position: "relative",
-            zIndex: 2,
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            padding: "2rem",
-          }}
-        >
-          {/* Text carousel */}
+        <div className="hero-content">
           <h1
             key={current}
-            style={{
-              color: "white",
-              fontSize: "clamp(2.5rem, 5vw, 5rem)",
-              fontWeight: 300,
-              letterSpacing: "1px",
-              lineHeight: 1.1,
-              margin: 0,
-
-              // Similar elegant font style to SoulHeal theme
-              fontFamily:
-                "'Cormorant Garamond', 'Playfair Display', serif",
-
-              animation: "fadeSlide 1s ease",
-              textShadow: "0 4px 20px rgba(0,0,0,0.35)",
-            }}
-          >
+            className="hero-title"
+                >
             {texts[current]}
           </h1>
 
-          {/* <p
-            style={{
-              marginTop: "1.5rem",
-              color: "rgba(255,255,255,0.9)",
-              fontSize: "1.2rem",
-              maxWidth: "700px",
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
-            Profesionali pagalba emociniam augimui, santykių gerinimui ir
-            vidinei pusiausvyrai.
-          </p> */}
-
-          {/* Dots */}
           <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              marginTop: "2rem",
-            }}
+          className="hero-dots"
           >
             {images.map((_, index) => (
               <div
                 key={index}
                 onClick={() => setCurrent(index)}
                 style={{
-                  width: current === index ? "34px" : "12px",
-                  height: "12px",
+                  width: current === index ? "24px" : "9px",
+                  height: "9px",
                   borderRadius: "999px",
                   background:
                     current === index

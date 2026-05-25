@@ -52,7 +52,7 @@ h1, h2, h3 {
   --card-border: #e8e2dc;
   --border-soft: rgba(80, 60, 40, 0.08);
   --shadow-soft:  0 10px 30px rgba(0, 0, 0,0.15);
-  --shadow-hoover: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-hoover: 0 20px 40px rgba(0, 0, 0, 0.1);
    
  
 
