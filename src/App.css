@@ -28,30 +28,33 @@ h1, h2, h3 {
 }
 
 :root {
-  --bg-main: #f6f1ea;
- 
-  /* --bg-section: #efe7dc; */
-  --bg-section: #efe7dc;
+  
+
+  --bg-section: #f3f0ec;
   --bg-section-alt: #ffffff;
-  --bg-card: #ffffff;
+ 
 
   --bg-card1: #665c96;
   --bg-card2: #dbeff2;
   --bg-card3: #f9f7f4;
-  --card-border: #e8e2dc;
-
+  
+  --text-header: rgb(26, 24, 27);
   --text-main: #2d2a26;
   --text-muted: #6f6a63;
   --text-accent: #A23D01;
-
+  --text-white: #f6f1ea;
+  
   --accent: #c89b7b;
   --accent-soft: #d8b59b;
   --accent-active: #5aaab7;
+  
 
+  --card-border: #e8e2dc;
   --border-soft: rgba(80, 60, 40, 0.08);
-
-  --shadow-soft:
-    0 10px 30px rgba(0,0,0,0.05);
+  --shadow-soft:  0 10px 30px rgba(0, 0, 0,0.15);
+  --shadow-hoover: 0 20px 40px rgba(0, 0, 0, 0.08);
+   
+ 
 
   --radius-xl: 32px;
   --radius-lg: 24px;

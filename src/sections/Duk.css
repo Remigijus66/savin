@@ -20,7 +20,7 @@
     margin-bottom: 20px;
     letter-spacing: -2.5px;
     font-family: "Noto Serif Display", serif;
-    color: rgb(26, 24, 27);
+    color: var(--text-header) ;
     font-weight: 400;
     text-align: center;
 }
@@ -83,10 +83,10 @@
   font-size: 16px;
   line-height: 30px;
 
-  color: rgb(26, 24, 27);
+  color: var(--text-main);
 
   text-align: left;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 @media (max-width: 900px) {

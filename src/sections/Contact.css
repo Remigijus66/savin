@@ -27,8 +27,10 @@ border: 1px solid var(--card-border);
 
   padding: 48px;
 
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow:var(--shadow-soft);
+
+   
+
 
   overflow: hidden;
 }

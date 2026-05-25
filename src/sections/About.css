@@ -1,9 +1,7 @@
 /* SECTION BASE */
 .about-section {
-  /* background: green; */
   background: var(--bg-section-alt);
   padding: 0px 24px 72px 24px;
-  color: #2c2c2c;
  background-image: linear-gradient(to bottom, var(--bg-section-alt) 90%, var(--bg-section) 100%)
 }
 
@@ -16,37 +14,28 @@
   z-index: 1;
 }
 
-/* background image layer */
 
 /* INTRO */
 .about-intro {
     text-align: center;
-    /* max-width: 800px; */
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     gap: 250px;
-    /* background-image: url(./Savin-logo.png);
-    background-size: "cover";
-    background-repeat: no-repeat;
-    background-position: "left"; */
 }
 
 
 
 .about-moto  {
     max-width: 500px;
-    /* padding-top: 80px; */
     display: flex ;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: green; */
-    
 }
+
 .about-title-wrapper{
     position: relative;
-    /* background-color: aquamarine; */
     display: flex;
     align-items: center;
     justify-content: center;   
@@ -54,7 +43,6 @@
     min-height: 500px;
 }
 
-/* .about-container::before { */
 .about-title-wrapper::before {
     content: "";
     position: absolute;
@@ -63,23 +51,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 400px;
-    /* background-size: 40%; */
-
     opacity: 0.08; 
-    /* z-index: 1; */
     pointer-events: none;
 }
 
-
-
 .about-title {
-    
     font-size: 60px;
     line-height: 60px;
     margin-bottom: 20px;
     letter-spacing: -2.5px;
     font-family: "Noto Serif Display", serif;
-    color: rgb(26, 24, 27);
+    color:var(--text-header);
     font-weight: 400;
 }
 
@@ -99,7 +81,7 @@
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
     line-height: 30px;
-    color: rgb(26, 24, 27);
+    color: var(--text-main);
     text-align: left;
     /* line-height: 1.8; */    
     font-weight: 100;
@@ -142,8 +124,10 @@
 /* hover lift effect */
 .about-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-hoover);
 }
+
+
 
 /* subtle top accent line */
 .about-card::before {
@@ -182,7 +166,8 @@
 
 .about-card p {
     font-size: 18px;
-    color: #666;
+    /* color: #666; */
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 18px;
 }
@@ -190,13 +175,13 @@
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #c9a27e;
+  color: var(--accent);
   font-weight: 600;
 }
+
 .bg1 {
-    background-color: 
-var(--bg-card1);
-color: var(--bg-main);
+    background-color: var(--bg-card1);
+color: var(--text-white);
 }
 
 .bg1 * {

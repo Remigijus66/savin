@@ -11,7 +11,7 @@
 }
 .gestalt-image {
     /* background: #ffffff; */
-    border: 1px solid #e8e2dc;
+    border: 1px solid var(--card-border);
     border-radius: 18px;
     transition: all 0.4s ease;
 background-size: cover;
@@ -19,7 +19,7 @@ background-size: cover;
 }
 .gestalt-card {
     /* background: #ffffff; */
-    border: 1px solid #e8e2dc;
+    border: 1px solid var(--card-border);
     border-radius: 18px;
     padding: 32px;
     transition: all 0.4s ease;
@@ -31,7 +31,7 @@ background-size: cover;
 /* hover lift effect */
 .gestalt-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-hoover);
 }
 
 /* subtle top accent line */
@@ -62,7 +62,7 @@ background-size: cover;
 
 .gestalt-card p {
     font-size: 18px;
-    color: #666;
+    color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 18px;
 }
@@ -70,6 +70,6 @@ background-size: cover;
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #c9a27e;
+  color: var(--accent);
   font-weight: 600;
 }
