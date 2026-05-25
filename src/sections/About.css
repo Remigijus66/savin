@@ -4,7 +4,7 @@
   background: var(--bg-section-alt);
   padding: 0px 24px 72px 24px;
   color: #2c2c2c;
-  /* font-family: "Georgia", "Times New Roman", serif; */
+ background-image: linear-gradient(to bottom, var(--bg-section-alt) 90%, var(--bg-section) 100%)
 }
 
 /* CONTAINER */
@@ -131,7 +131,7 @@
 /* CARD */
 .about-card {
     /* background: #ffffff; */
-    border: 1px solid #e8e2dc;
+    border: 1px solid var(--card-border);
     border-radius: 18px;
     padding: 32px;
     transition: all 0.4s ease;

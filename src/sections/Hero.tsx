@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Hero.css";
 
 const images = ["/sea.jpg", "/sea1.jpg", "/sea2.jpg"];
 
@@ -22,6 +23,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         // minHeight: "100vh",
         display: "flex",
@@ -29,7 +31,7 @@ export default function Hero() {
         justifyContent: "center",
       //  paddingTop:"7rem",
         padding: "6rem 2rem 2rem 2rem", 
-        background: "var(--bg-section)",
+        // background: "var(--bg-section)",
       }}
     >
       <div

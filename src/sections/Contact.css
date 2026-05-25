@@ -20,7 +20,7 @@
 
 .contact-card {
   background: var(--bg-card3);
-
+border: 1px solid var(--card-border);
   backdrop-filter: blur(8px);
 
   border-radius: 36px;

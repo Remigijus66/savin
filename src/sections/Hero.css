@@ -1,0 +1,5 @@
+.hero-section {
+  padding: 120px 32px;
+    background: var(--bg-section);
+     background-image: linear-gradient(to bottom, var(--bg-section) 90%, var(--bg-section-alt) 100%)
+}

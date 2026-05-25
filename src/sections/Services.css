@@ -1,9 +1,26 @@
 .services-section{
   background: var(--bg-section);
   padding: 0px 24px 72px 24px;
+    background-image: linear-gradient(to bottom, var(--bg-section) 90%, var(--bg-section-alt) 100%);
   color: #2c2c2c;
   /* font-family: "Georgia", "Times New Roman", serif; */
 }
+
+  /**
+   * Example:
+   * [
+   *   { color: "#ffffff", stop: "0%" },
+   *   { color: "#ff0000", stop: "10%" },
+   *   { color: "#ff0000", stop: "90%" },
+   *   { color: "#0000ff", stop: "100%" },
+   * ]
+   */
+     /* const gradient =
+    gradientStops && gradientStops.length > 0
+      ? `linear-gradient(to bottom, ${gradientStops
+          .map((g) => `${g.color} ${g.stop}`)
+          .join(", ")})`
+      : undefined; */
 
 .services-grid {
     display: grid;

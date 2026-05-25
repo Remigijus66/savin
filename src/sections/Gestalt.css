@@ -1,6 +1,7 @@
 .gestalt-section {
   background: var(--bg-section-alt);
   padding: 0px 24px 72px 24px;
+   background-image: linear-gradient(to bottom, var(--bg-section-alt) 90%, var(--bg-section) 100%)
 }
 .gestalt-grid {
     display: grid;
