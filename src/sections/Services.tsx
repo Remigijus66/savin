@@ -48,7 +48,7 @@ export default function Services() {
 
     
           <div className="services-title-wrapper">
-            <h1 className="services-title">Terapijų rūsys</h1>
+            <h1 className="services-title">Terapijų rūšys</h1>
           </div>
         
           <div className="services-list">

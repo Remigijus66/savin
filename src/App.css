@@ -10,17 +10,18 @@ body {
   /* place-items: center; */
   min-width: 320px;
   /* min-height: 100vh; */
-    font-family: "Inter", sans-serif;
+    font-family: "Noto Sans", sans-serif;
 }
 
-p {
+/* p {
   font-family: "Inter", sans-serif;
-}
+} */
 
 h1, h2, h3 {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Noto Serif Display", serif;
   letter-spacing: -0.02em;
 }
+
 .nav-links a {
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -28,7 +29,10 @@ h1, h2, h3 {
 
 :root {
   --bg-main: #f6f1ea;
-  --bg-section: #efe7dc;
+ 
+  /* --bg-section: #efe7dc; */
+  --bg-section: green;
+  --bg-section-alt: yellow;
   --bg-card: #ffffff;
 
   --bg-card1: #665c96;
@@ -52,4 +56,42 @@ h1, h2, h3 {
   --radius-lg: 24px;
 
   --container: 1280px;
+
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+   font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url("./fonts/NotoSans-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url("./fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Noto Serif Display';
+    src: url("./fonts/NotoSerifDisplay-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif Display';
+    src: url("./fonts/NotoSerifDisplay-Italic-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
 }

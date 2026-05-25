@@ -1,5 +1,6 @@
 .contact-section {
   padding: 120px 32px;
+    background: var(--bg-section-alt);
 }
 
 .contact-grid {
@@ -43,8 +44,10 @@
 .contact-title {
   margin-top: 0;
   margin-bottom: 48px;
+    font-size: 44px;
+    font-family: "Noto Serif Display", serif;
+    font-weight: 400;   
 
-  font-size: 3rem;
 
   color: var(--color-primary);
 }

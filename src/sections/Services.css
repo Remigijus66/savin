@@ -1,5 +1,5 @@
 .services-section{
-  background: #f7f4f1;
+  background: var(--bg-section);
   padding: 0px 24px 72px 24px;
   color: #2c2c2c;
   /* font-family: "Georgia", "Times New Roman", serif; */
@@ -58,12 +58,15 @@ background-size: cover;
 
 /* CARD TEXT */
 .services-card h3 {
-    font-size: 20px;
+    /* font-size: 20px; */
     margin-bottom: 12px;
+        font-size: 44px;
+    font-family: "Noto Serif Display", serif;
+    font-weight: 400;   
 }
 
 .services-card p {
-    font-size: 15px;
+    font-size: 18px;
     color: #666;
     line-height: 1.7;
     margin-bottom: 18px;
@@ -122,7 +125,8 @@ background-size: cover;
     line-height: 60px;
     margin-bottom: 20px;
     letter-spacing: -2.5px;
-    font-family: "Noto Serif Display", serif;
+    /* font-family: "Noto Serif Display", serif; */
+        /* font-family: "Noto Sans", sans-serif; */
     color: rgb(26, 24, 27);
     font-weight: 400;
 }
@@ -153,8 +157,8 @@ background-size: cover;
     color: var(--accent-active);
     margin-bottom: 16px;
     font-family: "Noto Sans", sans-serif;
-    text-align: left;
-    
+    text-align: left;   
+    font-weight: 200; 
 }
 
 .service-text {
@@ -163,6 +167,7 @@ background-size: cover;
     line-height: 30px;
     color: rgb(26, 24, 27);
     text-align: left;
+    font-weight: 100; 
     /* line-height: 1.8; */
 }
 

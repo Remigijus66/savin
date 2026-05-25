@@ -26,6 +26,7 @@ export default function About() {
         <div className="about-grid">
           <div className="about-card bg1">
             <h3>Studijos</h3>
+            <div className="dash"></div>
             <p>
               Apie studijas Vilniaus universitete, psichologijos bakalauro ir
               magistro laipsnius. Studijos suteikė tvirtą teorinį pagrindą ir
@@ -38,6 +39,7 @@ export default function About() {
 
           <div className="about-card bg2">
             <h3>Praktika</h3>
+             <div className="dash"></div>
             <p>
               Specializuojuosi suaugusiųjų psichoterapijoje, dirbu su įvairiomis
               problemomis, įskaitant nerimą, depresiją, santykius, streso
@@ -48,6 +50,7 @@ export default function About() {
 
           <div className="about-card bg3">
             <h3>Savanorystė</h3>
+             <div className="dash"></div>
             <p>
               Apie savanorystę Vaikų linijoje. Volunteering can provide a sense
               of purpose, connection, and fulfillment, which can positively

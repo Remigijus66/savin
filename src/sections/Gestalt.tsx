@@ -17,8 +17,8 @@ export default function Gestalt() {
   return (
     <section id="gestalt" className="gestalt-section">
       <div className="gestalt-grid" style={{ minHeight: "600px" }}>
-        <div className="services-card bg1">
-          <h2>Geštalto psichoterapija</h2>
+        <div className="gestalt-card bg1">
+          <h3>Geštalto psichoterapija</h3>
           <p>{gestaltText[0]}</p>
         </div>
       

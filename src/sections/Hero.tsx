@@ -29,7 +29,7 @@ export default function Hero() {
         justifyContent: "center",
       //  paddingTop:"7rem",
         padding: "6rem 2rem 2rem 2rem", 
-        background: "var(--bg-main)",
+        background: "var(--bg-section)",
       }}
     >
       <div

@@ -1,5 +1,5 @@
 .gestalt-section {
-     background: #f7f4f1;
+  background: var(--bg-section-alt);
   padding: 0px 24px 72px 24px;
 }
 .gestalt-grid {
@@ -25,24 +25,16 @@ background-size: cover;
     position: relative;
     overflow: hidden;
 }
-.services-card {
-    /* background: #ffffff; */
-    border: 1px solid #e8e2dc;
-    border-radius: 18px;
-    padding: 32px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
+
 
 /* hover lift effect */
-.services-card:hover {
+.gestalt-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* subtle top accent line */
-.services-card::before {
+.gestalt-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -56,23 +48,24 @@ background-size: cover;
   transition: transform 0.4s ease;
 }
 
-.services-card:hover::before {
+.gestalt-card:hover::before {
     transform: scaleX(1);
 }
 
 /* CARD TEXT */
-.services-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
+.gestalt-card h3 {
+    font-size: 44px;
+    font-family: "Noto Serif Display", serif;
+    font-weight: 400;
 }
 
-.services-card p {
-    font-size: 15px;
+.gestalt-card p {
+    font-size: 18px;
     color: #666;
     line-height: 1.7;
     margin-bottom: 18px;
 }
-.services-card span {
+.gestalt-card span {
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
