@@ -40,6 +40,7 @@ export default function App() {
     <p style={ {fontSize: '40px', color: '#A23D01', marginBottom: '0'} } >Jolita Palekaitė</p>
     <p style={ {fontSize: '40px' , color: '#A23D01', margin: '0'} }> +370 650 11233</p>
     <p style={ {fontSize: '40px', color: '#A23D01', margin: '0'} }> jolita@savin.lt</p>
+    <p style={ {fontSize: '40px', color: '#A23D01', margin: '0'} }> Liepyno 11, Vilnius</p>
 
   </div>
 </section>
