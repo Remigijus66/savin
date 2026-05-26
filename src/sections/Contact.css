@@ -95,6 +95,15 @@ border: 1px solid var(--card-border);
   border: none;
 }
 
+.default-link {
+    color: rgb(0, 95, 219);
+    text-decoration: none;
+}
+
+.default-link:hover {
+    text-decoration: underline;
+}
+
 /* IMAGE */
 
 .contact-image {

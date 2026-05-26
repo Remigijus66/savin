@@ -1,4 +1,8 @@
 import "./Contact.css";
+interface ContactItem {
+  label: string;
+  value: string;
+};
 
 const contactItems = [
   {
@@ -15,6 +19,17 @@ const contactItems = [
   },
 ];
 
+
+const renderValue = (item: ContactItem ) => {
+  if (item.label === "El. paštas") {
+    return <a href={`mailto:${item.value}`} className="contact-value default-link">{item.value}</a>;
+  }
+  if (item.label === "Telefonas") {
+    return <a href={`tel:${item.value}`} className="contact-value default-link">{item.value}</a>;
+  }
+  return <p className="contact-value">{item.value}</p>;
+};
+
 export default function Contact() {
   return (
     <section id="contact" className="contact-section">
@@ -27,8 +42,7 @@ export default function Contact() {
             {contactItems.map((item, index) => (
               <div key={index} className="contact-item">
                 <p className="contact-label">{item.label}</p>
-
-                <p className="contact-value">{item.value}</p>
+                {renderValue(item)}
               </div>
             ))}
           </div>
