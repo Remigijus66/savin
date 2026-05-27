@@ -1,18 +1,28 @@
 Jolitos puslapio deploymentas: 
 
 
-Paskutine versija: 
-Build locally:
+git checkout main
 npm install
 npm run build
-Deploy safely:
+
+Remove-Item -Recurse -Force tempDeploy -ErrorAction Ignore
+Copy-Item dist tempDeploy -Recurse
+
+
+{
+jeigu kas nors pvz deployment.txt. buvo pakeistas 
+git add public/deployment.txt
+git commit -m "update deployment file"
+git checkout deploy}
+
 git checkout deploy
-rm -rf *
-cp -r dist/* .
+
+Get-ChildItem -Exclude ".git","tempDeploy" | Remove-Item -Recurse -Force
+Copy-Item tempDeploy\* . -Recurse -Force
+
 git add .
 git commit -m "deploy"
 git push origin deploy
-git checkout main
 
 
 # Plesk:  ( jungtis prei J telia po to prisijungti prie https://hosting.telia.lt/
@@ -28,57 +38,7 @@ Click Pull Now
 
 
 
-Outdated:
-git checkout main
-
-npm install
-npm run build
-
-git add .
-git commit -m "Latest changes"
-
-git checkout deploy
-
-git rm -rf .
-
-Copy-Item -Path dist\* -Destination . -Recurse -Force
-
-git add .
-
-git commit -m "Deploy $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-
-git push origin deploy
-
-git checkout main
-
-
-
-
-
-
 # Po deploymento gali tekti taisyti dependancies: 
-Remove-Item -Recurse -Force node_modules
-Remove-Item package-lock.json
-Remove-Item -Recurse -Force .vite
+
 npm install
-
-Latest: 
-git checkout main
-npm install
-npm run build
-
-Remove-Item -Recurse -Force tempDeploy -ErrorAction Ignore
-Copy-Item dist tempDeploy -Recurse
-
-git add public/deployment.txt
-git commit -m "update deployment file"
-git checkout deploy
-
-git checkout deploy
-
-Get-ChildItem -Exclude ".git","tempDeploy" | Remove-Item -Recurse -Force
-Copy-Item tempDeploy\* . -Recurse -Force
-
-git add .
-git commit -m "deploy"
-git push origin deploy
+npm run dev
