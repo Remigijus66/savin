@@ -32,6 +32,8 @@ h1, h2, h3 {
 
   --bg-section: #f3f0ec;
   --bg-section-alt: #ffffff;
+  /* --bg-section: red;
+  --bg-section-alt: rgb(255, 255, 0); */
  
 
   --bg-card1: #665c96;
@@ -61,7 +63,7 @@ h1, h2, h3 {
 
   --container: 1280px;
 
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

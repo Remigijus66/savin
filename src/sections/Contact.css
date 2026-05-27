@@ -1,7 +1,10 @@
 .contact-section {
   padding: 120px 32px;
-    background: var(--bg-section-alt);
+
+  background: var(--bg-section-alt);
 }
+
+/* ---------- GRID ---------- */
 
 .contact-grid {
   max-width: 1400px;
@@ -9,33 +12,35 @@
 
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
+
   gap: 40px;
 }
+
+/* RIGHT COLUMN STACK */
 
 .contact-right-column {
   display: grid;
   grid-template-rows: 1fr 1fr;
+
   gap: 40px;
 }
 
+/* ---------- CARD BASE ---------- */
+
 .contact-card {
   background: var(--bg-card3);
-border: 1px solid var(--card-border);
-  backdrop-filter: blur(8px);
 
+  border: 1px solid var(--card-border);
   border-radius: 36px;
 
   padding: 48px;
 
-  box-shadow:var(--shadow-soft);
-
-   
-
+  box-shadow: var(--shadow-soft);
 
   overflow: hidden;
 }
 
-/* LEFT CARD */
+/* ---------- LEFT CARD ---------- */
 
 .contact-info-card {
   display: flex;
@@ -44,26 +49,29 @@ border: 1px solid var(--card-border);
 }
 
 .contact-title {
-  margin-top: 0;
   margin-bottom: 48px;
-    font-size: 44px;
-    font-family: "Noto Serif Display", serif;
-    font-weight: 400;   
 
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
 
   color: var(--color-primary);
 }
 
+/* ITEMS */
+
 .contact-items {
   display: flex;
   flex-direction: column;
+
   gap: 32px;
 }
 
 .contact-label {
   margin: 0 0 10px;
 
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 
   letter-spacing: 0.08em;
 
@@ -75,14 +83,24 @@ border: 1px solid var(--card-border);
 .contact-value {
   margin: 0;
 
-  font-size: 1.4rem;
-
+  font-size: 1.25rem;
   line-height: 1.6;
 
   color: var(--color-dark);
 }
 
-/* MAP */
+/* LINKS */
+
+.default-link {
+  color: rgb(0, 95, 219);
+  text-decoration: none;
+}
+
+.default-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- MAP ---------- */
 
 .contact-map {
   min-height: 320px;
@@ -95,16 +113,7 @@ border: 1px solid var(--card-border);
   border: none;
 }
 
-.default-link {
-    color: rgb(0, 95, 219);
-    text-decoration: none;
-}
-
-.default-link:hover {
-    text-decoration: underline;
-}
-
-/* IMAGE */
+/* ---------- IMAGE ---------- */
 
 .contact-image {
   min-height: 320px;
@@ -113,7 +122,16 @@ border: 1px solid var(--card-border);
   background-position: center;
 }
 
-/* RESPONSIVE */
+/* ---------- LARGE TABLETS ---------- */
+
+@media (max-width: 1200px) {
+  .contact-card {
+    padding: 40px;
+    border-radius: 28px;
+  }
+}
+
+/* ---------- TABLETS ---------- */
 
 @media (max-width: 1000px) {
   .contact-grid {
@@ -123,8 +141,64 @@ border: 1px solid var(--card-border);
   .contact-right-column {
     grid-template-rows: auto;
   }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 16px;
+  }
 
   .contact-card {
-    padding: 36px;
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .contact-title {
+    margin-bottom: 32px;
+  }
+
+  .contact-items {
+    gap: 24px;
+  }
+
+  .contact-value {
+    font-size: 1.1rem;
+  }
+
+  .contact-map,
+  .contact-image {
+    min-height: 260px;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 60px 12px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+  }
+
+  .contact-map,
+  .contact-image {
+    min-height: 220px;
   }
 }

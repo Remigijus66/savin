@@ -2,27 +2,20 @@ Jolitos puslapio deploymentas:
 
 
 git checkout main
-
 npm install
 npm run build
 
-git add .
-git commit -m "Latest changes"
+Remove-Item -Recurse -Force tempDeploy -ErrorAction Ignore
+Copy-Item dist tempDeploy -Recurse
 
 git checkout deploy
 
-git rm -rf .
-
-Copy-Item -Path dist\* -Destination . -Recurse -Force
+Get-ChildItem -Exclude ".git","tempDeploy" | Remove-Item -Recurse -Force
+Copy-Item tempDeploy\* . -Recurse -Force
 
 git add .
-
-git commit -m "Deploy $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-
+git commit -m "deploy"
 git push origin deploy
-
-git checkout main
-
 
 
 # Plesk:  ( jungtis prei J telia po to prisijungti prie https://hosting.telia.lt/
@@ -34,3 +27,11 @@ Git settings → set branch = deploy
 Deployment path = /httpdocs
 
 Click Pull Now
+
+
+
+
+# Po deploymento : 
+
+npm install
+npm run dev

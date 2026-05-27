@@ -27,12 +27,6 @@ export default function Gestalt() {
           style={{ backgroundImage: "url('./sunrise-shore.jpg')" }}
         ></div>
       </div>
-      {/* //        gradientStops={ */}
-      {/* //   [
- 
-//   { color: "var(--background-main-alt1)", stop: "80%" },
-//   { color: "var(--background-main-alt2)", stop: "100%" },
-// ]} */}
     </section>
   );
 }

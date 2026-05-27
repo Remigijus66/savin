@@ -1,43 +1,65 @@
+/* ---------- SECTION ---------- */
+
 .duk-section {
   padding: 120px 32px;
-    background: var(--bg-section);
-     background-image: linear-gradient(to bottom, var(--bg-section) 90%, var(--bg-section-alt) 100%)
+
+  background: var(--bg-section);
+
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-section) 90%,
+    var(--bg-section-alt) 100%
+  );
 }
+
+/* ---------- CONTAINER ---------- */
 
 .duk-container {
-    padding:24px;
-         background-color: 
-    var(--bg-card2);
+  padding: 32px;
 
-    border-radius: 18px;
+  background-color: var(--bg-card2);
 
+  border-radius: 18px;
 }
+
+/* ---------- TITLE ---------- */
 
 .duk-title {
-    
-    font-size: 44px;
-    line-height: 60px;
-    margin-bottom: 20px;
-    letter-spacing: -2.5px;
-    font-family: "Noto Serif Display", serif;
-    color: var(--text-header) ;
-    font-weight: 400;
-    text-align: center;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.2;
+
+  margin-bottom: 20px;
+
+  letter-spacing: -2.5px;
+
+  font-family: "Noto Serif Display", serif;
+  color: var(--text-header);
+
+  font-weight: 400;
+  text-align: center;
 }
+
+/* ---------- GRID ---------- */
 
 .duk-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 40px 60px;
 
   max-width: 1200px;
   margin: 80px auto 0;
 }
 
+/* ---------- FAQ ITEM ---------- */
+
 .duk-item {
   border-bottom: 1px solid var(--accent-active);
+
   padding-bottom: 24px;
 }
+
+/* ---------- QUESTION ---------- */
 
 .duk-question {
   width: 100%;
@@ -56,19 +78,22 @@
 }
 
 .duk-question span:first-child {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.5;
 
   color: var(--accent-active);
 
   font-family: "Noto Sans", sans-serif;
 
   margin-bottom: 16px;
-  font-weight: 200; 
+  font-weight: 200;
 }
+
+/* ---------- ANSWER ---------- */
 
 .duk-answer {
   overflow: hidden;
+
   transition: max-height 0.35s ease;
 }
 
@@ -80,8 +105,9 @@
   margin: 0;
 
   font-family: "Noto Sans", sans-serif;
+
   font-size: 16px;
-  line-height: 30px;
+  line-height: 1.9;
 
   color: var(--text-main);
 
@@ -89,9 +115,106 @@
   font-weight: 200;
 }
 
-@media (max-width: 900px) {
+/* ---------- LARGE TABLETS ---------- */
+
+@media (max-width: 1200px) {
+  .duk-grid {
+    gap: 32px 40px;
+  }
+}
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 992px) {
+  .duk-section {
+    padding: 80px 20px;
+  }
+
+  .duk-container {
+    padding: 28px 24px;
+  }
+
   .duk-grid {
     grid-template-columns: 1fr;
+
     gap: 32px;
+
+    margin-top: 56px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .duk-section {
+    padding: 64px 16px;
+  }
+
+  .duk-container {
+    padding: 24px 20px;
+
+    border-radius: 16px;
+  }
+
+  .duk-title {
+    letter-spacing: -1.5px;
+  }
+
+  .duk-grid {
+    margin-top: 40px;
+
+    gap: 28px;
+  }
+
+  .duk-item {
+    padding-bottom: 20px;
+  }
+
+  .duk-question span:first-child {
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+  }
+
+  .duk-answer p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+  .duk-section {
+    padding: 48px 12px;
+  }
+
+  .duk-container {
+    padding: 20px 16px;
+  }
+
+  .duk-title {
+    font-size: 2rem;
+
+    line-height: 1.2;
+
+    letter-spacing: -1px;
+  }
+
+  .duk-grid {
+    margin-top: 32px;
+
+    gap: 24px;
+  }
+
+  .duk-question span:first-child {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .duk-answer p {
+    font-size: 14px;
+    line-height: 1.7;
   }
 }

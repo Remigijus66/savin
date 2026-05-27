@@ -1,75 +1,217 @@
 .gestalt-section {
   background: var(--bg-section-alt);
-  padding: 0px 24px 72px 24px;
-   background-image: linear-gradient(to bottom, var(--bg-section-alt) 90%, var(--bg-section) 100%)
-}
-.gestalt-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 48px 24px;
-}
-.gestalt-image {
-    /* background: #ffffff; */
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    transition: all 0.4s ease;
-background-size: cover;
-    overflow: hidden;
-}
-.gestalt-card {
-    /* background: #ffffff; */
-    border: 1px solid var(--card-border);
-    border-radius: 18px;
-    padding: 32px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-section-alt) 90%,
+    var(--bg-section) 100%
+  );
+
+  padding: 0 24px 72px;
 }
 
+/* ---------- GRID ---------- */
+
+.gestalt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px;
+
+  padding: 48px 24px;
+
+  min-height: 600px;
+}
+
+/* ---------- IMAGE ---------- */
+
+.gestalt-image {
+  min-height: 500px;
+
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+
+  transition: all 0.4s ease;
+}
+
+/* ---------- CARD ---------- */
+
+.gestalt-card {
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+
+  padding: 32px;
+
+  transition: all 0.4s ease;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /* hover lift effect */
+
 .gestalt-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-hoover);
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hoover);
 }
 
-/* subtle top accent line */
+/* top accent line */
+
 .gestalt-card::before {
   content: "";
+
   position: absolute;
   top: 0;
   left: 24px;
   right: 24px;
+
   height: 2px;
-  /* background: rgb(90, 171, 183); */
-  background:var(--accent-active);
+
+  background: var(--accent-active);
+
   transform: scaleX(0);
   transform-origin: left;
+
   transition: transform 0.4s ease;
 }
 
 .gestalt-card:hover::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-/* CARD TEXT */
+/* ---------- CARD TEXT ---------- */
+
 .gestalt-card h3 {
-    font-size: 44px;
-    font-family: "Noto Serif Display", serif;
-    font-weight: 400;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+
+  margin-bottom: 20px;
+
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+
+  line-height: 1.2;
 }
 
 .gestalt-card p {
-    font-size: 18px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: var(--text-muted);
+
+  margin-bottom: 18px;
 }
+
 .gestalt-card span {
   font-size: 12px;
+
   letter-spacing: 1px;
   text-transform: uppercase;
+
   color: var(--accent);
   font-weight: 600;
+}
+
+/* ---------- LARGE TABLETS ---------- */
+
+@media (max-width: 1200px) {
+  .gestalt-grid {
+    min-height: auto;
+  }
+
+  .gestalt-image {
+    min-height: 420px;
+  }
+}
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 992px) {
+  .gestalt-section {
+    padding: 0 20px 60px;
+  }
+
+  .gestalt-grid {
+    grid-template-columns: 1fr;
+
+    padding: 32px 0;
+
+    gap: 24px;
+  }
+
+  .gestalt-image {
+    min-height: 400px;
+    order: 2;
+  }
+
+  .gestalt-card {
+    order: 1;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .gestalt-section {
+    padding: 0 16px 48px;
+  }
+
+  .gestalt-grid {
+    padding: 24px 0;
+    gap: 20px;
+  }
+
+  .gestalt-card {
+    padding: 24px;
+  }
+
+  .gestalt-card p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .gestalt-image {
+    min-height: 300px;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+  .gestalt-section {
+    padding: 0 12px 40px;
+  }
+
+  .gestalt-grid {
+    gap: 16px;
+  }
+
+  .gestalt-card {
+    padding: 20px;
+
+    border-radius: 16px;
+  }
+
+  .gestalt-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .gestalt-card p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .gestalt-image {
+    min-height: 240px;
+
+    border-radius: 16px;
+  }
 }

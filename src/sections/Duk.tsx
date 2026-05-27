@@ -66,14 +66,6 @@ export default function Duk() {
       id="duk"
    className="duk-section"
   
-//    gradientStops={
-//   [
- 
-//   { color: "var(--background-main-alt2)", stop: "80%" },
-//   { color: "var(--background-main-alt1)", stop: "100%" },
-// ]
-// }
-
     >
       <div className="duk-container" >
         <h2
@@ -98,15 +90,6 @@ export default function Duk() {
               className="duk-question"
                 >
                   <span>{item.question}</span>
-
-                  {/* <span
-                    style={{
-                      fontSize: "1.5rem",
-                      color: "var(--color-accent)",
-                    }}
-                  >
-                    {isOpen ? "−" : "+"}
-                  </span> */}
                 </button>
 
              <div
