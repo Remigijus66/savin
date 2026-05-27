@@ -68,19 +68,16 @@
   pointer-events: none;
 }
 
-.about-title {
+/* .about-title {
   font-size: clamp(3rem, 5vw, 5rem);
   line-height: 1.1;
   letter-spacing: -2.5px;
-
   margin-bottom: 20px;
-
   font-family: "Noto Serif Display", serif;
   color: var(--text-header);
   font-weight: 400;
-
   text-align: center;
-}
+} */
 
 .about-lead {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
@@ -288,9 +285,9 @@
     background-size: 210px;
   }
 
-  .about-title {
+  /* .about-title {
     letter-spacing: -1.5px;
-  }
+  } */
 
   .about-lead {
     font-size: 1.1rem;
@@ -327,9 +324,9 @@
     background-size: 170px;
   }
 
-  .about-title {
+  /* .about-title {
     font-size: 2.2rem;
-  }
+  } */
 
   .about-card {
     padding: 20px;

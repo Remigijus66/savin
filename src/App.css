@@ -17,67 +17,6 @@ body {
   font-family: "Inter", sans-serif;
 } */
 
-h1, h2, h3 {
-  font-family: "Noto Serif Display", serif;
-  letter-spacing: -0.02em;
-}
-
-.nav-links a {
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-}
-
-:root {
-  
-
-  --bg-section: #f3f0ec;
-  --bg-section-alt: #ffffff;
-  /* --bg-section: red;
-  --bg-section-alt: rgb(255, 255, 0); */
- 
-
-  --bg-card1: #665c96;
-  --bg-card2: #dbeff2;
-  --bg-card3: #f9f7f4;
-  
-  --text-header: rgb(26, 24, 27);
-  --text-main: #2d2a26;
-  --text-muted: #6f6a63;
-  --text-accent: #A23D01;
-  --text-white: #f6f1ea;
-  
-  --accent: #c89b7b;
-  --accent-soft: #d8b59b;
-  --accent-active: #5aaab7;
-  
-
-  --card-border: #e8e2dc;
-  --border-soft: rgba(80, 60, 40, 0.08);
-  --shadow-soft:  0 10px 30px rgba(0, 0, 0,0.15);
-  --shadow-hoover: 0 20px 40px rgba(0, 0, 0, 0.1);
-   
- 
-
-  --radius-xl: 32px;
-  --radius-lg: 24px;
-
-  --container: 1280px;
-
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-   font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.theme-experimental {
-   --bg-card1: #green ;
-  --bg-card2: #dbeff2;
-  --bg-card3: #f9f7f4;
-}
-
 @font-face {
     font-family: 'Noto Sans';
     src: url("./fonts/NotoSans-VariableFont_wdth\,wght.ttf") format('truetype');
@@ -105,4 +44,101 @@ h1, h2, h3 {
     src: url("./fonts/NotoSerifDisplay-Italic-VariableFont_wdth\,wght.ttf") format('truetype');
     font-weight: 100 900;
     font-style: italic;
+}
+
+:root {
+  
+  --bg-section: #f3f0ec;
+  --bg-section-alt: #ffffff;
+  /* --bg-section: red;
+  --bg-section-alt: rgb(255, 255, 0); */
+  
+  
+  --bg-card1: #665c96;
+  --bg-card2: #dbeff2;
+  --bg-card3: #f9f7f4;
+  
+  --text-header: rgb(26, 24, 27);
+  --text-main: #2d2a26;
+  --text-muted: #6f6a63;
+  --text-accent: #A23D01;
+  --text-white: #f6f1ea;
+  
+  --accent: #c89b7b;
+  --accent-soft: #d8b59b;
+  --accent-active: #5aaab7;
+  
+  
+  --card-border: #e8e2dc;
+  --border-soft: rgba(80, 60, 40, 0.08);
+  --shadow-soft:  0 10px 30px rgba(0, 0, 0,0.15);
+  --shadow-hoover: 0 20px 40px rgba(0, 0, 0, 0.1);
+  
+  
+  
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  
+  --container: 1280px;
+  
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.theme-experimental {
+  --bg-card1: #665c96 ;
+  --bg-card2: #dbeff2;
+  --bg-card3: #f9f7f4;
+}
+
+
+h1, h2, h3 {
+  font-family: "Noto Serif Display", serif;
+  letter-spacing: -0.02em;
+}
+
+.nav-links a {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.heading-xl {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+  margin-bottom: 20px;
+  font-family: "Noto Serif Display", serif;
+  color: var(--text-header);
+  font-weight: 400;
+  text-align: center;
+}
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 992px) { 
+
+  
+}
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) { 
+
+  .heading-xl {
+    letter-spacing: -1.5px;
+  }
+}  
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+  .heading-xl {
+    font-size: 2.2rem;
+  }
 }

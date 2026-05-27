@@ -287,13 +287,13 @@
     background-size: 210px;
   }
 
-  .services-title {
+  /* .services-title {
     letter-spacing: -1.5px;
   }
 
   .service-title {
     font-size: 1.2rem;
-  }
+  } */
 
   .service-text {
     font-size: 15px;
@@ -327,9 +327,9 @@
     background-size: 170px;
   }
 
-  .services-title {
+  /* .services-title {
     font-size: 2.2rem;
-  }
+  } */
 
   .services-card {
     padding: 20px;

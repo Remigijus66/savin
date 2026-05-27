@@ -46,7 +46,8 @@ export default function Hero() {
         <div className="hero-content">
           <h1
             key={current}
-            className="hero-title"
+            className="hero-title heading-xl"
+            // className="heading-xl"
                 >
             {texts[current]}
           </h1>

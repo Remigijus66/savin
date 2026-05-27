@@ -14,11 +14,11 @@ import Themes from "./sections/Themes";
 import { useState } from "react";
 import Navbar1 from "./components/navbar1";
 
-type Theme = "theme-first" | "theme-forest" |"theme-ocean" | "theme-dark";
+type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
 
 
 export default function App() {
-    const [theme, setTheme] = useState<Theme>("theme-first");
+    const [theme, setTheme] = useState<Theme>("theme-experimental");
 
   const toggleTheme = (newTheme: Theme) => {
     setTheme(newTheme);
