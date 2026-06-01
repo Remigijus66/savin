@@ -41,7 +41,7 @@ export default function Services() {
 
     
           <div className="services-title-wrapper">
-            <h1 className="heading-xl">Terapijų rūšys</h1>
+            <h2 className="heading-xl">Terapijų rūšys</h2>
           </div>
         
           <div className="services-list">

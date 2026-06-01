@@ -6,7 +6,7 @@ export default function About() {
       <div className="about-container">
         <div className="about-intro">
           <div className="about-title-wrapper">
-            <h1 className="heading-xl">Jolita Palekaitė</h1>
+            <h2 className="heading-xl">Jolita Palekaitė</h2>
           </div>
           <div className="about-moto">
             <p className="about-lead">
