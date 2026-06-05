@@ -15,6 +15,9 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 import { useEffect } from "react";
+
+import Booking from "./sections/Booking";
+
 type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
 
 
@@ -61,44 +64,6 @@ useEffect(() => {
     Geštaltinė psichoterapija Vilniuje | Jolita Palekaitė
   </title>
 
-  {/* <script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Psychologist",
-      name: "Jolita Palekaitė",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Liepyno g. 11",
-        addressLocality: "Vilnius",
-        postalCode: "08108",
-        addressCountry: "LT",
-      },
-      telephone: "+37065011233",
-      email: "jolita@savin.lt",
-      url: "https://yoursite.lt",
-    })}
-  </script> */}
-
-  {/* <script type="application/ld+json">
-  {`
-    {
-      "@context": "https://schema.org",
-      "@type": "Psychologist",
-      "name": "Jolita Palekaitė",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Liepyno g. 11",
-        "addressLocality": "Vilnius",
-        "postalCode": "08108",
-        "addressCountry": "LT"
-      },
-      "telephone": "+37065011233",
-      "email": "jolita@savin.lt",
-      "url": "https://yoursite.lt"
-    }
-  `}
-</script> */}
-
   <meta
     name="description"
     content="Geštaltinė psichoterapija Vilniuje. Individualios konsultacijos, emocinė pagalba, santykių sunkumai, nerimas ir asmeninis augimas."
@@ -118,6 +83,8 @@ useEffect(() => {
         <Gestalt />
         <Duk />
         <Contact />
+        <Booking />
+        
     </div>
    
   );
