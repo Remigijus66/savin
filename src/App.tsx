@@ -3,31 +3,33 @@
 // https://www.magnific.com/
 
 import "./App.css"; // import global CSS
-import Navbar from "./components/Navbar";
-import About from "./sections/About";
-import Contact from "./sections/Contact";
-import Hero from "./sections/Hero";
-import Gestalt from "./sections/Gestalt";
-import Services from "./sections/Services";
-import Duk from "./sections/Duk";
-import { useState } from "react";
+// import Navbar from "./components/Navbar";
+// import About from "./sections/About";
+// import Contact from "./sections/Contact";
+// import Hero from "./sections/Hero";
+// import Gestalt from "./sections/Gestalt";
+// import Services from "./sections/Services";
+// import Duk from "./sections/Duk";
+// import { useState } from "react";
+
+import HomePage from "./pages/HomePage";
+import BookingPage from "./pages/BookingPage";
+import AdminLoginPage from "./pages/AdmLoginPage";
+import AdminPage from "./pages/AdmPage";  
 
 import { Helmet } from "react-helmet-async";
 
 import { useEffect } from "react";
 
 import Booking from "./sections/Booking";
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import AdminAvailability from "./pages/AdminAvailability";
 
-type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
+// type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
 
 
 export default function App() {
-  const [theme, setTheme] = useState<Theme>("theme-experimental");
-
-  const toggleTheme = (newTheme: Theme) => {
-    setTheme(newTheme);
-  };
-
 useEffect(() => {
   const script = document.createElement("script");
   script.type = "application/ld+json";
@@ -57,8 +59,9 @@ useEffect(() => {
 
   return (
     
-    <div className={theme} >
-    <Helmet>
+    <div>
+ {/* Reikia perkelti Helmet į atskirą komponentą, kad būtų galima dinamiškai keisti meta duomenis pagal puslapį. Šiuo metu Helmet yra App komponente, todėl meta duomenys yra bendri visiems puslapiams. Reikėtų sukurti atskirą komponentą, pvz., SEO, kuris priimtų props ir nustatytų meta duomenis pagal puslapį./ */}
+  <Helmet>
 
   <title>
     Geštaltinė psichoterapija Vilniuje | Jolita Palekaitė
@@ -76,14 +79,41 @@ useEffect(() => {
 
 </Helmet>
 
-      <Navbar  />
+      {/* <Navbar  />
+        <Booking />
         <Hero />
         <About />
         <Services />
         <Gestalt />
         <Duk />
-        <Contact />
-        <Booking />
+        <Contact /> */}
+
+         
+   <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/booking" element={<BookingPage />} />
+
+      <Route path="/admin/login" element={<AdminLoginPage />} />
+
+      <Route
+        path="/admin"
+        element={
+          <ProtectedRoute adminOnly>
+            <AdminPage />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin/availability"
+        element={
+          <ProtectedRoute adminOnly>
+            <AdminAvailability />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
+  
         
     </div>
    

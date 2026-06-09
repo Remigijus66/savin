@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { generateSlots } from "../utils/GenerateSlots";
 import BookingCalendar from "./BookingCalendar";
-import { supabase } from "../utils/Mock";
-const { data } = await supabase.from("bookings").select();
+import { supabase } from "../lib/supabase";
 
 export default function Booking() {
   const [date, setDate] = useState(new Date());
+  const [availableDates, setAvailableDates] = useState<Set<string>>(new Set());
   const [slots, setSlots] = useState<string[]>([]);
 const [bookings, setBookings] = useState<any[]>([]);
 
@@ -26,7 +26,32 @@ const [bookings, setBookings] = useState<any[]>([]);
     });
 
     setSlots(generated);
+
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const lastDay = new Date(year, month + 1, 0);
+
+  const available = new Set<string>();
+
+  for (let day = 1; day <= lastDay.getDate(); day++) {
+    const currentDate = new Date(year, month, day);
+
+    const daySlots = generateSlots({
+      date: currentDate,
+      availability: availability || [],
+      bookings: bookingsData || [],
+    });
+
+    if (daySlots.length > 0) {
+      available.add(currentDate.toDateString());
+    }
   }
+
+  setAvailableDates(available);
+
+  }
+
+
 
   async function bookSlot(slot: string) {
   await supabase.from("bookings").insert({
@@ -45,6 +70,7 @@ const [bookings, setBookings] = useState<any[]>([]);
 <BookingCalendar
   selectedDate={date}
   onSelectDate={setDate}
+  availableDates={availableDates}
 />
 <h2>Available times</h2>
 

@@ -3,11 +3,13 @@ import { useMemo } from "react";
 type Props = {
   selectedDate: Date;
   onSelectDate: (date: Date) => void;
+    availableDates: Set<string>;
 };
 
 export default function BookingCalendar({
   selectedDate,
   onSelectDate,
+  availableDates,
 }: Props) {
   const days = useMemo(() => {
     const year = selectedDate.getFullYear();
@@ -44,19 +46,23 @@ export default function BookingCalendar({
         {days.map((day) => {
           const isSelected =
             day.toDateString() === selectedDate.toDateString();
+          const isAvailable = availableDates.has(day.toDateString());
 
           return (
             <button
               key={day.toISOString()}
               onClick={() => onSelectDate(day)}
-              style={{
-                padding: "10px",
-                border: isSelected
-                  ? "2px solid #007bff"
-                  : "1px solid #ccc",
-                borderRadius: "8px",
-                cursor: "pointer",
-              }}
+            style={{
+  padding: "10px",
+  border: isSelected
+    ? "2px solid #007bff"
+    : "1px solid #ccc",
+  borderRadius: "8px",
+  cursor: "pointer",
+  backgroundColor: isAvailable
+    ? "#d4edda"
+    : "#fff",
+}}
             >
               {day.getDate()}
             </button>
