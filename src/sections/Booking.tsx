@@ -122,7 +122,9 @@ export default function Booking() {
         textAlign: "center",
       }}
     >
+   
       <h2>Pick a time</h2>
+     
 
       <BookingCalendar
         selectedDate={date}

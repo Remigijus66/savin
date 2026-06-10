@@ -79,6 +79,8 @@ function nextMonth() {
 
 
   return (
+    <div>
+      <span style={{padding: '10px'}} onClick={previousMonth}>-</span><span>{selectedDate.getFullYear()+'-'+selectedDate.getMonth()}</span ><span style={{padding: '10px'}} onClick={nextMonth}>+</span>
 <div
   style={{
     display: "grid",
@@ -181,6 +183,7 @@ function nextMonth() {
       </button>
     );
   })}
+</div>
 </div>
   );
 }
