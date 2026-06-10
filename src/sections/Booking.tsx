@@ -1,98 +1,199 @@
-import { useEffect, useState } from "react";
-import { generateSlots } from "../utils/GenerateSlots";
+import { useEffect, useMemo, useState } from "react";
 import BookingCalendar from "./BookingCalendar";
 import { supabase } from "../lib/supabase";
 
 export default function Booking() {
   const [date, setDate] = useState(new Date());
-  const [availableDates, setAvailableDates] = useState<Set<string>>(new Set());
-  const [slots, setSlots] = useState<string[]>([]);
-const [bookings, setBookings] = useState<any[]>([]);
+
+  const [availability, setAvailability] = useState<any[]>([]);
+  const [bookings, setBookings] = useState<any[]>([]);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     loadData();
-  }, [date]);
+  }, []);
 
   async function loadData() {
-    const { data: availability } = await supabase.from("availability").select();
-    const { data: bookingsData } = await supabase.from("bookings").select();
+    const { data: availabilityData, error: availabilityError } =
+      await supabase
+        .from("availability")
+        .select("*")
+        .order("start_time");
 
-    setBookings(bookingsData || []);
-
-    const generated = generateSlots({
-      date,
-      availability: availability || [],
-      bookings: bookingsData || [],
-    });
-
-    setSlots(generated);
-
-  const year = date.getFullYear();
-  const month = date.getMonth();
-  const lastDay = new Date(year, month + 1, 0);
-
-  const available = new Set<string>();
-
-  for (let day = 1; day <= lastDay.getDate(); day++) {
-    const currentDate = new Date(year, month, day);
-
-    const daySlots = generateSlots({
-      date: currentDate,
-      availability: availability || [],
-      bookings: bookingsData || [],
-    });
-
-    if (daySlots.length > 0) {
-      available.add(currentDate.toDateString());
+    if (availabilityError) {
+      console.error(availabilityError);
+      return;
     }
+
+    const { data: bookingsData, error: bookingsError } =
+      await supabase
+        .from("bookings")
+        .select("*");
+
+    if (bookingsError) {
+      console.error(bookingsError);
+      return;
+    }
+
+    setAvailability(availabilityData || []);
+    setBookings(bookingsData || []);
   }
 
-  setAvailableDates(available);
+  async function bookSlot(slot: any) {
+    if (!name.trim()) {
+      alert("Please enter your name");
+      return;
+    }
 
+    if (!email.trim()) {
+      alert("Please enter your email");
+      return;
+    }
+
+    const { error } = await supabase
+      .from("bookings")
+      .insert({
+        name,
+        email,
+        availability_id: slot.id,
+        start_time: slot.start_time,
+        end_time: slot.end_time,
+      });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Booking successful");
+
+    setName("");
+    setEmail("");
+
+    await loadData();
   }
 
+  const bookedSlotIds = useMemo(
+    () => new Set(bookings.map((b) => b.availability_id)),
+    [bookings]
+  );
 
+  const slotsByDate = useMemo(() => {
+    const map: Record<string, any[]> = {};
 
-  async function bookSlot(slot: string) {
-  await supabase.from("bookings").insert({
-    name: "John",
-    email: "john@test.com",
-    start_time: slot,
-    end_time: new Date(new Date(slot).getTime() + 3600000).toISOString(),
-  });
+    availability.forEach((slot) => {
+      if (bookedSlotIds.has(slot.id)) {
+        return;
+      }
 
-  loadData();
-}
+      const key = new Date(
+        slot.start_time
+      ).toDateString();
+
+      if (!map[key]) {
+        map[key] = [];
+      }
+
+      map[key].push(slot);
+    });
+
+    return map;
+  }, [availability, bookedSlotIds]);
+
+  const filteredSlots = useMemo(() => {
+    return availability.filter((slot) => {
+      const slotDate = new Date(
+        slot.start_time
+      ).toDateString();
+
+      return (
+        slotDate === date.toDateString() &&
+        !bookedSlotIds.has(slot.id)
+      );
+    });
+  }, [availability, bookedSlotIds, date]);
 
   return (
-    <div style={{ padding: "40px", textAlign: "center" }}>
+    <div
+      style={{
+        padding: "40px",
+        textAlign: "center",
+      }}
+    >
       <h2>Pick a time</h2>
-<BookingCalendar
-  selectedDate={date}
-  onSelectDate={setDate}
-  availableDates={availableDates}
-/>
-<h2>Available times</h2>
 
-{slots.map((s) => (
-  <button
-    key={s}
-    onClick={() => bookSlot(s)}
-  >
-    {new Date(s).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })}
-  </button>
-))}
-      {/* {slots.map((s) => (
-        <button key={s} onClick={() => bookSlot(s)}>
-          {new Date(s).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    })}
+      <BookingCalendar
+        selectedDate={date}
+        onSelectDate={setDate}
+        slotsByDate={slotsByDate}
+      />
+
+      <div
+        style={{
+          marginTop: "30px",
+          marginBottom: "30px",
+        }}
+      >
+        <h3>Your Details</h3>
+
+        <input
+          placeholder="Name"
+          value={name}
+          onChange={(e) =>
+            setName(e.target.value)
+          }
+          style={{
+            display: "block",
+            margin: "10px auto",
+            padding: "8px",
+            width: "250px",
+          }}
+        />
+
+        <input
+          placeholder="Email"
+          type="email"
+          value={email}
+          onChange={(e) =>
+            setEmail(e.target.value)
+          }
+          style={{
+            display: "block",
+            margin: "10px auto",
+            padding: "8px",
+            width: "250px",
+          }}
+        />
+      </div>
+
+      <h2>Available Times</h2>
+
+      {filteredSlots.length === 0 && (
+        <p>No available slots.</p>
+      )}
+
+      {filteredSlots.map((slot) => (
+        <button
+          key={slot.id}
+          onClick={() => bookSlot(slot)}
+          style={{
+            margin: "5px",
+            padding: "10px 15px",
+            border: "1px solid #ccc",
+            borderRadius: "8px",
+            cursor: "pointer",
+          }}
+        >
+          {new Date(
+            slot.start_time
+          ).toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
         </button>
-      ))} */}
+      ))}
     </div>
   );
 }
