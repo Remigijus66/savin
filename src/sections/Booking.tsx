@@ -118,12 +118,12 @@ export default function Booking() {
   return (
     <div
       style={{
-        padding: "40px",
+        padding: "60px 40px 40px 40px",
         textAlign: "center",
       }}
     >
    
-      <h2>Pick a time</h2>
+      <h2>Booking</h2>
      
 
       <BookingCalendar

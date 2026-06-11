@@ -1,12 +1,36 @@
+import { useState } from "react";
 import "./About.css";
 
+
 export default function About() {
+
+const [sequence, setSequence] = useState("");
+
+  const mark = (char: string) => {
+  const newSequence = sequence + char;
+
+  console.log("new sequence:", newSequence);
+
+  if (newSequence === "JPPJ") {
+    setSequence("");
+    window.location.href = "/loooooogggiiiiiinnnnnn";
+    return;
+  }
+
+  if (newSequence.length > 3) {
+    setSequence("");
+    return;
+  }
+
+  setSequence(newSequence);
+};
+  
   return (
     <section className="about-section" id="about">
       <div className="about-container">
         <div className="about-intro">
           <div className="about-title-wrapper">
-            <h2 className="heading-xl">Jolita Palekaitė</h2>
+            <h2 className="heading-xl"><span onClick={() => mark('J')}>Jolita </span><span onClick={() => mark('P')}>Palekaitė</span></h2>
           </div>
           <div className="about-moto">
             <p className="about-lead">

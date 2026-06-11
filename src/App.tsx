@@ -21,15 +21,18 @@ import { Helmet } from "react-helmet-async";
 
 import { useEffect } from "react";
 
-import Booking from "./sections/Booking";
+
 import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminAvailability from "./pages/AdminAvailability";
+import MainLayout from "./components/MainLayout";
 
 // type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
 
 
 export default function App() {
+
+
 useEffect(() => {
   const script = document.createElement("script");
   script.type = "application/ld+json";
@@ -90,10 +93,15 @@ useEffect(() => {
 
          
    <Routes>
+      <Route element={<MainLayout />}>
       <Route path="/" element={<HomePage />} />
-      <Route path="/booking" element={<BookingPage />} />
+      <Route path="/booking"    element={
+          <ProtectedRoute adminOnly>
+            <BookingPage />
+          </ProtectedRoute>
+        } />
 
-      <Route path="/admin/login" element={<AdminLoginPage />} />
+
 
       <Route
         path="/admin"
@@ -112,6 +120,8 @@ useEffect(() => {
           </ProtectedRoute>
         }
       />
+      </Route>
+            <Route path="/loooooogggiiiiiinnnnnn" element={<AdminLoginPage />} />
     </Routes>
   
         

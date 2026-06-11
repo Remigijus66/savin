@@ -80,7 +80,56 @@ function nextMonth() {
 
   return (
     <div>
-      <span style={{padding: '10px'}} onClick={previousMonth}>-</span><span>{selectedDate.getFullYear()+'-'+selectedDate.getMonth()}</span ><span style={{padding: '10px'}} onClick={nextMonth}>+</span>
+  <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "20px",
+    marginBottom: "20px",
+  }}
+>
+  <button
+    onClick={previousMonth}
+    style={{
+      border: "none",
+      background: "transparent",
+      cursor: "pointer",
+      fontSize: "24px",
+      fontWeight: 600,
+      padding: "8px 12px",
+    }}
+  >
+    ←
+  </button>
+
+  <h2
+    style={{
+      margin: 0,
+      minWidth: "220px",
+      textAlign: "center",
+    }}
+  >
+    {selectedDate.toLocaleString("lt-LT", {
+      month: "long",
+      year: "numeric",
+    })}
+  </h2>
+
+  <button
+    onClick={nextMonth}
+    style={{
+      border: "none",
+      background: "transparent",
+      cursor: "pointer",
+      fontSize: "24px",
+      fontWeight: 600,
+      padding: "8px 12px",
+    }}
+  >
+    →
+  </button>
+</div>
 <div
   style={{
     display: "grid",

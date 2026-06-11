@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 import Hero from "../sections/Hero";
 import About from "../sections/About";
 import Services from "../sections/Services";
@@ -9,7 +9,7 @@ import Contact from "../sections/Contact";
 export default function HomePage() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <About />
       <Services />
