@@ -16,6 +16,7 @@ type Booking = {
   email: string;
   start_time: string;
   end_time: string;
+  google_event_id?: string;
 };
 
 
@@ -339,7 +340,22 @@ async function syncDayToGoogle() {
   const results = [];
   
   console.log("selectedDayBookings:", selectedDayBookings);
+
+
   for (const booking of selectedDayBookings) {
+
+     if (booking.google_event_id) {
+    console.log(
+      "Already synced:",
+      booking.google_event_id
+    );
+       results.push({
+        skipped: true,
+        booking: booking.id,
+      });
+    continue;
+  }
+    
    
     const res = await fetch(
       "https://vkqxfytikugpdbvwincy.supabase.co/functions/v1/sync-google-calendar",
@@ -355,33 +371,33 @@ async function syncDayToGoogle() {
         }),
       }
     );
+    console.log("Response:", res);
 
     const data = await res.json();
+
+       if (data.googleEventId) {
+
+      await supabase
+        .from("bookings")
+        .update({
+          google_event_id: data.googleEventId,
+        })
+        .eq(
+          "id",
+          booking.id
+        );
+
+    }
+
     results.push(data);
   }
 
-  console.log(results);
+  console.log("Results:", results);
 
-  alert(
-    `${selectedDayBookings.length} bookings synced to Google Calendar`
+ 
+    alert(
+    `${results.filter((r) => !r.skipped).length} bookings processed`
   );
-}
-
-async function testCon() {
-  await fetch(
-  "https://vkqxfytikugpdbvwincy.supabase.co/functions/v1/sync-google-calendar",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      summary: "Booking - John",
-         "start_time": "2026-06-15T17:00:00+03:00",
-  "end_time": "2026-06-15T18:00:00+03:00",
-    }),
-  }
-);
 }
 
 
@@ -400,18 +416,7 @@ async function testCon() {
     Week of {selectedDate.toLocaleDateString()}
   </h3>
 
-  <button
-    onClick={() => testCon()}
-    style={{
-      padding: "8px 12px",
-      borderRadius: "6px",
-      border: "1px solid #ccc",
-      cursor: "pointer",
-    }}
-  >
-  Test Connection to google calendar 
 
-  </button>
   <button
   onClick={syncDayToGoogle}
   style={{
