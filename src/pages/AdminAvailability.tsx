@@ -335,6 +335,54 @@ async function applyTemplateToWeek(
   );
 }
 
+async function syncDayToGoogle() {
+  const results = [];
+  
+  console.log("selectedDayBookings:", selectedDayBookings);
+  for (const booking of selectedDayBookings) {
+   
+    const res = await fetch(
+      "https://vkqxfytikugpdbvwincy.supabase.co/functions/v1/sync-google-calendar",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          summary: `Booking - ${booking.name}`,
+          start_time: booking.start_time,
+  end_time: booking.end_time,
+        }),
+      }
+    );
+
+    const data = await res.json();
+    results.push(data);
+  }
+
+  console.log(results);
+
+  alert(
+    `${selectedDayBookings.length} bookings synced to Google Calendar`
+  );
+}
+
+async function testCon() {
+  await fetch(
+  "https://vkqxfytikugpdbvwincy.supabase.co/functions/v1/sync-google-calendar",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      summary: "Booking - John",
+         "start_time": "2026-06-15T17:00:00+03:00",
+  "end_time": "2026-06-15T18:00:00+03:00",
+    }),
+  }
+);
+}
 
 
   return (
@@ -353,7 +401,7 @@ async function applyTemplateToWeek(
   </h3>
 
   <button
-    // onClick={() => applyTemplateToWeek(selectedDate)}
+    onClick={() => testCon()}
     style={{
       padding: "8px 12px",
       borderRadius: "6px",
@@ -361,8 +409,21 @@ async function applyTemplateToWeek(
       cursor: "pointer",
     }}
   >
-    Apply Weekly Template
+  Test Connection to google calendar 
+
   </button>
+  <button
+  onClick={syncDayToGoogle}
+  style={{
+    marginTop: "10px",
+    padding: "8px 12px",
+    border: "1px solid #ccc",
+    borderRadius: "6px",
+    cursor: "pointer",
+  }}
+>
+  Sync Google Calendar (this day)
+</button>
 </div>
 
     <BookingCalendar
