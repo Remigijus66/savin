@@ -16,7 +16,7 @@ type Booking = {
   email: string;
   start_time: string;
   end_time: string;
-  google_event_id?: string;
+  google_event_id: string | null;
 };
 
 
@@ -42,8 +42,12 @@ async function loadData() {
       .from("bookings")
       .select("*");
 
+
+
   setAvailability(availabilityData || []);
   setBookings(bookingsData || []);
+  console.log("bookingsData", bookingsData);
+
 }
 
 
@@ -344,6 +348,7 @@ async function syncDayToGoogle() {
 
   for (const booking of selectedDayBookings) {
 
+    console.log(  'booking.google_event_id',   booking.google_event_id)
      if (booking.google_event_id) {
     console.log(
       "Already synced:",
@@ -374,7 +379,7 @@ async function syncDayToGoogle() {
     console.log("Response:", res);
 
     const data = await res.json();
-
+console.log('data', data)
        if (data.googleEventId) {
 
       await supabase
@@ -386,6 +391,16 @@ async function syncDayToGoogle() {
           "id",
           booking.id
         );
+        setBookings(prev =>
+  prev.map(b =>
+    b.id === booking.id
+      ? {
+          ...b,
+          google_event_id: data.googleEventId,
+        }
+      : b
+  )
+);
 
     }
 
