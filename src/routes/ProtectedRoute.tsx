@@ -14,7 +14,7 @@ export default function ProtectedRoute({
   if (loading) return <p>Loading...</p>;
 
   if (!user) {
-    return <Navigate to="/admin/login" />;
+    return <Navigate to="/" />;
   }
 
   if (adminOnly && role !== "admin") {
