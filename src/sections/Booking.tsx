@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import BookingCalendar from "./BookingCalendar";
 import { supabase } from "../lib/supabase";
+import ScheduleSessionModal from "../components/ScheduleSessionModal";
 
 export default function Booking() {
   const [date, setDate] = useState(new Date());
@@ -196,6 +197,8 @@ export default function Booking() {
           })}
         </button>
       ))}
+
+
     </div>
   );
 }

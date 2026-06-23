@@ -1,5 +1,6 @@
 
-import { useMemo } from "react";
+import { useMemo} from "react";
+
 
 type Props = {
   selectedDate: Date;
@@ -9,7 +10,8 @@ type Props = {
     string,
     {
       available: number;
-      booked: number;
+      // booked: number;
+      sessions: number;
     }
   >;
 };
@@ -33,6 +35,9 @@ export default function BookingCalendar({
  const calendarCells = useMemo(() => {
   const year = selectedDate.getFullYear();
   const month = selectedDate.getMonth();
+
+
+
 
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
@@ -172,11 +177,17 @@ function nextMonth() {
       dayStats?.[key]?.available ??
       slots.length;
 
-    const booked =
-      dayStats?.[key]?.booked ?? 0;
+    // const booked =
+    //   dayStats?.[key]?.booked ?? 0;
+   
+      const sessions =
+      dayStats?.[key]?.sessions ?? 0;
+
+    // const hasSlots =
+    //   available > 0 || booked > 0;
 
     const hasSlots =
-      available > 0 || booked > 0;
+      available > 0 || sessions > 0;
 
     return (
       <button
@@ -193,8 +204,14 @@ function nextMonth() {
           borderRadius: "8px",
           cursor: "pointer",
           position: "relative",
+          // backgroundColor:
+          //   booked > 0
+          //     ? "#e3f2fd"
+          //     : available > 0
+          //     ? "#e8f5e9"
+          //     : "white",
           backgroundColor:
-            booked > 0
+            sessions > 0
               ? "#e3f2fd"
               : available > 0
               ? "#e8f5e9"
@@ -222,17 +239,41 @@ function nextMonth() {
               </div>
             )}
 
-            {booked > 0 && (
+            {/* {booked > 0 && (
               <div>
                 🔵 {booked}
               </div>
+            )} */}
+            {sessions > 0 && (
+              <div>
+                🔵 {sessions}
+              </div>
             )}
+
+          {/* { available >0 &&(
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelectDate(day);
+              }}
+              style={{
+                // background: "transparent",
+                // border: "none",
+                cursor: "pointer",
+                fontWeight: 600,
+              }}
+            >
+             Registruoti
+            </button>
+          )} */}
           </div>
         )}
       </button>
     );
   })}
 </div>
+
 </div>
   );
+
 }

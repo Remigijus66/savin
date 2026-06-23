@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabase";
 import BookingCalendar from "../sections/BookingCalendar";
 import WeeklyTemplateModal from "../components/WeeklyTemplateModal";
+import ScheduleSessionModal from "../components/ScheduleSessionModal";
 
 type AvailabilitySlot = {
   id: string;
@@ -19,15 +20,32 @@ type Booking = {
   google_event_id: string | null;
 };
 
+type Sessions = {
+  id: string;
+  client_id: string;
+  availability_id: string;
+  start_time: string;
+  end_time: string;
+  google_event_id: string | null;
+   client: {
+    id: string;
+    first_name: string;
+    last_name: string;
+    email: string;
+  };
+};
+
 
 export default function AdminAvailability() {
 
 const [selectedDate, setSelectedDate] = useState(new Date());
 const [availability, setAvailability] = useState<AvailabilitySlot[]>([]);
 const [bookings, setBookings] = useState<Booking[]>([]);
+const [sessions, setSessions] = useState<Sessions[]>([]);
 const [time, setTime] = useState("09:00");
 const [showTemplateEditor, setShowTemplateEditor] =
   useState(false);
+  const [showSessionModal, setShowSessionModal] = useState(false);
 
 
 async function loadData() {
@@ -37,17 +55,30 @@ async function loadData() {
       .select("*")
       .order("start_time");
 
-  const { data: bookingsData } =
-    await supabase
-      .from("bookings")
-      .select("*");
+  // const { data: bookingsData } =
+  //   await supabase
+  //     .from("bookings")
+  //     .select("*");
+
+const { data: sessionsData } = await supabase
+  .from("sessions")
+  .select(`
+    *,
+    client:clients (
+      id,
+      first_name,
+      last_name,
+      email
+    )
+  `);
 
 
 
   setAvailability(availabilityData || []);
-  setBookings(bookingsData || []);
-  console.log("bookingsData", bookingsData);
-
+  // setBookings(bookingsData || []);
+  setSessions(sessionsData || []);
+  // console.log("bookingsData", bookingsData);
+  console.log("sessionsData", sessionsData);
 }
 
 
@@ -56,17 +87,37 @@ useEffect(() => {
 }, []);
 
 
-async function cancelBooking(bookingId: string) {
+// async function cancelBooking(bookingId: string) {
+//   const confirm = window.confirm(
+//     "Cancel this booking?"
+//   );
+
+//   if (!confirm) return;
+
+//   const { error } = await supabase
+//     .from("bookings")
+//     .delete()
+//     .eq("id", bookingId);
+
+//   if (error) {
+//     alert(error.message);
+//     return;
+//   }
+
+//   await loadData();
+// }
+
+async function cancelSession(sessionId: string) {
   const confirm = window.confirm(
-    "Cancel this booking?"
+    "Cancel this session?"
   );
 
   if (!confirm) return;
 
   const { error } = await supabase
-    .from("bookings")
+    .from("sessions")
     .delete()
-    .eq("id", bookingId);
+    .eq("id", sessionId);
 
   if (error) {
     alert(error.message);
@@ -81,7 +132,8 @@ const dayStats = useMemo(() => {
     string,
     {
       available: number;
-      booked: number;
+      // booked: number;
+      sessions: number;
     }
   > = {};
 
@@ -94,29 +146,50 @@ const dayStats = useMemo(() => {
       stats[key] = {
         available: 0,
         booked: 0,
+        sessions: 0,
       };
     }
 
     stats[key].available++;
   });
 
-  bookings.forEach((booking) => {
+  // bookings.forEach((booking) => {
+  //   const key = new Date(
+  //     booking.start_time
+  //   ).toDateString();
+
+  //   if (!stats[key]) {
+  //     stats[key] = {
+  //       available: 0,
+  //       booked: 0,
+  //       sessions: 0,
+  //     };
+  //   }
+
+  //   stats[key].booked++;
+  // });
+
+  sessions.forEach((session) => {
     const key = new Date(
-      booking.start_time
+      session.start_time
     ).toDateString();
 
     if (!stats[key]) {
       stats[key] = {
         available: 0,
         booked: 0,
+        sessions: 0,
       };
     }
 
-    stats[key].booked++;
+    stats[key].sessions++;
   });
 
   return stats;
-}, [availability, bookings]);
+
+// }, [availability, bookings, sessions]);
+}, [availability, sessions]);
+
 
 
 const selectedDaySlots = useMemo(() => {
@@ -131,39 +204,66 @@ const selectedDaySlots = useMemo(() => {
 }, [availability, selectedDate]);
 
 
-const selectedDayBookings = useMemo(() => {
-    return bookings.filter((booking) => {
+// const selectedDayBookings = useMemo(() => {
+//     return bookings.filter((booking) => {
+//         return (
+//             new Date(
+//                 booking.start_time
+//             ).toDateString() ===
+//             selectedDate.toDateString()
+//         );
+//     });
+// }, [bookings, selectedDate]);
+
+const selectedDaySessions = useMemo(() => {
+    return sessions.filter((session) => {
         return (
             new Date(
-                booking.start_time
+                session.start_time
             ).toDateString() ===
             selectedDate.toDateString()
         );
     });
-}, [bookings, selectedDate]);
+}, [sessions, selectedDate]);
 
 
 const dayTimeline = useMemo(() => {
-  const slots = selectedDaySlots;
-  const bookingsForDay = selectedDayBookings;
+  // const bookingMap = new Map(
+  //   selectedDayBookings.map((b) => [
+  //     b.availability_id,
+  //     b,
+  //   ])
+  // );
 
-  const bookingMap = new Map(
-    bookingsForDay.map((b) => [
-      b.availability_id,
-      b,
+  const sessionMap = new Map(
+    selectedDaySessions.map((s) => [
+      s.availability_id,
+      s,
     ])
   );
 
-  return slots
+  return selectedDaySlots
     .map((slot) => {
-      const booking = bookingMap.get(slot.id);
+
+      const session =
+        sessionMap.get(slot.id);
+
+      // const booking =
+      //   bookingMap.get(slot.id);
 
       return {
         id: slot.id,
         time: slot.start_time,
-        type: booking ? "booked" : "available",
+
+        type: session
+          ? "session"
+          // : booking
+          // ? "booked"
+          : "available",
+
         slot,
-        booking,
+        // booking,
+        session,
       };
     })
     .sort(
@@ -171,7 +271,11 @@ const dayTimeline = useMemo(() => {
         new Date(a.time).getTime() -
         new Date(b.time).getTime()
     );
-}, [selectedDaySlots, selectedDayBookings]);
+}, [
+  selectedDaySlots,
+  // selectedDayBookings,
+  selectedDaySessions,
+]);
 
 
 async function addSlot() {
@@ -201,13 +305,16 @@ async function addSlot() {
 }
 
 async function deleteSlot(id: string) {
-  const booked = bookings.some(
-    (b) => b.availability_id === id
+  // const booked = bookings.some(
+  //   (b) => b.availability_id === id
+  // );
+  const sessionExists = sessions.some(
+    (s) => s.availability_id === id
   );
 
-  if (booked) {
+  if (sessionExists) {
     alert(
-      "Cannot delete slot with existing booking"
+      "Cannot delete slot with existing session"
     );
     return;
   }
@@ -451,7 +558,17 @@ console.log('data', data)
       onSelectDate={setSelectedDate}
       dayStats={dayStats}
     />
+     <button 
+     style={{
+      marginTop: "20px",
+      padding: "8px 12px"}}
+
+     onClick={() => setShowSessionModal(true)}>
+       Registruoti nauja sesiją
+     </button> 
 <div style ={{ display: "flex", gap: "10px", alignItems: "center", marginTop: "30px"}}>
+ 
+ 
 
     <h2 style={{ marginTop: "30px" }}>
       {selectedDate.toLocaleDateString()}
@@ -490,6 +607,10 @@ console.log('data', data)
 </button>
 
     </div>
+{ showSessionModal && (
+  <ScheduleSessionModal selectedDate={selectedDate}  onClose={()=>{ setShowSessionModal(false)}} onSaved={()=>{console.log('onSaved', selectedDate)}} />
+)}
+
     {showTemplateEditor && (
   <WeeklyTemplateModal
     onClose={() =>
@@ -512,6 +633,7 @@ console.log('data', data)
   ).toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
+
   });
 
   return (
@@ -526,10 +648,15 @@ console.log('data', data)
         padding: "10px",
         border: "1px solid #ddd",
         borderRadius: "6px",
-        background:
-          item.type === "booked"
-            ? "#e3f2fd"
-            : "white",
+       background:
+  // item.type === "session"
+  //   ? "#e3f2fd"
+  //   : item.type === "booked"
+  //   ? "#e8f5e9"
+  //   : "white",
+  item.type === "session"
+    ? "#e3f2fd"
+    : "white",
       }}
     >
       {/* LEFT: time + info */}
@@ -537,16 +664,48 @@ console.log('data', data)
         <strong>{timeLabel}</strong>
 
         <div style={{ marginTop: "4px" }}>
-          {item.type === "booked" ? (
-            <>
-              <div>
-                👤 {item?.booking?.name ?? "(unknown)"}
-              </div>
-              <div>
-                📧 {item.booking?.email ?? "(unknown)"}
-              </div>
-            </>
-          ) : (
+          {item.type === "session" ? (
+
+  <>
+    {/* <div>
+      🧠 Session
+    </div> */}
+
+    <div>
+      {/* Client ID:
+      {item.session?.client_id} */}
+      {item.session?.client && (
+        <div>
+        <div>
+          👤 {item.session.client.first_name} {item.session.client.last_name}
+          </div>
+          <div>
+          📧 {item.session.client.email}
+            </div>  
+        </div>
+   
+
+
+      )}
+    </div>
+  </>
+
+// ) : item.type === "booked" ? (
+//             <>
+//               <div>
+//                 👤 {item?.booking?.name ?? "(unknown)"}
+//               </div>
+//               <div>
+//                 📧 {item.booking?.email ?? "(unknown)"}
+//               </div>
+              
+//             </>
+//           ) : (
+//             <span style={{ color: "#888" }}>
+//               Available
+//             </span>
+//           )}
+) :(
             <span style={{ color: "#888" }}>
               Available
             </span>
@@ -556,10 +715,10 @@ console.log('data', data)
 
       {/* RIGHT: actions */}
       <div>
-        {item.type === "booked" ? (
+        {item.type === "session" ? (
           <button
             onClick={() =>
-              item.booking && cancelBooking(item.booking.id)
+              item.session && cancelSession(item.session.id)
             }
             style={{
               background: "#ff4d4f",
@@ -581,6 +740,15 @@ console.log('data', data)
             Delete
           </button>
         )}
+       
+         {/* ( <button
+            onClick={() =>
+              deleteSlot(item.id)
+            }
+          >
+            Delete
+          </button>) */}
+       
       </div>
     </div>
   );
