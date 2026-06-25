@@ -1,6 +1,6 @@
 
 import { useMemo} from "react";
-
+import Holidays from "date-holidays";
 
 type Props = {
   selectedDate: Date;
@@ -61,6 +61,12 @@ export default function BookingCalendar({
 
   return cells;
 }, [selectedDate]);
+
+const hd = new Holidays("LT");
+
+
+const isHoliday = (date: Date) =>
+  hd.isHoliday(date) !== false || date.getDay() === 0;
 
 function previousMonth() {
   onSelectDate(
@@ -211,6 +217,9 @@ function nextMonth() {
           //     ? "#e8f5e9"
           //     : "white",
           backgroundColor:
+          isHoliday(day)
+              ? "#fff3e0"
+              :
             sessions > 0
               ? "#e3f2fd"
               : available > 0

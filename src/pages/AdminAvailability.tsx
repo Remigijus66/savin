@@ -3,6 +3,7 @@ import { supabase } from "../lib/supabase";
 import BookingCalendar from "../sections/BookingCalendar";
 import WeeklyTemplateModal from "../components/WeeklyTemplateModal";
 import ScheduleSessionModal from "../components/ScheduleSessionModal";
+import { useNavigate } from "react-router-dom";
 
 type AvailabilitySlot = {
   id: string;
@@ -37,6 +38,8 @@ type Sessions = {
 
 
 export default function AdminAvailability() {
+
+  const nav = useNavigate();
 
 const [selectedDate, setSelectedDate] = useState(new Date());
 const [availability, setAvailability] = useState<AvailabilitySlot[]>([]);
@@ -636,6 +639,11 @@ console.log('data', data)
 
   });
 
+  const openSessionNotes = (item: any) => {
+  nav( `/clients/${item.session.client.id}/notes?sessionId=${item.session.id}`);
+  // nav(`/admin`);
+};
+
   return (
     <div
       key={item.id}
@@ -667,13 +675,7 @@ console.log('data', data)
           {item.type === "session" ? (
 
   <>
-    {/* <div>
-      🧠 Session
-    </div> */}
-
     <div>
-      {/* Client ID:
-      {item.session?.client_id} */}
       {item.session?.client && (
         <div>
         <div>
@@ -689,22 +691,6 @@ console.log('data', data)
       )}
     </div>
   </>
-
-// ) : item.type === "booked" ? (
-//             <>
-//               <div>
-//                 👤 {item?.booking?.name ?? "(unknown)"}
-//               </div>
-//               <div>
-//                 📧 {item.booking?.email ?? "(unknown)"}
-//               </div>
-              
-//             </>
-//           ) : (
-//             <span style={{ color: "#888" }}>
-//               Available
-//             </span>
-//           )}
 ) :(
             <span style={{ color: "#888" }}>
               Available
@@ -716,21 +702,41 @@ console.log('data', data)
       {/* RIGHT: actions */}
       <div>
         {item.type === "session" ? (
-          <button
-            onClick={() =>
-              item.session && cancelSession(item.session.id)
-            }
-            style={{
-              background: "#ff4d4f",
-              color: "white",
-              border: "none",
-              padding: "6px 10px",
-              borderRadius: "4px",
-              cursor: "pointer",
-            }}
-          >
-            Cancel
-          </button>
+    <>
+      {item.session?.client && (
+        <button
+          onClick={() =>
+            openSessionNotes(item)
+          }
+          style={{
+            background: "#1677ff",
+            color: "white",
+            border: "none",
+            padding: "6px 10px",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+        >
+          📝 Notes
+        </button>
+      )}
+
+      <button
+        onClick={() =>
+          item.session && cancelSession(item.session.id)
+        }
+        style={{
+          background: "#ff4d4f",
+          color: "white",
+          border: "none",
+          padding: "6px 10px",
+          borderRadius: "4px",
+          cursor: "pointer",
+        }}
+      >
+        Cancel
+      </button>
+    </>
         ) : (
           <button
             onClick={() =>
@@ -740,14 +746,7 @@ console.log('data', data)
             Delete
           </button>
         )}
-       
-         {/* ( <button
-            onClick={() =>
-              deleteSlot(item.id)
-            }
-          >
-            Delete
-          </button>) */}
+  
        
       </div>
     </div>

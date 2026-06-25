@@ -92,11 +92,11 @@ async function logout() {
 )}
             {isAdmin && (
     <>
-      <Link to="/booking">
-        Booking
+      <Link to="/clients">
+        Klientai
       </Link>
       <Link to="/admin/availability">
-        Admin
+        Tvarkaraštis 
       </Link>
 
       <button onClick={logout}>

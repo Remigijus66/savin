@@ -26,6 +26,8 @@ import { Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import AdminAvailability from "./pages/AdminAvailability";
 import MainLayout from "./components/MainLayout";
+import ClientNotes from "./pages/ClientNotes";
+import ClientsPage from "./pages/ClientsPage";
 
 // type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
 
@@ -112,6 +114,23 @@ useEffect(() => {
         }
       />
 
+<Route
+   path="clients/:clientId/notes"
+  element={
+    <ProtectedRoute adminOnly>
+      <ClientNotes />
+    </ProtectedRoute>
+  }
+/>
+      <Route
+  path="clients"
+  element={
+   <ProtectedRoute adminOnly>
+         <ClientsPage />
+          </ProtectedRoute>
+
+  }
+/>
       <Route
         path="/admin/availability"
         element={
@@ -121,6 +140,13 @@ useEffect(() => {
         }
       />
       </Route>
+   
+
+
+
+ 
+
+      
             <Route path="/loooooogggiiiiiinnnnnn" element={<AdminLoginPage />} />
     </Routes>
   
