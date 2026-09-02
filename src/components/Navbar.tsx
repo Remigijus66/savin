@@ -57,18 +57,9 @@ async function logout() {
     
       >
  
-          <div
-            style={{
-              marginLeft: "20px",
-              width: "54px",
-              height: "48px",
-              backgroundImage: `url(./Savin-logo.png)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-    
-          </div>
+          <Link to={path.home} className="nav-logo" onClick={handleClick}>
+            <img src="/logo.svg" alt="Jolita Palekaitė – geštaltinė psichoterapija" />
+          </Link>
 
 
 

@@ -114,3 +114,29 @@
 .mobile-menu .lang-switch {
   align-self: flex-start;
 }
+
+/* logotipas kairėje viršuje */
+.nav-logo {
+  display: block;
+  margin-left: 20px;
+  line-height: 0;
+}
+
+.nav-logo img {
+  display: block;
+  height: 54px;
+  width: auto;
+}
+
+/* mažiau nei ~44px aukščio antrinė eilutė tampa neįskaitoma */
+@media (max-width: 768px) {
+  .nav-logo img {
+    height: 46px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo img {
+    height: 40px;
+  }
+}
