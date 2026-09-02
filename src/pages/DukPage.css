@@ -1,0 +1,100 @@
+/* DUK puslapio akordeonas */
+
+.faq-list {
+  margin-top: 64px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--accent-active);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  width: 100%;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-question span:first-child {
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  font-weight: 200;
+
+  color: var(--accent-active);
+}
+
+.faq-icon {
+  flex-shrink: 0;
+
+  font-size: 1.6rem;
+  line-height: 1;
+
+  color: var(--accent-active);
+
+  transition: transform 0.35s ease;
+}
+
+.faq-icon.open {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.35s ease;
+}
+
+.faq-answer.open {
+  max-height: 1200px;
+}
+
+.faq-answer-inner {
+  padding-top: 12px;
+}
+
+.faq-answer p {
+  margin: 0 0 12px;
+
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 200;
+
+  color: var(--text-main);
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .faq-list {
+    margin-top: 44px;
+  }
+
+  .faq-question span:first-child {
+    font-size: 1.05rem;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}

@@ -13,6 +13,10 @@ import "./App.css"; // import global CSS
 // import { useState } from "react";
 
 import HomePage from "./pages/HomePage";
+import KasEsu from "./pages/KasEsu";
+import KurKvieciu from "./pages/KurKvieciu";
+import DukPage from "./pages/DukPage";
+import Susisiekime from "./pages/Susisiekime";
 import BookingPage from "./pages/BookingPage";
 import AdminLoginPage from "./pages/AdmLoginPage";
 import AdminPage from "./pages/AdmPage";  
@@ -97,6 +101,10 @@ useEffect(() => {
    <Routes>
       <Route element={<MainLayout />}>
       <Route path="/" element={<HomePage />} />
+      <Route path="/kas-esu" element={<KasEsu />} />
+      <Route path="/kur-kvieciu-ir-kuo-tikiu" element={<KurKvieciu />} />
+      <Route path="/duk" element={<DukPage />} />
+      <Route path="/susisiekime" element={<Susisiekime />} />
       <Route path="/booking"    element={
           <ProtectedRoute adminOnly>
             <BookingPage />

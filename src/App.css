@@ -144,3 +144,50 @@ h1, h2, h3 {
 }
 
 
+
+
+/* ---------- CTA mygtukas (bendras) ---------- */
+
+
+.page-cta {
+  display: flex;
+  justify-content: center;
+
+  margin: 48px 0 0;
+}
+
+.cta-button {
+  display: inline-block;
+
+  padding: 14px 40px;
+
+  border: 1px solid var(--accent-active);
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--accent-active);
+
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--accent-active);
+  color: var(--text-white);
+}
+
+.cta-button-solid {
+  background: var(--accent-active);
+  color: var(--text-white);
+}
+
+.cta-button-solid:hover {
+  background: transparent;
+  color: var(--accent-active);
+}

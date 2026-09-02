@@ -86,3 +86,9 @@
             font-weight: 500;
           }
         }
+/* aktyvus puslapis */
+.nav-links a.active,
+.mobile-menu a.active {
+  color: var(--accent-active);
+  border-bottom: 1px solid var(--accent-active);
+}

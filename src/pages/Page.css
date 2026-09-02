@@ -1,0 +1,294 @@
+/* Bendri turinio puslapių stiliai: Kas esu, Kur kviečiu ir kuo tikiu, DUK */
+
+.page {
+  background: var(--bg-section-alt);
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-section-alt) 85%,
+    var(--bg-section) 100%
+  );
+
+  padding: 140px 24px 96px;
+  min-height: 100vh;
+}
+
+.page-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ---------- ANTRAŠTĖS ---------- */
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+
+  font-family: "Noto Serif Display", serif;
+  color: var(--text-header);
+
+  font-weight: 400;
+  text-align: center;
+
+  margin: 0 0 40px;
+}
+
+.page-lead {
+  font-family: "Noto Sans", sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.7;
+  font-weight: 200;
+
+  color: var(--accent-active);
+  text-align: center;
+
+  margin: 0 0 64px;
+}
+
+.page-section {
+  margin-bottom: 72px;
+}
+
+.page-section h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.25;
+  letter-spacing: -1px;
+
+  font-family: "Noto Serif Display", serif;
+  color: var(--text-header);
+  font-weight: 400;
+
+  margin: 0 0 8px;
+}
+
+.page-section h3 {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.4;
+
+  font-family: "Noto Serif Display", serif;
+  color: var(--text-header);
+  font-weight: 400;
+
+  margin: 40px 0 8px;
+}
+
+.page-dash {
+  width: 60px;
+  height: 2px;
+
+  background: var(--accent-active);
+
+  margin-bottom: 24px;
+}
+
+/* ---------- TEKSTAS ---------- */
+
+.page-section p {
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: 17px;
+  line-height: 1.9;
+  font-weight: 200;
+
+  color: var(--text-main);
+
+  margin: 0 0 20px;
+}
+
+.page-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-list li {
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 200;
+
+  color: var(--text-main);
+
+  padding: 0 0 16px 24px;
+  position: relative;
+}
+
+.page-list li::before {
+  content: "";
+
+  position: absolute;
+  top: 14px;
+  left: 0;
+
+  width: 10px;
+  height: 2px;
+
+  background: var(--accent-active);
+}
+
+.page-list a {
+  color: var(--text-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+.page-list a:hover {
+  border-bottom-color: var(--text-accent);
+}
+
+/* ---------- NUMERUOTAS SĄRAŠAS ---------- */
+
+.page-steps {
+  list-style: none;
+  counter-reset: step;
+
+  padding: 0;
+  margin: 0;
+}
+
+.page-steps li {
+  counter-increment: step;
+
+  position: relative;
+  padding: 0 0 28px 56px;
+
+  font-family: "Noto Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  font-weight: 200;
+
+  color: var(--text-main);
+}
+
+.page-steps li::before {
+  content: counter(step);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--accent-active);
+  border-radius: 50%;
+
+  font-family: "Noto Serif Display", serif;
+  font-size: 1rem;
+  color: var(--accent-active);
+}
+
+/* ---------- PRINCIPŲ KORTELĖS ---------- */
+
+.page-cards {
+  display: grid;
+  gap: 24px;
+
+  margin-top: 32px;
+}
+
+.page-card {
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+
+  padding: 32px;
+
+  background: var(--bg-card3);
+
+  transition: all 0.4s ease;
+}
+
+.page-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hoover);
+}
+
+.page-card h3 {
+  margin: 0 0 12px;
+
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+
+  color: var(--text-header);
+}
+
+.page-card p {
+  margin: 0;
+}
+
+/* ---------- TABLETAI ---------- */
+
+@media (max-width: 992px) {
+  .page {
+    padding: 120px 20px 72px;
+  }
+
+  .page-section {
+    margin-bottom: 56px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 100px 16px 56px;
+  }
+
+  .page-title {
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+  }
+
+  .page-lead {
+    margin-bottom: 44px;
+  }
+
+  .page-section p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .page-card {
+    padding: 24px;
+  }
+
+  .page-steps li {
+    padding-left: 48px;
+    font-size: 16px;
+  }
+}
+
+/* ---------- MAŽI TELEFONAI ---------- */
+
+@media (max-width: 480px) {
+  .page {
+    padding: 90px 12px 48px;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+    letter-spacing: -1px;
+  }
+
+  .page-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .page-steps li {
+    padding-left: 42px;
+  }
+
+  .page-steps li::before {
+    width: 30px;
+    height: 30px;
+  }
+}

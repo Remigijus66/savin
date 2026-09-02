@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { nav } from "../content/site";
 import "./Navbar.css";
 
 export default function Navbar({ onThemeChange }: any) {
@@ -10,11 +11,6 @@ export default function Navbar({ onThemeChange }: any) {
   const [isAdmin, setIsAdmin] = useState(false);
 
   const handleClick = () => setOpen(false);
-
-  const location = useLocation();
-
-const isHomePage = location.pathname === "/";
-
 
   useEffect(() => {
   supabase.auth.getUser().then(({ data }) => {
@@ -75,21 +71,17 @@ async function logout() {
 
         {/* Desktop links */}
         <div className="nav-links">
-        {isHomePage && (
-  <>
-    <a href="#hero">Pradžia</a>
-    <a href="#about">Apie mane</a>
-    <a href="#services">Paslaugos</a>
-    <a href="#gestalt">Geštaltas</a>
-    <a href="#duk">D.U.K.</a>
-    <a href="#contact">Kontaktai</a>
-  </>
-)}
-{!isHomePage && (
-  <Link to="/" >
-    Pagrindinis
-  </Link>
-)}
+        {nav.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === "/"}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+              onClick={handleClick}
+            >
+              {item.label}
+            </NavLink>
+          ))}
             {isAdmin && (
     <>
       <Link to="/clients">
@@ -119,21 +111,17 @@ async function logout() {
       {/* Mobile menu */}
       {open && (
         <div className="mobile-menu">
-       {isHomePage && (
-  <>
-    <a href="#hero">Pradžia</a>
-    <a href="#about">Apie mane</a>
-    <a href="#services">Paslaugos</a>
-    <a href="#gestalt">Geštaltas</a>
-    <a href="#duk">D.U.K.</a>
-    <a href="#contact">Kontaktai</a>
-  </>
-)}
-{!isHomePage && (
-  <Link to="/" >
-    Pagrindinis
-  </Link>
-)}
+       {nav.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === "/"}
+              className={({ isActive }) => (isActive ? "active" : undefined)}
+              onClick={handleClick}
+            >
+              {item.label}
+            </NavLink>
+          ))}
            {isAdmin && (
     <>
       <Link to="/admin/availability">

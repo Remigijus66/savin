@@ -1,0 +1,167 @@
+/* Pradžios pasisveikinimas su Jolitos nuotrauka */
+
+.intro-section {
+  background: var(--bg-section-alt);
+
+  padding: 140px 32px 96px;
+}
+
+.intro-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  align-items: center;
+
+  gap: 72px;
+}
+
+/* ---------- NUOTRAUKA ---------- */
+
+.intro-photo {
+  position: relative;
+
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-soft);
+}
+
+.intro-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  object-fit: cover;
+  object-position: center 15%;
+}
+
+/* ---------- TEKSTAS ---------- */
+
+.intro-greeting {
+  font-family: "Noto Serif Display", serif;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+
+  color: var(--accent-active);
+
+  margin: 0 0 4px;
+}
+
+.intro-name {
+  font-family: "Noto Serif Display", serif;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+
+  color: var(--text-header);
+  font-weight: 400;
+
+  margin: 0 0 24px;
+}
+
+.intro-dash {
+  width: 72px;
+  height: 2px;
+
+  background: var(--accent-active);
+
+  margin-bottom: 28px;
+}
+
+.intro-lead {
+  font-family: "Noto Sans", sans-serif;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.8;
+  font-weight: 200;
+
+  color: var(--text-main);
+
+  max-width: 34em;
+  margin: 0 0 40px;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 16px;
+}
+
+/* ---------- TABLETAI ---------- */
+
+@media (max-width: 992px) {
+  .intro-section {
+    padding: 120px 20px 72px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+
+    justify-items: center;
+    text-align: center;
+  }
+
+  .intro-photo {
+    max-width: 420px;
+  }
+
+  .intro-dash {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .intro-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .intro-actions {
+    justify-content: center;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 100px 16px 56px;
+  }
+
+  .intro-name {
+    letter-spacing: -1.5px;
+  }
+
+  .intro-photo {
+    max-width: 100%;
+    border-radius: var(--radius-lg);
+  }
+
+  .intro-actions {
+    flex-direction: column;
+    align-self: stretch;
+    width: 100%;
+  }
+
+  .intro-actions .cta-button {
+    text-align: center;
+  }
+}
+
+/* ---------- MAŽI TELEFONAI ---------- */
+
+@media (max-width: 480px) {
+  .intro-section {
+    padding: 90px 12px 48px;
+  }
+
+  .intro-name {
+    font-size: 2.4rem;
+    letter-spacing: -1px;
+  }
+}

@@ -1,0 +1,220 @@
+/* Pradžios puslapis: trumpos kitų puslapių santraukos */
+
+.home-section {
+  background: var(--bg-section-alt);
+  background-image: linear-gradient(
+    to bottom,
+    var(--bg-section-alt) 85%,
+    var(--bg-section) 100%
+  );
+
+  padding: 40px 24px 96px;
+}
+
+.home-container {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* ---------- SANTRAUKŲ KORTELĖS ---------- */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+.home-card {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+
+  padding: 32px;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.4s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hoover);
+}
+
+.home-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+
+  height: 2px;
+
+  background: var(--accent-active);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 0.4s ease;
+}
+
+.home-card:hover::before {
+  transform: scaleX(1);
+}
+
+.home-card h3 {
+  margin: 0 0 12px;
+
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+}
+
+.home-card p {
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 200;
+
+  color: var(--text-muted);
+
+  margin: 0 0 24px;
+
+  flex-grow: 1;
+}
+
+.home-card-link {
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--text-accent);
+
+  transition: opacity 0.3s ease;
+}
+
+.home-card-link:hover {
+  opacity: 0.7;
+}
+
+/* .bg1 kortelėje nuoroda turi likti šviesi */
+.home-card.bg1 .home-card-link {
+  color: var(--text-white);
+}
+
+/* ---------- KONTAKTŲ SANTRAUKA ---------- */
+
+.home-contact {
+  margin-top: 96px;
+  text-align: center;
+}
+
+.home-contact h3 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+
+  color: var(--text-header);
+
+  margin: 0 0 12px;
+}
+
+.home-contact p {
+  font-family: "Noto Sans", sans-serif;
+
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 200;
+
+  color: var(--text-main);
+
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+/* ---------- TABLETAI ---------- */
+
+@media (max-width: 992px) {
+  .home-section {
+    padding: 24px 20px 72px;
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .home-section {
+    padding: 16px 16px 56px;
+  }
+
+  .home-card {
+    padding: 24px;
+  }
+
+  .home-contact {
+    margin-top: 64px;
+  }
+}
+
+/* ---------- MAŽI TELEFONAI ---------- */
+
+@media (max-width: 480px) {
+  .home-section {
+    padding: 12px 12px 48px;
+  }
+
+  .home-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+}
+
+/* ---------- KORTELIŲ SPALVOS ---------- */
+/* Atkartoja About.css spalvas, kad nepriklausytų nuo to skyriaus stilių */
+
+.home-card.bg1 {
+  background-color: var(--bg-card1);
+  color: var(--text-white);
+}
+
+.home-card.bg1 h3,
+.home-card.bg1 p {
+  color: var(--text-white);
+}
+
+.home-card.bg2 {
+  background-color: var(--bg-card2);
+}
+
+.home-card.bg3 {
+  background-color: var(--bg-card3);
+}
+
+.home-card .dash {
+  width: 60px;
+  height: 2px;
+
+  background: var(--accent-active);
+
+  margin-bottom: 16px;
+}
+
+.home-card.bg1 .dash {
+  background: var(--text-white);
+}
