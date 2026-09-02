@@ -3,14 +3,6 @@
 // https://www.magnific.com/
 
 import "./App.css"; // import global CSS
-// import Navbar from "./components/Navbar";
-// import About from "./sections/About";
-// import Contact from "./sections/Contact";
-// import Hero from "./sections/Hero";
-// import Gestalt from "./sections/Gestalt";
-// import Services from "./sections/Services";
-// import Duk from "./sections/Duk";
-// import { useState } from "react";
 
 import HomePage from "./pages/HomePage";
 import KasEsu from "./pages/KasEsu";
@@ -81,14 +73,7 @@ useEffect(() => {
     <link rel="alternate" hrefLang={otherLang} href={`https://savin.lt${otherPath}`} />
   </Helmet>
 
-      {/* <Navbar  />
-        <Booking />
-        <Hero />
-        <About />
-        <Services />
-        <Gestalt />
-        <Duk />
-        <Contact /> */}
+
 
          
    <Routes>
