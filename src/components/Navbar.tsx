@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { Link, NavLink } from "react-router-dom";
-import { nav } from "../content/site";
+import { pageOrder } from "../content/site";
+import { useLang } from "../i18n";
 import "./Navbar.css";
 
-export default function Navbar({ onThemeChange }: any) {
+export default function Navbar() {
+  const { t, path, otherLang, otherPath } = useLang();
+
   const [open, setOpen] = useState(false);
 
   const [user, setUser] = useState<any>(null);
@@ -71,17 +74,27 @@ async function logout() {
 
         {/* Desktop links */}
         <div className="nav-links">
-        {nav.map((item) => (
+        {pageOrder.map((id) => (
             <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.to === "/"}
+              key={id}
+              to={path[id]}
+              end
               className={({ isActive }) => (isActive ? "active" : undefined)}
               onClick={handleClick}
             >
-              {item.label}
+              {t.nav[id]}
             </NavLink>
           ))}
+
+          <Link
+            to={otherPath}
+            className="lang-switch"
+            hrefLang={otherLang}
+            title={t.ui.languageTitle}
+            onClick={handleClick}
+          >
+            {t.ui.languageLabel}
+          </Link>
             {isAdmin && (
     <>
       <Link to="/clients">
@@ -111,17 +124,27 @@ async function logout() {
       {/* Mobile menu */}
       {open && (
         <div className="mobile-menu">
-       {nav.map((item) => (
+       {pageOrder.map((id) => (
             <NavLink
-              key={item.to}
-              to={item.to}
-              end={item.to === "/"}
+              key={id}
+              to={path[id]}
+              end
               className={({ isActive }) => (isActive ? "active" : undefined)}
               onClick={handleClick}
             >
-              {item.label}
+              {t.nav[id]}
             </NavLink>
           ))}
+
+          <Link
+            to={otherPath}
+            className="lang-switch"
+            hrefLang={otherLang}
+            title={t.ui.languageTitle}
+            onClick={handleClick}
+          >
+            {t.ui.languageLabel}
+          </Link>
            {isAdmin && (
     <>
       <Link to="/admin/availability">

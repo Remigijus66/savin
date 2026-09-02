@@ -92,3 +92,25 @@
   color: var(--accent-active);
   border-bottom: 1px solid var(--accent-active);
 }
+
+/* kalbos jungiklis / language switch */
+.nav-links .lang-switch,
+.mobile-menu .lang-switch {
+  border: 1px solid var(--accent-active);
+  border-radius: 999px;
+
+  padding: 4px 14px;
+
+  color: var(--accent-active);
+  font-size: 13px;
+}
+
+.nav-links .lang-switch:hover,
+.mobile-menu .lang-switch:hover {
+  background: var(--accent-active);
+  color: var(--text-white);
+}
+
+.mobile-menu .lang-switch {
+  align-self: flex-start;
+}

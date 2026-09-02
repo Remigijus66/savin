@@ -1,10 +1,13 @@
 import { useState } from "react";
 import CtaSusisiekime from "../components/CtaSusisiekime";
-import { duk } from "../content/site";
+import { useLang } from "../i18n";
 import "./Page.css";
 import "./DukPage.css";
 
 export default function DukPage() {
+  const { t } = useLang();
+  const duk = t.duk;
+
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleItem = (index: number) =>

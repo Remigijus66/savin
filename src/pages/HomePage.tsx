@@ -1,33 +1,35 @@
 import { Link } from "react-router-dom";
 import Intro from "../sections/Intro";
-import { duk, kasEsu, kurKvieciu, routes, susisiekime } from "../content/site";
+import { useLang } from "../i18n";
 import "./Home.css";
 
-const teasers = [
-  {
-    title: kasEsu.title,
-    text: kasEsu.teaser,
-    linkLabel: kasEsu.teaserLink,
-    to: routes.kasEsu,
-    variant: "bg1",
-  },
-  {
-    title: kurKvieciu.title,
-    text: kurKvieciu.teaser,
-    linkLabel: kurKvieciu.teaserLink,
-    to: routes.kurKvieciu,
-    variant: "bg2",
-  },
-  {
-    title: duk.title,
-    text: duk.intro,
-    linkLabel: duk.teaserLink,
-    to: routes.duk,
-    variant: "bg3",
-  },
-];
-
 export default function HomePage() {
+  const { t, path } = useLang();
+
+  const teasers = [
+    {
+      title: t.kasEsu.title,
+      text: t.kasEsu.teaser,
+      linkLabel: t.kasEsu.teaserLink,
+      to: path.kasEsu,
+      variant: "bg1",
+    },
+    {
+      title: t.kurKvieciu.title,
+      text: t.kurKvieciu.teaser,
+      linkLabel: t.kurKvieciu.teaserLink,
+      to: path.kurKvieciu,
+      variant: "bg2",
+    },
+    {
+      title: t.duk.title,
+      text: t.duk.intro,
+      linkLabel: t.duk.teaserLink,
+      to: path.duk,
+      variant: "bg3",
+    },
+  ];
+
   return (
     <>
       <Intro />
@@ -48,10 +50,10 @@ export default function HomePage() {
           </div>
 
           <div className="home-contact">
-            <h3>{susisiekime.title}</h3>
-            <p>{susisiekime.teaser}</p>
-            <Link to={routes.susisiekime} className="cta-button">
-              {susisiekime.teaserLink}
+            <h3>{t.susisiekime.title}</h3>
+            <p>{t.susisiekime.teaser}</p>
+            <Link to={path.susisiekime} className="cta-button">
+              {t.susisiekime.teaserLink}
             </Link>
           </div>
         </div>

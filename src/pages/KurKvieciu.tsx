@@ -1,8 +1,11 @@
 import CtaSusisiekime from "../components/CtaSusisiekime";
-import { kurKvieciu } from "../content/site";
+import { useLang } from "../i18n";
 import "./Page.css";
 
 export default function KurKvieciu() {
+  const { t } = useLang();
+  const kurKvieciu = t.kurKvieciu;
+
   return (
     <main className="page">
       <div className="page-container">

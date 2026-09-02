@@ -22,6 +22,7 @@ import AdminLoginPage from "./pages/AdmLoginPage";
 import AdminPage from "./pages/AdmPage";  
 
 import { Helmet } from "react-helmet-async";
+import { useLang } from "./i18n";
 
 import { useEffect } from "react";
 
@@ -37,6 +38,8 @@ import ClientsPage from "./pages/ClientsPage";
 
 
 export default function App() {
+
+  const { t, otherLang, otherPath } = useLang();
 
 
 useEffect(() => {
@@ -71,22 +74,12 @@ useEffect(() => {
     <div>
  {/* Reikia perkelti Helmet į atskirą komponentą, kad būtų galima dinamiškai keisti meta duomenis pagal puslapį. Šiuo metu Helmet yra App komponente, todėl meta duomenys yra bendri visiems puslapiams. Reikėtų sukurti atskirą komponentą, pvz., SEO, kuris priimtų props ir nustatytų meta duomenis pagal puslapį./ */}
   <Helmet>
-
-  <title>
-    Geštaltinė psichoterapija Vilniuje | Jolita Palekaitė
-  </title>
-
-  <meta
-    name="description"
-    content="Geštaltinė psichoterapija Vilniuje. Individualios konsultacijos, emocinė pagalba, santykių sunkumai, nerimas ir asmeninis augimas."
-  />
-
-  <meta
-    name="keywords"
-    content="psichoterapija Vilniuje, geštalto terapija, psichologas Vilnius"
-  />
-
-</Helmet>
+    <html lang={t.meta.htmlLang} />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <meta name="keywords" content={t.meta.keywords} />
+    <link rel="alternate" hrefLang={otherLang} href={`https://savin.lt${otherPath}`} />
+  </Helmet>
 
       {/* <Navbar  />
         <Booking />
@@ -100,11 +93,19 @@ useEffect(() => {
          
    <Routes>
       <Route element={<MainLayout />}>
+      {/* lietuviškas variantas */}
       <Route path="/" element={<HomePage />} />
       <Route path="/kas-esu" element={<KasEsu />} />
       <Route path="/kur-kvieciu-ir-kuo-tikiu" element={<KurKvieciu />} />
       <Route path="/duk" element={<DukPage />} />
       <Route path="/susisiekime" element={<Susisiekime />} />
+
+      {/* English */}
+      <Route path="/en" element={<HomePage />} />
+      <Route path="/en/about-me" element={<KasEsu />} />
+      <Route path="/en/what-i-offer" element={<KurKvieciu />} />
+      <Route path="/en/faq" element={<DukPage />} />
+      <Route path="/en/contact" element={<Susisiekime />} />
       <Route path="/booking"    element={
           <ProtectedRoute adminOnly>
             <BookingPage />

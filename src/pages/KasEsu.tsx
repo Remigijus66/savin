@@ -1,8 +1,11 @@
 import CtaSusisiekime from "../components/CtaSusisiekime";
-import { kasEsu } from "../content/site";
+import { useLang } from "../i18n";
 import "./Page.css";
 
 export default function KasEsu() {
+  const { t } = useLang();
+  const kasEsu = t.kasEsu;
+
   return (
     <main className="page">
       <div className="page-container">
