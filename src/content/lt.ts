@@ -26,6 +26,13 @@ const ui = {
   languageTitle: "In English",
   photoAlt: "Jolita Palekaitė, geštaltinės psichoterapijos praktikė",
   name: "Jolita Palekaitė",
+  tagline: "geštaltinė psichoterapija",
+};
+
+const footer = {
+  pagesTitle: "Puslapiai",
+  contactTitle: "Kontaktai",
+  rights: "Visos teisės saugomos.",
 };
 
 const contact = {
@@ -293,6 +300,7 @@ export const lt: SiteContent = {
   nav,
   meta,
   ui,
+  footer,
   contact,
   kasEsu,
   kurKvieciu,

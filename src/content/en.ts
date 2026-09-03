@@ -27,6 +27,13 @@ const ui = {
   languageTitle: "Lietuviškai",
   photoAlt: "Jolita Palekaitė, gestalt psychotherapy practitioner",
   name: "Jolita Palekaitė",
+  tagline: "gestalt psychotherapy",
+};
+
+const footer = {
+  pagesTitle: "Pages",
+  contactTitle: "Contact",
+  rights: "All rights reserved.",
 };
 
 const contact = {
@@ -294,6 +301,7 @@ export const en: SiteContent = {
   nav,
   meta,
   ui,
+  footer,
   contact,
   kasEsu,
   kurKvieciu,

@@ -8,6 +8,12 @@ export type { Lang, PageId, SiteContent } from "./types";
 
 export const content: Record<Lang, SiteContent> = { lt, en };
 
+/** Nepriklauso nuo kalbos. */
+export const contactDetails = {
+  phone: "+370 650 11233",
+  email: "jolita@savin.lt",
+};
+
 export const pageOrder: PageId[] = [
   "home",
   "kasEsu",

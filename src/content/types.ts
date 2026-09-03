@@ -40,6 +40,13 @@ export type SiteContent = {
     languageTitle: string;
     photoAlt: string;
     name: string;
+    tagline: string;
+  };
+
+  footer: {
+    pagesTitle: string;
+    contactTitle: string;
+    rights: string;
   };
 
   contact: {
