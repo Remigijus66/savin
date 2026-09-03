@@ -21,12 +21,16 @@ export default function Intro() {
           <p className="intro-greeting">{t.kasEsu.greeting}</p>
           <h1 className="intro-name">{t.ui.name}</h1>
           <div className="intro-dash" />
-          <p className="intro-lead">{t.kasEsu.intro}</p>
+          <p className="intro-lead">
+            {t.kasEsu.intro}{" "}
+            {t.kasEsu.introCta.before}
+            <Link to={path.kasEsu} className="inline-link">
+              {t.kasEsu.introCta.link}
+            </Link>
+            {t.kasEsu.introCta.after}
+          </p>
 
           <div className="intro-actions">
-            <Link to={path.kasEsu} className="cta-button">
-              {t.kasEsu.teaserLink}
-            </Link>
             <Link to={path.susisiekime} className="cta-button cta-button-solid">
               {t.susisiekime.title}
             </Link>

@@ -280,3 +280,16 @@ h1, h2, h3 {
   background: transparent;
   color: var(--accent-active);
 }
+
+/* nuoroda teksto viduryje */
+.inline-link {
+  color: var(--accent-active);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.inline-link:hover {
+  color: var(--text-accent);
+  border-bottom-color: currentColor;
+}

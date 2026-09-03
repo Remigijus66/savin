@@ -44,6 +44,11 @@ const kasEsu = {
   greeting: "Hello,",
   intro:
     "I am Jolita, a gestalt psychotherapy practitioner. If we ever meet, we will mostly be talking about you.",
+  introCta: {
+    before: "So ",
+    link: "click here",
+    after: " if you would like to know a little more about me...",
+  },
   teaser:
     "My path into psychotherapy was not a short one. I dreamed of psychology back in school, and in 2023 I began gestalt psychotherapy studies at the “Dialogas” institute.",
   teaserLink: "A little more about me",

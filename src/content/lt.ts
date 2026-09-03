@@ -43,6 +43,11 @@ const kasEsu = {
   greeting: "Labas,",
   intro:
     "Esu Jolita, geštaltinės psichoterapijos praktikė. Jei kada nors susitiksime, kalbėsimės daugiausia apie jus.",
+  introCta: {
+    before: "Todėl ",
+    link: "spauskite čia",
+    after: ", jei norite šiek tiek daugiau sužinoti apie mane...",
+  },
   teaser:
     "Mano kelias į psichoterapiją – netrumpas. Apie psichologiją svajojau dar mokykloje, o geštaltinės psichoterapijos studijas institute „Dialogas“ pradėjau 2023-iaisiais.",
   teaserLink: "Šiek tiek daugiau apie mane",

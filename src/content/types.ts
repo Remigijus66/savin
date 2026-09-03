@@ -54,6 +54,8 @@ export type SiteContent = {
     title: string;
     greeting: string;
     intro: string;
+    /* Sakinys su nuoroda i /kas-esu: before + <Link>link</Link> + after */
+    introCta: { before: string; link: string; after: string };
     teaser: string;
     teaserLink: string;
     kelias: { title: string; paragraphs: string[] };
