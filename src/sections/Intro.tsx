@@ -18,17 +18,30 @@ export default function Intro() {
         </div>
 
         <div className="intro-text">
-          <p className="intro-greeting">{t.kasEsu.greeting}</p>
-          <h1 className="intro-name">{t.ui.name}</h1>
-          <div className="intro-dash" />
-          <p className="intro-lead">
+          {/* <p className="intro-greeting">{t.kasEsu.greeting}</p> */}
+          {/* <h1 className="intro-name">{t.ui.name}</h1> */}
+          {/* <div className="intro-dash" /> */}
+          <div className="intro-copy">
+            <p className="intro-lead">{t.home.greeting}</p>
+
+            {/* H1 tik del semantikos (SEO) - atrodo kaip paprastas tekstas */}
+            <h1 className="intro-lead">{t.home.headline}</h1>
+
+            {t.home.paragraphs.map((text, index) => (
+              <p key={index} className="intro-lead">
+                {text}
+              </p>
+            ))}
+          </div>
+
+          {/* <p className="intro-lead">
             {t.kasEsu.intro}{" "}
             {t.kasEsu.introCta.before}
             <Link to={path.kasEsu} className="inline-link">
               {t.kasEsu.introCta.link}
             </Link>
             {t.kasEsu.introCta.after}
-          </p>
+          </p> */}
 
           <div className="intro-actions">
             <Link to={path.susisiekime} className="cta-button cta-button-solid">

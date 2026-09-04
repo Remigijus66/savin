@@ -43,6 +43,14 @@ export type SiteContent = {
     tagline: string;
   };
 
+  /* Pradzios puslapio tekstas salia nuotraukos.
+     headline renderinamas kaip <h1> (SEO), bet atrodo kaip paprastas tekstas. */
+  home: {
+    greeting: string;
+    headline: string;
+    paragraphs: string[];
+  };
+
   footer: {
     pagesTitle: string;
     contactTitle: string;

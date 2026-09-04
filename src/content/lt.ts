@@ -7,7 +7,7 @@ import type { SiteContent } from "./types";
 const nav = {
   home: "Pradžia",
   kasEsu: "Kas esu",
-  kurKvieciu: "Kur kviečiu ir kuo tikiu",
+  kurKvieciu: "Kur kviečiu",
   duk: "DUK",
   susisiekime: "Susisiekime",
 };
@@ -27,6 +27,16 @@ const ui = {
   photoAlt: "Jolita Palekaitė, geštaltinės psichoterapijos praktikė",
   name: "Jolita Palekaitė",
   tagline: "geštaltinė psichoterapija",
+};
+
+const home = {
+  greeting: "Labas,",
+  headline: "Esu Jolita, geštaltinės psichoterapijos praktikė.",
+  paragraphs: [
+    "Tikiu, kad kiekvienas iš mūsų žino savo kelią. Tik kartais reikia kito žmogaus šalia – kad padėtų jį pamatyti.",
+    "Aš savojo kelio ieškojau daug metų. Manau, kad radau.",
+    "Tai... gal į kelią?",
+  ],
 };
 
 const footer = {
@@ -300,6 +310,7 @@ export const lt: SiteContent = {
   nav,
   meta,
   ui,
+  home,
   footer,
   contact,
   kasEsu,

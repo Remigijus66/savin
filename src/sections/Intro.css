@@ -166,3 +166,24 @@
     letter-spacing: -1px;
   }
 }
+
+/* ---------- PRADZIOS TEKSTAS ---------- */
+/* Vientisas teksto blokas; antra eilute yra <h1> tik del semantikos,
+   todel jai nuimamas antrasciu dydis, storis ir raidziu tarpas. */
+
+.intro-copy {
+  margin-bottom: 40px;
+}
+
+.intro-copy .intro-lead {
+  margin-bottom: 14px;
+}
+
+.intro-copy .intro-lead:last-child {
+  margin-bottom: 0;
+}
+
+.intro-copy h1.intro-lead {
+  font-weight: 200;
+  letter-spacing: normal;
+}

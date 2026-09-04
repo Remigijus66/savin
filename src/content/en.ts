@@ -8,7 +8,7 @@ import type { SiteContent } from "./types";
 const nav = {
   home: "Home",
   kasEsu: "About me",
-  kurKvieciu: "What I offer and believe",
+  kurKvieciu: "What I offer",
   duk: "FAQ",
   susisiekime: "Get in touch",
 };
@@ -28,6 +28,16 @@ const ui = {
   photoAlt: "Jolita Palekaitė, gestalt psychotherapy practitioner",
   name: "Jolita Palekaitė",
   tagline: "gestalt psychotherapy",
+};
+
+const home = {
+  greeting: "Hello,",
+  headline: "I am Jolita, a gestalt psychotherapy practitioner.",
+  paragraphs: [
+    "I believe each of us knows our own path. Sometimes we simply need another person beside us – to help us see it.",
+    "I looked for mine for many years. I think I have found it.",
+    "So... shall we set out?",
+  ],
 };
 
 const footer = {
@@ -301,6 +311,7 @@ export const en: SiteContent = {
   nav,
   meta,
   ui,
+  home,
   footer,
   contact,
   kasEsu,
