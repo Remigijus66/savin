@@ -47,30 +47,6 @@ body {
 }
 
 :root {
-  /* Senoji schema  */
-  /* --bg-section: #f3f0ec;
-  --bg-section-alt: #ffffff;
-  
-  --bg-card1: #665c96;
-  --bg-card2: #dbeff2;
-  --bg-card3: #f9f7f4;
-  
-  --text-header: rgb(26, 24, 27);
-  --text-main: #2d2a26;
-  --text-muted: #6f6a63;
-  --text-accent: #A23D01;
-  --text-white: #f6f1ea;
-  
-  --accent: #c89b7b;
-  --accent-soft: #d8b59b;
-  --accent-active: #5aaab7;
-  
-  
-  --card-border: #e8e2dc;
-  --border-soft: rgba(80, 60, 40, 0.08);
-  --shadow-soft:  0 10px 30px rgba(0, 0, 0,0.15);
-  --shadow-hoover: 0 20px 40px rgba(0, 0, 0, 0.1); */
-
   --bg-section: #F2F1EA;
   --bg-section-alt: #FBFAF6;
 
@@ -78,8 +54,8 @@ body {
   --bg-card2: #E3E8D8;
   --bg-card3: #F7F5EF;
 
-  --text-header: #2C3320;
-  --text-main: #3D4233;
+  --text-header: #232a17;
+  --text-main: #2C3320;
   --text-muted: #787A6C;
   --text-accent: #8A5A32;
   --text-white: #F7F5EF;
@@ -107,78 +83,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-/* ===================================================================
-   ALTERNATYVIOS SPALVU SCHEMOS (pagal logotipo zalia #7E8A5A)
-
-   Isbandymui atkomentuoti VIENA bloka: istrinti komentaro atidarymo
-   eilute virs ":root {" ir uzdarymo eilute po "}". Blokas eina po
-   pagrindinio :root, todel perraso auksciau esancias reiksmes.
-   Grazinant atgal - vel uzkomentuoti.
-
-   Kodel keiciasi --accent-active: dabartinis #5aaab7 ant balto fono
-   duoda 2.67:1 kontrasta, o tekstui reikia bent 4.5:1. Grynas
-   logotipo zalias #7E8A5A - 3.70:1, irgi per mazai. #6B7A4E - 4.65:1.
-   =================================================================== */
-
-
-/* ---- A: SALAVIJAS (rekomenduojama) --------------------------------
-   Viena spalva is logotipo + silti neutralus tonai. Violetine kortele
-   virsta giliu salaviju, zydra - sviesiu salaviju. Molio atspalvis
-   paliktas tik nuorodoms (--text-accent).
-
-:root {
-  --bg-section: #F2F1EA;
-  --bg-section-alt: #FBFAF6;
-
-  --bg-card1: #5A6A45;
-  --bg-card2: #E3E8D8;
-  --bg-card3: #F7F5EF;
-
-  --text-header: #2C3320;
-  --text-main: #3D4233;
-  --text-muted: #787A6C;
-  --text-accent: #8A5A32;
-  --text-white: #F7F5EF;
-
-  --accent: #A8B48C;
-  --accent-soft: #C6CFB2;
-  --accent-active: #6B7A4E;
-
-  --card-border: #E1DFD4;
-}
-
-------------------------------------------------------------------- */
-
-
-/* ---- B: SALAVIJAS IR MOLIS ----------------------------------------
-   Pats logotipo zalias tampa uzpildyta kortele, vidurine - svelnaus
-   molio spalvos, fonai siltesni. Siltesne, bet ivedama antra spalva,
-   kuri konkuruoja su logotipu.
-
-:root {
-  --bg-section: #EFEAE1;
-  --bg-section-alt: #FDFBF7;
-
-  --bg-card1: #7E8A5A;
-  --bg-card2: #EFDDD0;
-  --bg-card3: #F8F4EC;
-
-  --text-header: #2A2E1F;
-  --text-main: #3B3A31;
-  --text-muted: #7C7568;
-  --text-accent: #9C5B3A;
-  --text-white: #FAF7F1;
-
-  --accent: #C9A98E;
-  --accent-soft: #DFC7B1;
-  --accent-active: #6B7A4E;
-
-  --card-border: #E4DCCF;
-}
-
-------------------------------------------------------------------- */
 
 
 .theme-experimental {

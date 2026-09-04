@@ -87,7 +87,7 @@
 .intro-actions {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: flex-end;
   gap: 16px;
 }
 
@@ -146,6 +146,7 @@
     flex-direction: column;
     align-self: stretch;
     width: 100%;
+      justify-content: center;
   }
 
   .intro-actions .cta-button {
