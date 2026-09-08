@@ -98,3 +98,13 @@
     line-height: 1.8;
   }
 }
+
+/* Klausimas yra antraste (h2), bet atrodo taip pat kaip anksciau */
+.faq-question-heading {
+  margin: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: normal;
+}

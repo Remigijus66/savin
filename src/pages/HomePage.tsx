@@ -39,7 +39,7 @@ export default function HomePage() {
           <div className="home-grid">
             {teasers.map((teaser) => (
               <article key={teaser.to} className={`home-card ${teaser.variant}`}>
-                <h3>{teaser.title}</h3>
+                <h2>{teaser.title}</h2>
                 <div className="dash" />
                 <p>{teaser.text}</p>
                 <Link to={teaser.to} className="home-card-link">
