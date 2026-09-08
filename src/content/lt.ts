@@ -32,7 +32,7 @@ const seo = {
       "Mano kelias į psichoterapiją: geštaltinės psichoterapijos studijos institute „Dialogas“, psichologija Vilniaus universitete, savanorystė Vaikų linijoje.",
   },
   kurKvieciu: {
-    title: "Kur kviečiu ir kuo tikiu | Jolita Palekaitė",
+    title: "Kur kviečiu | Jolita Palekaitė, psichoterapija Vilniuje",
     description:
       "Asmeninė psichoterapija Vilniuje: kaip dirbu, kuo tikiu terapiniame darbe ir ko tikėtis nuo pirmųjų susitikimų iki proceso pabaigos.",
   },
@@ -183,7 +183,7 @@ const kasEsu = {
 /* ---------------- KUR KVIEČIU IR KUO TIKIU ---------------- */
 
 const kurKvieciu = {
-  title: "Kur kviečiu ir kuo tikiu",
+  title: "Kur kviečiu",
   teaser:
     // "Asmeninė psichoterapija – tai dviejų žmonių susitikimas. Saugioje ir palaikančioje aplinkoje, jums priimtinu tempu, tyrinėjame jūsų poreikius, jausmus, mintis, kūno pojūčius.",
  "Ką siūlau, kaip dirbu ir kas man svarbu",

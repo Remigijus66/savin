@@ -27,7 +27,7 @@ export const paths: Record<Lang, Record<PageId, string>> = {
   lt: {
     home: "/",
     kasEsu: "/kas-esu",
-    kurKvieciu: "/kur-kvieciu-ir-kuo-tikiu",
+    kurKvieciu: "/kur-kvieciu",
     duk: "/duk",
     susisiekime: "/susisiekime",
   },

@@ -83,7 +83,7 @@ useEffect(() => {
       {/* lietuviškas variantas */}
       <Route path="/" element={<HomePage />} />
       <Route path="/kas-esu" element={<KasEsu />} />
-      <Route path="/kur-kvieciu-ir-kuo-tikiu" element={<KurKvieciu />} />
+      <Route path="/kur-kvieciu" element={<KurKvieciu />} />
       <Route path="/duk" element={<DukPage />} />
       <Route path="/susisiekime" element={<Susisiekime />} />
 

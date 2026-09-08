@@ -33,7 +33,7 @@ const seo = {
       "My path into psychotherapy: gestalt studies at the “Dialogas” institute, psychology at Vilnius University, and volunteering at the Children's Line.",
   },
   kurKvieciu: {
-    title: "What I offer and believe | Jolita Palekaitė",
+    title: "What I offer | Jolita Palekaitė, psychotherapy in Vilnius",
     description:
       "Personal psychotherapy in Vilnius: how I work, what I believe matters in therapeutic work, and what to expect from the first session onwards.",
   },
@@ -184,7 +184,7 @@ const kasEsu = {
 /* ---------------- WHAT I OFFER AND BELIEVE ---------------- */
 
 const kurKvieciu = {
-  title: "What I offer and believe",
+  title: "What I offer",
   teaser:
     // "Personal psychotherapy is a meeting of two people. In a safe and supportive environment, at a pace that suits you, we explore your needs, feelings, thoughts and bodily sensations.",
  "What I offer, how I work and what matters to me",
