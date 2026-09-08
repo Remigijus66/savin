@@ -8,6 +8,7 @@
 
 .contact-grid {
   max-width: 1400px;
+  min-height: 60vh;
   margin: 0 auto;
 
   display: grid;
@@ -19,8 +20,9 @@
 /* RIGHT COLUMN STACK */
 
 .contact-right-column {
+  height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
 
   gap: 40px;
 }
@@ -28,6 +30,7 @@
 /* ---------- CARD BASE ---------- */
 
 .contact-card {
+
   background: var(--bg-card3);
 
   border: 1px solid var(--card-border);
@@ -103,8 +106,9 @@
 /* ---------- MAP ---------- */
 
 .contact-map {
+
   min-height: 320px;
-  padding: 0;
+  padding: 0 !important;
 }
 
 .contact-map iframe {
@@ -201,4 +205,10 @@
   .contact-image {
     min-height: 220px;
   }
+}
+/* puslapio antraste virs korteliu */
+.contact-eyebrow {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }

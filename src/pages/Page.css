@@ -45,6 +45,23 @@
   margin: 0 0 64px;
 }
 
+.page-trail {
+  font-family: "Noto Sans", sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.7;
+  font-weight: 200;
+
+  color: var(--accent-active);
+  text-align: center;
+
+  /* margin: 0 0 24px; */
+  margin:32px 0 0;
+}
+  /* padding-top: 24px; */
+
+
+
+
 .page-section {
   margin-bottom: 72px;
 }
@@ -104,17 +121,19 @@
 .page-list li {
   font-family: "Noto Sans", sans-serif;
 
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.9;
   font-weight: 200;
 
   color: var(--text-main);
 
-  padding: 0 0 16px 24px;
+  /* padding: 0 0 16px 24px; */
+  /* padding: 0 0 16px 0px; */
+    margin: 0 0 20px;
   position: relative;
 }
 
-.page-list li::before {
+/* .page-list li::before {
   content: "";
 
   position: absolute;
@@ -125,7 +144,7 @@
   height: 2px;
 
   background: var(--accent-active);
-}
+} */
 
 .page-list a {
   color: var(--text-accent);
@@ -151,7 +170,7 @@
   counter-increment: step;
 
   position: relative;
-  padding: 0 0 28px 56px;
+  padding: 0 0 28px 0px;
 
   font-family: "Noto Sans", sans-serif;
   font-size: 17px;
@@ -161,7 +180,7 @@
   color: var(--text-main);
 }
 
-.page-steps li::before {
+/* .page-steps li::before {
   content: counter(step);
 
   position: absolute;
@@ -181,7 +200,7 @@
   font-family: "Noto Serif Display", serif;
   font-size: 1rem;
   color: var(--accent-active);
-}
+} */
 
 /* ---------- PRINCIPŲ KORTELĖS ---------- */
 
@@ -249,6 +268,9 @@
 
   .page-lead {
     margin-bottom: 44px;
+  }
+  .page-trail {
+    margin-top: 2dvh;
   }
 
   .page-section p {

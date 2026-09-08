@@ -16,11 +16,13 @@ export default function DukPage() {
   return (
     <main className="page">
       <div className="page-container">
-        <h1 className="page-title">{duk.subtitle}</h1>
+        {/* <h1 className="page-title">{duk.subtitle}</h1> */}
+
+        <h1 className="page-eyebrow">{duk.subtitle}</h1>
 
         <p className="page-lead">{duk.intro}</p>
 
-        <CtaSusisiekime />
+        {/* <CtaSusisiekime /> */}
 
         <div className="faq-list">
           {duk.items.map((item, index) => {
@@ -48,6 +50,9 @@ export default function DukPage() {
             );
           })}
         </div>
+                <p className="page-trail">{duk.trail}</p>
+
+        <CtaSusisiekime />
       </div>
     </main>
   );

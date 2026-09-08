@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
 
         <nav className="footer-col">
-          <h3>{t.footer.pagesTitle}</h3>
+          {/* <h3>{t.footer.pagesTitle}</h3> */}
           <ul>
             {pageOrder.map((id) => (
               <li key={id}>
@@ -27,8 +27,9 @@ export default function Footer() {
         </nav>
 
         <div className="footer-col">
-          <h3>{t.footer.contactTitle}</h3>
+          {/* <h3>{t.footer.contactTitle}</h3> */}
           <ul>
+            <li className="footer-address">{t.contact.address}</li>
             <li>
               <a href={`tel:${contactDetails.phone.replace(/\s/g, "")}`}>
                 {contactDetails.phone}
@@ -37,7 +38,6 @@ export default function Footer() {
             <li>
               <a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a>
             </li>
-            <li className="footer-address">{t.contact.address}</li>
           </ul>
         </div>
       </div>

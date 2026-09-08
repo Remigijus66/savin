@@ -21,8 +21,37 @@ const meta = {
   keywords: "psychotherapy Vilnius, gestalt therapy, therapist in English Vilnius",
 };
 
+const seo = {
+  home: {
+    title: "Gestalt psychotherapy in Vilnius | Jolita Palekaitė",
+    description:
+      "Gestalt psychotherapy in Vilnius and online, in Lithuanian and English. Individual sessions for adults: anxiety, relationships, burnout, personal growth.",
+  },
+  kasEsu: {
+    title: "About me | Jolita Palekaitė, gestalt practitioner",
+    description:
+      "My path into psychotherapy: gestalt studies at the “Dialogas” institute, psychology at Vilnius University, and volunteering at the Children's Line.",
+  },
+  kurKvieciu: {
+    title: "What I offer and believe | Jolita Palekaitė",
+    description:
+      "Personal psychotherapy in Vilnius: how I work, what I believe matters in therapeutic work, and what to expect from the first session onwards.",
+  },
+  duk: {
+    title: "FAQ about gestalt psychotherapy | Jolita Palekaitė",
+    description:
+      "Who gestalt psychotherapy is for, how long therapy lasts, what a session costs, whether I work remotely – answers to the most common questions.",
+  },
+  susisiekime: {
+    title: "Get in touch | Psychotherapy in Vilnius",
+    description:
+      "Get in touch about a first meeting: phone, email and the practice address at Liepyno g. 11, Vilnius. Sessions in Lithuanian and English.",
+  },
+};
+
 const ui = {
   ctaLabel: "GET IN TOUCH",
+  ctaKurKvieciuLabel: "WHAT I OFFER",
   languageLabel: "LT",
   languageTitle: "Lietuviškai",
   photoAlt: "Jolita Palekaitė, gestalt psychotherapy practitioner",
@@ -52,6 +81,8 @@ const contact = {
   emailLabel: "Email",
   addressLabel: "Address",
   address: "Liepyno g. 11, Vilnius",
+  messengerLabel: "Messenger",
+  messengerUrl: "https://m.me/jolitapalekaite",
 };
 
 /* ---------------- ABOUT ME ---------------- */
@@ -66,9 +97,28 @@ const kasEsu = {
     link: "click here",
     after: " if you would like to know a little more about me...",
   },
+  links: [
+    {
+      phrase: "Academy of Psychology",
+      url: "https://psichologijosakademija.lt/portfolio-item/psichologijos-akademija-praktine-psichologija/",
+    },
+    {
+      phrase: "Children's Line",
+      url: "https://www.vaikulinija.lt/tapk-savanoriu/emocines-paramos-savanoryste/",
+    },
+    {
+      phrase: "“Dialogas” institute",
+      url: "https://dialogas.net/",
+    },
+    {
+      phrase: "Vilnius University",
+      url: "https://www.vu.lt/stojantiesiems/bakalauro/psichologija-s",
+    },
+  ],
   teaser:
-    "My path into psychotherapy was not a short one. I dreamed of psychology back in school, and in 2023 I began gestalt psychotherapy studies at the “Dialogas” institute.",
-  teaserLink: "A little more about me",
+    // "My path into psychotherapy was not a short one. I dreamed of psychology back in school, and in 2023 I began gestalt psychotherapy studies at the “Dialogas” institute.",
+      "How I went from economist to therapist. And why it took so long",
+    teaserLink: "More",
 
   kelias: {
     title: "My path",
@@ -85,49 +135,38 @@ const kasEsu = {
       "In 2023 I began gestalt psychotherapy studies at the “Dialogas” institute and psychology studies at Vilnius University.",
       "I also learn during my own personal psychotherapy – together with my therapists I have already spent hundreds of hours travelling both the familiar, well-known paths of my personality (or are they?) and the ones never walked before.",
       "In my therapeutic work I am helped not only by academic knowledge, but by my own experiences of work, life and personal change. Successes and defeats, a fine career and unemployment, two daughters in a safe home and hundreds of children at the other end of the Children's Line telephone – this is the “capital” I bring with me to the therapist's chair.",
-      "Since 2025 I have been a gestalt psychotherapy practitioner. Accompanying people on their journey towards a truer, more authentic way of being with themselves and with others, I am also walking towards my own dream.",
+      "Since 2025 I have been a gestalt psychotherapy practitioner. I keep developing my skills in seminars and supervision. I am an associate member of the gestalt psychotherapy association.",
+      "Accompanying people on their journey towards a truer, more authentic way of being with themselves and with others, I am also walking towards my own dream.",
     ],
     groups: [
       {
         title: "Studies",
         items: [
-          {
-            text: "September 2023 – present – Bachelor's studies in psychology at the Faculty of Philosophy, Vilnius University",
-            url: "https://www.vu.lt/stojantiesiems/bakalauro/psichologija-s",
-          },
-          {
-            text: "February 2023 – present – gestalt psychotherapy studies at the “Dialogas” gestalt psychotherapy institute",
-            url: "https://dialogas.net/",
-          },
-          {
-            text: "February – June 2022 – emotional support volunteer training at the Children's Line",
-            url: "https://www.vaikulinija.lt/tapk-savanoriu/emocines-paramos-savanoryste/",
-          },
-          {
-            text: "September 2018 – June 2020 – non-formal studies in practical psychology at the Academy of Psychology",
-            url: "https://psichologijosakademija.lt/portfolio-item/psichologijos-akademija-praktine-psichologija/",
-          },
+          "September 2023 – present – Bachelor's studies in psychology at the Faculty of Philosophy, Vilnius University",
+          "February 2023 – present – gestalt psychotherapy studies at the “Dialogas” gestalt psychotherapy institute",
+          "February – June 2022 – emotional support volunteer training at the Children's Line",
+          "September 2018 – June 2020 – non-formal studies in practical psychology at the Academy of Psychology",
         ],
       },
       {
         title: "Continuing professional development",
         items: [
-          { text: "Gestalt Associates Training Los Angeles (GATLA) European Summer Residential Gestalt Therapy Training Program. Brno, Czech Republic, 19–31 July 2026." },
-          { text: "Lecture “Aggression as a rupture of contact”. Juraj Rektor, M.D. Online, 4 March 2026." },
-          { text: "10th Vilnius Conference on Suicide Intervention Methods. Suicidology Research Centre, Institute of Psychology, Vilnius University. Online, 5 December 2025." },
-          { text: "Conference “Dreams in tradition, psychology and everyday life: a transcultural perspective”. Lithuanian Humanistic Psychology Association. Vilnius, 22 November 2025." },
-          { text: "Lecture “On contemporary psychopathology”. Gianni Francesetti. Online, 30 October 2025." },
-          { text: "Seminar “Trauma and its treatment from the perspective of gestalt psychotherapy”. Dr. Stephanie Goldsmith. Online, 26 September 2025." },
-          { text: "ASIST suicide intervention skills training. Vilnius, 15–16 December 2022." },
+          "Gestalt Associates Training Los Angeles (GATLA) European Summer Residential Gestalt Therapy Training Program. Brno, Czech Republic, 19–31 July 2026.",
+          "Lecture “Aggression as a rupture of contact”. Juraj Rektor, M.D. Online, 4 March 2026.",
+          "10th Vilnius Conference on Suicide Intervention Methods. Suicidology Research Centre, Institute of Psychology, Vilnius University. Online, 5 December 2025.",
+          "Conference “Dreams in tradition, psychology and everyday life: a transcultural perspective”. Lithuanian Humanistic Psychology Association. Vilnius, 22 November 2025.",
+          "Lecture “On contemporary psychopathology”. Gianni Francesetti. Online, 30 October 2025.",
+          "Seminar “Trauma and its treatment from the perspective of gestalt psychotherapy”. Dr. Stephanie Goldsmith. Online, 26 September 2025.",
+          "ASIST suicide intervention skills training. Vilnius, 15–16 December 2022.",
         ],
       },
       {
         title: "Volunteering",
         items: [
-          { text: "Children's Line. June 2022 – present" },
-          { text: "“Viltis” summer camp for people with intellectual disabilities. Giruliai, 20–30 July 2025." },
-          { text: "The International Society for Prevention of Child Abuse and Neglect (ISPCAN) congress. Vilnius, 6–9 October 2025." },
-          { text: "22nd European Conference on Developmental Psychology. Vilnius, 25–29 August 2025." },
+          "Children's Line. June 2022 – present",
+          "“Viltis” summer camp for people with intellectual disabilities. Giruliai, 20–30 July 2025.",
+          "The International Society for Prevention of Child Abuse and Neglect (ISPCAN) congress. Vilnius, 6–9 October 2025.",
+          "22nd European Conference on Developmental Psychology. Vilnius, 25–29 August 2025.",
         ],
       },
     ],
@@ -147,16 +186,17 @@ const kasEsu = {
 const kurKvieciu = {
   title: "What I offer and believe",
   teaser:
-    "Personal psychotherapy is a meeting of two people. In a safe and supportive environment, at a pace that suits you, we explore your needs, feelings, thoughts and bodily sensations.",
-  teaserLink: "What I offer and believe",
+    // "Personal psychotherapy is a meeting of two people. In a safe and supportive environment, at a pace that suits you, we explore your needs, feelings, thoughts and bodily sensations.",
+ "What I offer, how I work and what matters to me",
+    teaserLink: "More",
 
   terapija: {
-    title: "Personal psychotherapy",
+    title: "An invitation to personal psychotherapy",
     paragraphs: [
       "Personal psychotherapy is a meeting of two people.",
       "I know it may sound strange – after all, you can meet a friend for coffee, chat with your mother on the phone or drop in on a neighbour. And that is wonderful – treasure those moments with the people close to you.",
       "But in a therapist's room something more is born than simply a pleasant conversation. Here, in a safe and supportive environment, at a pace that suits you, we explore your needs, feelings, thoughts and bodily sensations. We raise the “uncomfortable” questions and look for answers. Without rushing to judge or to change, we learn to understand ourselves better, to make more conscious choices and to take fuller responsibility for our life experiences.",
-      "As in any work, questions and difficulties sometimes arise for me too. That is why my psychotherapeutic work is supervised – meaning that I regularly discuss the questions that come up in my practice with a highly experienced supervisor.",
+      // "As in any work, questions and difficulties sometimes arise for me too. That is why my psychotherapeutic work is supervised – meaning that I regularly discuss the questions that come up in my practice with a highly experienced supervisor.",
     ],
   },
 
@@ -197,7 +237,8 @@ const kurKvieciu = {
 const duk = {
   title: "FAQ",
   subtitle: "Frequently asked questions",
-  intro: "Here you will find answers to the usual, frequently asked questions. And if you have others...",
+  intro: "Here you will find answers to the usual, frequently asked questions.",
+  trail: "Have another question?",
   teaserLink: "All questions and answers",
 
   items: [
@@ -310,6 +351,7 @@ const susisiekime = {
 export const en: SiteContent = {
   nav,
   meta,
+  seo,
   ui,
   home,
   footer,

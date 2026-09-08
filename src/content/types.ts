@@ -4,9 +4,10 @@ export type Lang = "lt" | "en";
 
 export type PageId = "home" | "kasEsu" | "kurKvieciu" | "duk" | "susisiekime";
 
-export type LinkItem = {
-  text: string;
-  url?: string;
+/** Fraze pastraipos viduryje, kuri virsta nuoroda. */
+export type PhraseLink = {
+  phrase: string;
+  url: string;
 };
 
 export type Principle = {
@@ -21,7 +22,13 @@ export type FaqItem = {
 
 export type Group = {
   title: string;
-  items: LinkItem[];
+  items: string[];
+};
+
+/** Kiekvieno puslapio <title> ir aprasymas paieskos sistemoms. */
+export type PageSeo = {
+  title: string;
+  description: string;
 };
 
 export type SiteContent = {
@@ -34,8 +41,13 @@ export type SiteContent = {
     keywords: string;
   };
 
+  /* Atskiras title/description kiekvienam puslapiui - kitaip visi
+     penki puslapiai paieskoje atrodo vienodai. */
+  seo: Record<PageId, PageSeo>;
+
   ui: {
     ctaLabel: string;
+    ctaKurKvieciuLabel: string;
     languageLabel: string;
     languageTitle: string;
     photoAlt: string;
@@ -63,12 +75,16 @@ export type SiteContent = {
     emailLabel: string;
     addressLabel: string;
     address: string;
+    messengerLabel: string;
+    messengerUrl: string;
   };
 
   kasEsu: {
     title: string;
     greeting: string;
     intro: string;
+    /* Frazes, kurios pastraipose renderinamos kaip nuorodos */
+    links: PhraseLink[];
     /* Sakinys su nuoroda i /kas-esu: before + <Link>link</Link> + after */
     introCta: { before: string; link: string; after: string };
     teaser: string;
@@ -91,6 +107,7 @@ export type SiteContent = {
     title: string;
     subtitle: string;
     intro: string;
+    trail: string;
     teaserLink: string;
     items: FaqItem[];
   };

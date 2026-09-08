@@ -1,4 +1,6 @@
+import CtaKurKvieciu from "../components/CtaKurKvieciu";
 import CtaSusisiekime from "../components/CtaSusisiekime";
+import RichText from "../components/RichText";
 import { useLang } from "../i18n";
 import "./Page.css";
 
@@ -9,19 +11,23 @@ export default function KasEsu() {
   return (
     <main className="page">
       <div className="page-container">
-        <h1 className="page-title">{kasEsu.title}</h1>
+        {/* <h1 className="page-title">{kasEsu.title}</h1> */}
 
-        <p className="page-lead">
+        <h1 className="page-eyebrow">{kasEsu.title}</h1>
+
+        {/* <p className="page-lead">
           {kasEsu.greeting}
           <br />
           {kasEsu.intro}
-        </p>
+        </p> */}
 
         <section className="page-section">
           <h2>{kasEsu.kelias.title}</h2>
           <div className="page-dash" />
           {kasEsu.kelias.paragraphs.map((text, index) => (
-            <p key={index}>{text}</p>
+            <p key={index}>
+              <RichText text={text} links={kasEsu.links} />
+            </p>
           ))}
         </section>
 
@@ -29,7 +35,9 @@ export default function KasEsu() {
           <h2>{kasEsu.studijos.title}</h2>
           <div className="page-dash" />
           {kasEsu.studijos.paragraphs.map((text, index) => (
-            <p key={index}>{text}</p>
+            <p key={index}>
+              <RichText text={text} links={kasEsu.links} />
+            </p>
           ))}
 
           {kasEsu.studijos.groups.map((group) => (
@@ -37,21 +45,13 @@ export default function KasEsu() {
               <h3>{group.title}</h3>
               <ul className="page-list">
                 {group.items.map((item, index) => (
-                  <li key={index}>
-                    {item.url ? (
-                      <a href={item.url} target="_blank" rel="noopener noreferrer">
-                        {item.text}
-                      </a>
-                    ) : (
-                      item.text
-                    )}
-                  </li>
+                  <li key={index}>{item}</li>
                 ))}
               </ul>
             </div>
           ))}
 
-          <CtaSusisiekime />
+          {/* <CtaSusisiekime /> */}
         </section>
 
         <section className="page-section">
@@ -61,7 +61,7 @@ export default function KasEsu() {
             <p key={index}>{text}</p>
           ))}
 
-          <CtaSusisiekime />
+          <CtaKurKvieciu />
         </section>
       </div>
     </main>

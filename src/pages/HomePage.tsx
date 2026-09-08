@@ -21,13 +21,13 @@ export default function HomePage() {
       to: path.kurKvieciu,
       variant: "bg2",
     },
-    {
-      title: t.duk.title,
-      text: t.duk.intro,
-      linkLabel: t.duk.teaserLink,
-      to: path.duk,
-      variant: "bg3",
-    },
+    // {
+    //   title: t.duk.title,
+    //   text: t.duk.intro,
+    //   linkLabel: t.duk.teaserLink,
+    //   to: path.duk,
+    //   variant: "bg3",
+    // },
   ];
 
   return (
@@ -50,10 +50,10 @@ export default function HomePage() {
           </div>
 
           <div className="home-contact">
-            <h3>{t.susisiekime.title}</h3>
-            <p>{t.susisiekime.teaser}</p>
+            {/* <h3>{t.susisiekime.title}</h3> */}
+            {/* <p>{t.susisiekime.teaser}</p> */}
             <Link to={path.susisiekime} className="cta-button">
-              {t.susisiekime.teaserLink}
+              {t.susisiekime.title}
             </Link>
           </div>
         </div>

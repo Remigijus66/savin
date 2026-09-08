@@ -20,8 +20,37 @@ const meta = {
   keywords: "psichoterapija Vilniuje, geštalto terapija, psichologas Vilnius",
 };
 
+const seo = {
+  home: {
+    title: "Geštaltinė psichoterapija Vilniuje | Jolita Palekaitė",
+    description:
+      "Geštaltinė psichoterapija Vilniuje ir nuotoliu. Individualios konsultacijos suaugusiems: nerimas, santykių sunkumai, perdegimas, asmeninis augimas.",
+  },
+  kasEsu: {
+    title: "Kas esu | Jolita Palekaitė, psichoterapijos praktikė",
+    description:
+      "Mano kelias į psichoterapiją: geštaltinės psichoterapijos studijos institute „Dialogas“, psichologija Vilniaus universitete, savanorystė Vaikų linijoje.",
+  },
+  kurKvieciu: {
+    title: "Kur kviečiu ir kuo tikiu | Jolita Palekaitė",
+    description:
+      "Asmeninė psichoterapija Vilniuje: kaip dirbu, kuo tikiu terapiniame darbe ir ko tikėtis nuo pirmųjų susitikimų iki proceso pabaigos.",
+  },
+  duk: {
+    title: "DUK apie geštaltinę psichoterapiją | Jolita Palekaitė",
+    description:
+      "Kam tinka geštaltinė psichoterapija, kiek trunka terapija, kiek kainuoja konsultacija, ar dirbu nuotoliniu būdu – atsakymai į dažniausius klausimus.",
+  },
+  susisiekime: {
+    title: "Susisiekime | Psichoterapija Vilniuje, Liepyno g. 11",
+    description:
+      "Susisiekite dėl pirmojo susitikimo: telefonas, el. paštas ir kabineto adresas Vilniuje, Liepyno g. 11. Konsultuoju lietuvių ir anglų kalbomis.",
+  },
+};
+
 const ui = {
   ctaLabel: "SUSISIEKIME",
+  ctaKurKvieciuLabel: "KUR KVIEČIU",
   languageLabel: "EN",
   languageTitle: "In English",
   photoAlt: "Jolita Palekaitė, geštaltinės psichoterapijos praktikė",
@@ -51,6 +80,8 @@ const contact = {
   emailLabel: "El. paštas",
   addressLabel: "Adresas",
   address: "Liepyno g. 11, Vilnius",
+  messengerLabel: "Messenger",  
+  messengerUrl: "https://m.me/jolitapalekaite",
 };
 
 /* ---------------- KAS ESU ---------------- */
@@ -65,9 +96,28 @@ const kasEsu = {
     link: "spauskite čia",
     after: ", jei norite šiek tiek daugiau sužinoti apie mane...",
   },
+  links: [
+    {
+      phrase: "Psichologijos akademijoje",
+      url: "https://psichologijosakademija.lt/portfolio-item/psichologijos-akademija-praktine-psichologija/",
+    },
+    {
+      phrase: "Vaikų linijoje",
+      url: "https://www.vaikulinija.lt/tapk-savanoriu/emocines-paramos-savanoryste/",
+    },
+    {
+      phrase: "institute „Dialogas“",
+      url: "https://dialogas.net/",
+    },
+    {
+      phrase: "Vilniaus universitete",
+      url: "https://www.vu.lt/stojantiesiems/bakalauro/psichologija-s",
+    },
+  ],
   teaser:
-    "Mano kelias į psichoterapiją – netrumpas. Apie psichologiją svajojau dar mokykloje, o geštaltinės psichoterapijos studijas institute „Dialogas“ pradėjau 2023-iaisiais.",
-  teaserLink: "Šiek tiek daugiau apie mane",
+    // "Mano kelias į psichoterapiją – netrumpas. Apie psichologiją svajojau dar mokykloje, o geštaltinės psichoterapijos studijas institute „Dialogas“ pradėjau 2023-iaisiais.",
+      "Kaip iš ekonomistės tapau terapeute. Ir kodėl tai užtruko",
+    teaserLink: "Daugiau",
 
   kelias: {
     title: "Mano kelias",
@@ -84,49 +134,38 @@ const kasEsu = {
       "2023-iaisiais pradėjau geštaltinės psichoterapijos studijas institute „Dialogas“ ir psichologijos studijas Vilniaus universitete.",
       "Mokausi ir savo asmeninės psichoterapijos metu – jau šimtus valandų kartu su savo terapeutais „keliauju“ tiek įprastais ir pažįstamais (ar tikrai?), tiek nepramintais savo asmenybės takais.",
       "Terapiniame darbe man padeda ne tik akademinės žinios, bet ir mano pačios darbo, gyvenimo ir asmeninių pokyčių patirtys. Sėkmės ir pralaimėjimai, puiki karjera ir bedarbystė, dvi dukros saugiuose namuose ir šimtai vaikų prie „Vaikų linijos“ telefono ragelio – tai mano „kapitalas“, su kuriuo sėduosi į terapeutės krėslą.",
-      "Nuo 2025-ųjų esu geštaltinės psichoterapijos praktikė. Lydėdama žmones jų kelionėje į tikresnį, autentiškesnį buvimą su savimi ir kitais, drauge ir pati žengiu savo svajonės link.",
+      "Nuo 2025-ųjų esu geštaltinės psichoterapijos praktikė. Nuolat tobulinu savo įgūdžius seminaruose ir supervizijose. Esu geštaltinės psichoterapijos asociacijos asocijuota narė.",
+      "Lydėdama žmones jų kelionėje į tikresnį, autentiškesnį buvimą su savimi ir kitais, drauge ir pati žengiu savo svajonės link.",
     ],
     groups: [
       {
         title: "Studijos",
         items: [
-          {
-            text: "2023 m. rugsėjis – iki dabar – psichologijos bakalauro studijos Vilniaus Universiteto Filosofijos fakultete",
-            url: "https://www.vu.lt/stojantiesiems/bakalauro/psichologija-s",
-          },
-          {
-            text: "2023 m. vasaris – iki dabar – geštaltinės psichoterapijos studijos geštaltinės psichoterapijos institute „Dialogas“",
-            url: "https://dialogas.net/",
-          },
-          {
-            text: "2022 m. vasaris – birželis – Vaikų linijos emocinės paramos savanorių mokymai",
-            url: "https://www.vaikulinija.lt/tapk-savanoriu/emocines-paramos-savanoryste/",
-          },
-          {
-            text: "2018 m. rugsėjis – 2020 m. birželis – praktinės psichologijos neformaliosios studijos Psichologijos akademijoje",
-            url: "https://psichologijosakademija.lt/portfolio-item/psichologijos-akademija-praktine-psichologija/",
-          },
+          "2023 m. rugsėjis – iki dabar – psichologijos bakalauro studijos Vilniaus Universiteto Filosofijos fakultete",
+          "2023 m. vasaris – iki dabar – geštaltinės psichoterapijos studijos geštaltinės psichoterapijos institute „Dialogas“",
+          "2022 m. vasaris – birželis – Vaikų linijos emocinės paramos savanorių mokymai",
+          "2018 m. rugsėjis – 2020 m. birželis – praktinės psichologijos neformaliosios studijos Psichologijos akademijoje",
         ],
       },
       {
         title: "Kvalifikacijos kėlimas",
         items: [
-          { text: "Gestalt Associates Training Los Angeles (GATLA) European Summer Residential Gestalt Therapy Training Program. Brno, Čekija, 2026 m. liepos 19-31 d." },
-          { text: "Paskaita „Agresija kaip kontakto trūkis“. Juraj Rektor, M.D. Online, 2026 m. kovo 4 d." },
-          { text: "10-oji Vilniaus savižudybių intervencijos metodų konferencija. VU Psichologijos instituto Suicidologijos tyrimų centras. Online, 2025 m. gruodžio 5 d." },
-          { text: "Konferencija „Sapnas tradicijoje, psichologijoje ir kasdienybėje: transkultūrinė perspektyva“. Lietuvos humanistinės psichologijos asociacija. Vilnius, 2025 m. lapkričio 22 d." },
-          { text: "Paskaita „Apie šiuolaikinę psichopatologiją“. Gianni Francesetti. Online, 2025 m. spalio 30 d." },
-          { text: "Seminaras „Trauma ir jos gydymas geštaltinės psichoterapijos požiūriu“. Dr. Stephanie Goldsmith. Online, 2025 m. rugsėjo 26 d." },
-          { text: "Savižudybių intervencijos įgūdžių mokymai ASIST. Vilnius, 2022 m. gruodžio 15-16 d." },
+          "Gestalt Associates Training Los Angeles (GATLA) European Summer Residential Gestalt Therapy Training Program. Brno, Čekija, 2026 m. liepos 19-31 d.",
+          "Paskaita „Agresija kaip kontakto trūkis“. Juraj Rektor, M.D. Online, 2026 m. kovo 4 d.",
+          "10-oji Vilniaus savižudybių intervencijos metodų konferencija. VU Psichologijos instituto Suicidologijos tyrimų centras. Online, 2025 m. gruodžio 5 d.",
+          "Konferencija „Sapnas tradicijoje, psichologijoje ir kasdienybėje: transkultūrinė perspektyva“. Lietuvos humanistinės psichologijos asociacija. Vilnius, 2025 m. lapkričio 22 d.",
+          "Paskaita „Apie šiuolaikinę psichopatologiją“. Gianni Francesetti. Online, 2025 m. spalio 30 d.",
+          "Seminaras „Trauma ir jos gydymas geštaltinės psichoterapijos požiūriu“. Dr. Stephanie Goldsmith. Online, 2025 m. rugsėjo 26 d.",
+          "Savižudybių intervencijos įgūdžių mokymai ASIST. Vilnius, 2022 m. gruodžio 15-16 d.",
         ],
       },
       {
         title: "Savanorystė",
         items: [
-          { text: "Vaikų linija. 2022 m. birželis – iki dabar" },
-          { text: "Sutrikusio intelekto žmonių vasaros stovykla „Viltis“. Giruliai, 2025 m. liepos 20-30 d." },
-          { text: "The International Society for Prevention of Child Abuse and Neglect (ISPCAN) kongresas. Vilnius, 2025 m. spalio 6-9 d." },
-          { text: "22-oji Europos raidos psichologijos konferencija. Vilnius, 2025 m. rugpjūčio 25-29 d." },
+          "Vaikų linija. 2022 m. birželis – iki dabar",
+          "Sutrikusio intelekto žmonių vasaros stovykla „Viltis“. Giruliai, 2025 m. liepos 20-30 d.",
+          "The International Society for Prevention of Child Abuse and Neglect (ISPCAN) kongresas. Vilnius, 2025 m. spalio 6-9 d.",
+          "22-oji Europos raidos psichologijos konferencija. Vilnius, 2025 m. rugpjūčio 25-29 d.",
         ],
       },
     ],
@@ -146,16 +185,17 @@ const kasEsu = {
 const kurKvieciu = {
   title: "Kur kviečiu ir kuo tikiu",
   teaser:
-    "Asmeninė psichoterapija – tai dviejų žmonių susitikimas. Saugioje ir palaikančioje aplinkoje, jums priimtinu tempu, tyrinėjame jūsų poreikius, jausmus, mintis, kūno pojūčius.",
-  teaserLink: "Kur kviečiu ir kuo tikiu",
+    // "Asmeninė psichoterapija – tai dviejų žmonių susitikimas. Saugioje ir palaikančioje aplinkoje, jums priimtinu tempu, tyrinėjame jūsų poreikius, jausmus, mintis, kūno pojūčius.",
+ "Ką siūlau, kaip dirbu ir kas man svarbu",
+    teaserLink: "Daugiau",
 
   terapija: {
-    title: "Asmeninė psichoterapija",
+    title: "Kviečiu asmeninei psichoterapijai",
     paragraphs: [
       "Asmeninė psichoterapija – tai dviejų žmonių susitikimas.",
       "Žinau, gali skambėti keistai – juk susitikti kavos galite su draugu, telefonu paplepėti su mama ar užsukti pas kaimynę. Ir tai nuostabu – branginkite šias akimirkas su artimais žmonėmis.",
       "Tačiau terapeuto kabinete gimsta kai kas daugiau nei tiesiog mielas pašnekesys. Čia, saugioje ir palaikančioje aplinkoje, jums priimtinu tempu, tyrinėjame jūsų poreikius, jausmus, mintis, kūno pojūčius. Keliame „nepatogius“ klausimus ir ieškome atsakymų. Neskubėdami vertinti ar keisti, mokomės geriau save suprasti, daryti sąmoningesnius pasirinkimus ir drąsiau prisiimti atsakomybę už savo gyvenimo patirtis.",
-      "Kaip ir kiekviename darbe, man kartais taip pat iškyla klausimų ar sunkumų. Todėl mano psichoterapinis darbas yra supervizuojamas – tai reiškia, kad praktikoje iškilusius klausimus reguliariai aptariu su didelę patirtį turinčia supervizore.",
+      // "Kaip ir kiekviename darbe, man kartais taip pat iškyla klausimų ar sunkumų. Todėl mano psichoterapinis darbas yra supervizuojamas – tai reiškia, kad praktikoje iškilusius klausimus reguliariai aptariu su didelę patirtį turinčia supervizore.",
     ],
   },
 
@@ -196,7 +236,8 @@ const kurKvieciu = {
 const duk = {
   title: "DUK",
   subtitle: "Dažniausiai užduodami klausimai",
-  intro: "Čia rasite atsakymus į įprastus, dažnai kylančius klausimus. O jei turite kitų klausimų...",
+  intro: "Čia rasite atsakymus į įprastus, dažnai kylančius klausimus.",
+  trail: "Turite kitų klausimų?",
   teaserLink: "Visi klausimai ir atsakymai",
 
   items: [
@@ -309,6 +350,7 @@ const susisiekime = {
 export const lt: SiteContent = {
   nav,
   meta,
+  seo,
   ui,
   home,
   footer,

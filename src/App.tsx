@@ -31,7 +31,7 @@ import ClientsPage from "./pages/ClientsPage";
 
 export default function App() {
 
-  const { t, otherLang, otherPath } = useLang();
+  const { t, pageId, path, otherLang, otherPath } = useLang();
 
 
 useEffect(() => {
@@ -67,10 +67,12 @@ useEffect(() => {
  {/* Reikia perkelti Helmet į atskirą komponentą, kad būtų galima dinamiškai keisti meta duomenis pagal puslapį. Šiuo metu Helmet yra App komponente, todėl meta duomenys yra bendri visiems puslapiams. Reikėtų sukurti atskirą komponentą, pvz., SEO, kuris priimtų props ir nustatytų meta duomenis pagal puslapį./ */}
   <Helmet>
     <html lang={t.meta.htmlLang} />
-    <title>{t.meta.title}</title>
-    <meta name="description" content={t.meta.description} />
+    <title>{t.seo[pageId].title}</title>
+    <meta name="description" content={t.seo[pageId].description} />
     <meta name="keywords" content={t.meta.keywords} />
+    <link rel="canonical" href={`https://savin.lt${path[pageId]}`} />
     <link rel="alternate" hrefLang={otherLang} href={`https://savin.lt${otherPath}`} />
+    <link rel="alternate" hrefLang={t.meta.htmlLang} href={`https://savin.lt${path[pageId]}`} />
   </Helmet>
 
 

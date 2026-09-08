@@ -9,7 +9,9 @@ export default function KurKvieciu() {
   return (
     <main className="page">
       <div className="page-container">
-        <h1 className="page-title">{kurKvieciu.title}</h1>
+        {/* <h1 className="page-title">{kurKvieciu.title}</h1> */}
+
+        <h1 className="page-eyebrow">{kurKvieciu.title}</h1>
 
         <section className="page-section">
           <h2>{kurKvieciu.terapija.title}</h2>
@@ -18,34 +20,35 @@ export default function KurKvieciu() {
             <p key={index}>{text}</p>
           ))}
 
-          <CtaSusisiekime />
+          {/* <CtaSusisiekime /> */}
         </section>
 
         <section className="page-section">
           <h2>{kurKvieciu.principai.title}</h2>
           <div className="page-dash" />
           <p>{kurKvieciu.principai.intro}</p>
-
-          <div className="page-cards">
+          </section>
+      
             {kurKvieciu.principai.items.map((item) => (
-              <article key={item.title} className="page-card">
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+            
+        <section className="page-section">
+          <h2>{item.title}</h2>
+          <div className="page-dash" />
+          <p>{item.text}</p>
+          </section>
             ))}
-          </div>
+          {/* </div> */}
 
-          <CtaSusisiekime />
-        </section>
+          {/* <CtaSusisiekime /> */}
 
         <section className="page-section">
           <h2>{kurKvieciu.koTiketis.title}</h2>
           <div className="page-dash" />
-          <ol className="page-steps">
+          <ul className="page-steps">
             {kurKvieciu.koTiketis.items.map((text, index) => (
               <li key={index}>{text}</li>
             ))}
-          </ol>
+          </ul>
 
           <CtaSusisiekime />
         </section>

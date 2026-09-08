@@ -9,12 +9,19 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact-section">
+      <h1 className="page-eyebrow contact-eyebrow">{t.contact.title}</h1>
+
       <div className="contact-grid">
         {/* LEFT LARGE CARD */}
         <div className="contact-card contact-info-card">
-          <h2 className="contact-title">{t.contact.title}</h2>
+          {/* <h2 className="contact-title">{t.contact.title}</h2> */}
 
           <div className="contact-items">
+            <div className="contact-item">
+              <p className="contact-label">{t.contact.addressLabel}</p>
+              <p className="contact-value">{t.contact.address}</p>
+            </div>
+            
             <div className="contact-item">
               <p className="contact-label">{t.contact.phoneLabel}</p>
               <a href={`tel:${phone}`} className="contact-value default-link">
@@ -30,9 +37,13 @@ export default function Contact() {
             </div>
 
             <div className="contact-item">
-              <p className="contact-label">{t.contact.addressLabel}</p>
-              <p className="contact-value">{t.contact.address}</p>
+              <p className="contact-label">{t.contact.messengerLabel}</p>
+              {/* <p className="contact-value">{t.contact.messengerUrl}</p> */}
+              <a href={t.contact.messengerUrl} className="contact-value default-link" target="_blank" rel="noopener noreferrer">
+                {t.contact.messengerUrl}
+              </a>
             </div>
+
           </div>
         </div>
 
@@ -46,12 +57,12 @@ export default function Contact() {
             ></iframe>
           </div>
 
-          <div
+          {/* <div
             className="contact-card contact-image"
             style={{
               backgroundImage: "url('/liepyno11.png')",
             }}
-          />
+          /> */}
         </div>
       </div>
     </section>
