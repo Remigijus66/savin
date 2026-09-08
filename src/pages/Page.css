@@ -1,4 +1,4 @@
-/* Bendri turinio puslapių stiliai: Kas esu, Kur kviečiu ir kuo tikiu, DUK */
+/* Bendri turinio puslapių stiliai: Kas esu, Kur kviečiu, DUK */
 
 .page {
   background: var(--bg-section-alt);
@@ -61,21 +61,8 @@
   margin-bottom: 72px;
 }
 
-.page-section h2 
-{
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  line-height: 1.25;
-  letter-spacing: -1px;
-
-  font-family: "Noto Serif Display", serif;
-  color: var(--text-header);
-  font-weight: 400;
-
-  margin: 0 0 8px;
-}
-
-.page-section h1 
-{
+.page-section h1,
+.page-section h2 {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 1.25;
   letter-spacing: -1px;
