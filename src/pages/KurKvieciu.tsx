@@ -31,7 +31,7 @@ export default function KurKvieciu() {
       
             {kurKvieciu.principai.items.map((item) => (
             
-        <section className="page-section">
+        <section key={item.title} className="page-section">
           <h2>{item.title}</h2>
           <div className="page-dash" />
           <p>{item.text}</p>
