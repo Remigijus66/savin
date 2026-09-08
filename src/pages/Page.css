@@ -66,6 +66,7 @@
   margin-bottom: 72px;
 }
 
+.page-section h1,
 .page-section h2 {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   line-height: 1.25;

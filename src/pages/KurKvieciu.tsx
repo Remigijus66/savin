@@ -11,10 +11,10 @@ export default function KurKvieciu() {
       <div className="page-container">
         {/* <h1 className="page-title">{kurKvieciu.title}</h1> */}
 
-        <h1 className="page-eyebrow">{kurKvieciu.title}</h1>
+        <p className="page-eyebrow">{kurKvieciu.title}</p>
 
         <section className="page-section">
-          <h2>{kurKvieciu.terapija.title}</h2>
+          <h1>{kurKvieciu.terapija.title}</h1>
           <div className="page-dash" />
           {kurKvieciu.terapija.paragraphs.map((text, index) => (
             <p key={index}>{text}</p>
