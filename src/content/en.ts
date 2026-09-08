@@ -175,7 +175,7 @@ const kasEsu = {
   gyvenimas: {
     title: "What I do in life besides therapy",
     paragraphs: [
-      "I am a mother of two daughters. I volunteer. I like watching people and birds. I grow flowers, medicinal herbs and weeds. I love dogs, though I have kept more cats. I adore horses (I have owned them and will again). I make soap. I am learning French. In summer I climb mountains. I experiment in the vegetable garden (so far without success). One day I want to learn to knit and to cook.",
+      "I am a mother of two daughters. I volunteer. I like watching people and birds. I grow flowers, medicinal herbs and weeds. I love dogs, though I have kept more cats. I adore horses. I make soap. I am learning French. In summer I climb mountains. I experiment in the vegetable garden (so far without success). One day I want to learn to knit and to cook.",
       "In short – I simply love nature, life and people.",
     ],
   },
@@ -342,7 +342,7 @@ const duk = {
 
 const susisiekime = {
   title: "Get in touch",
-  teaser: "Have a question, or would you like to arrange a first meeting? Write or call.",
+  teaser: "Have a question, or would you like to arrange a first meeting?",
   teaserLink: "Contact",
 };
 

@@ -27,16 +27,17 @@ export default function KurKvieciu() {
           <h2>{kurKvieciu.principai.title}</h2>
           <div className="page-dash" />
           <p>{kurKvieciu.principai.intro}</p>
+              {kurKvieciu.principai.items.map((item) => (
+            
+        <div key={item.title} >
+          <h3>{item.title}</h3>
+          {/* <div className="page-dash" /> */}
+          <p>{item.text}</p>
+          </div>
+            ))}
           </section>
       
-            {kurKvieciu.principai.items.map((item) => (
-            
-        <section key={item.title} className="page-section">
-          <h2>{item.title}</h2>
-          <div className="page-dash" />
-          <p>{item.text}</p>
-          </section>
-            ))}
+      
           {/* </div> */}
 
           {/* <CtaSusisiekime /> */}

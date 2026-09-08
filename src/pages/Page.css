@@ -2,11 +2,9 @@
 
 .page {
   background: var(--bg-section-alt);
-  background-image: linear-gradient(
-    to bottom,
-    var(--bg-section-alt) 85%,
-    var(--bg-section) 100%
-  );
+  background-image: linear-gradient(to bottom,
+      var(--bg-section-alt) 85%,
+      var(--bg-section) 100%);
 
   padding: 140px 24px 96px;
   min-height: 100vh;
@@ -54,7 +52,7 @@
   color: var(--accent-active);
   text-align: center;
 
-  margin:32px 0 0;
+  margin: 32px 0 0;
 }
 
 .page-section {
@@ -73,16 +71,15 @@
 
   margin: 0 0 8px;
 }
-
 .page-section h3 {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+font-size: clamp(1.2rem, 2vw, 1.5rem);
   line-height: 1.4;
 
   font-family: "Noto Serif Display", serif;
   color: var(--text-header);
   font-weight: 400;
 
-  margin: 40px 0 8px;
+   margin: 0 0 8px;
 }
 
 .page-dash {
@@ -125,7 +122,7 @@
 
   /* padding: 0 0 16px 24px; */
   /* padding: 0 0 16px 0px; */
-    margin: 0 0 20px;
+  margin: 0 0 20px;
   position: relative;
 }
 
@@ -265,6 +262,7 @@
   .page-lead {
     margin-bottom: 44px;
   }
+
   .page-trail {
     margin-top: 2dvh;
   }

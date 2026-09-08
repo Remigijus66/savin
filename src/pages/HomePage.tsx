@@ -51,7 +51,7 @@ export default function HomePage() {
 
           <div className="home-contact">
             {/* <h3>{t.susisiekime.title}</h3> */}
-            {/* <p>{t.susisiekime.teaser}</p> */}
+            <p>{t.susisiekime.teaser}</p>
             <Link to={path.susisiekime} className="cta-button">
               {t.susisiekime.title}
             </Link>

@@ -174,7 +174,7 @@ const kasEsu = {
   gyvenimas: {
     title: "Kuo, be terapijos, užsiimu gyvenime",
     paragraphs: [
-      "Esu 2 dukrų mama. Savanoriauju. Mėgstu stebėti žmones ir paukščius. Auginu gėles, vaistažoles ir piktžoles. Myliu šunis, nors kačių esu auginusi daugiau. Dievinu žirgus (esu buvusi ir būsima jų savininkė). Gaminu muilą. Mokausi prancūzų kalbos. Vasarą lipu į kalnus. Eksperimentuoju (kol kas nesėkmingai) darže. Kada nors noriu išmokti megzti ir gaminti maistą.",
+      "Esu 2 dukrų mama. Savanoriauju. Mėgstu stebėti žmones ir paukščius. Auginu gėles, vaistažoles ir piktžoles. Myliu šunis, nors kačių esu auginusi daugiau. Dievinu žirgus. Gaminu muilą. Mokausi prancūzų kalbos. Vasarą lipu į kalnus. Eksperimentuoju (kol kas nesėkmingai) darže. Kada nors noriu išmokti megzti ir gaminti maistą.",
       "Jei trumpiau – tiesiog myliu gamtą, gyvenimą ir žmones.",
     ],
   },
@@ -341,7 +341,7 @@ const duk = {
 
 const susisiekime = {
   title: "Susisiekime",
-  teaser: "Turite klausimų ar norite susitarti dėl pirmojo susitikimo? Parašykite arba paskambinkite.",
+  teaser: "Turite klausimų ar norite susitarti dėl pirmojo susitikimo?",
   teaserLink: "Kontaktai",
 };
 

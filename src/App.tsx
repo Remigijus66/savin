@@ -87,12 +87,14 @@ useEffect(() => {
       <Route path="/duk" element={<DukPage />} />
       <Route path="/susisiekime" element={<Susisiekime />} />
 
-      {/* English */}
-      <Route path="/en" element={<HomePage />} />
+      {/* English, temporary disabled */}
+      {/* <Route path="/en" element={<HomePage />} />
       <Route path="/en/about-me" element={<KasEsu />} />
       <Route path="/en/what-i-offer" element={<KurKvieciu />} />
       <Route path="/en/faq" element={<DukPage />} />
-      <Route path="/en/contact" element={<Susisiekime />} />
+      <Route path="/en/contact" element={<Susisiekime />} /> */}
+    
+    
       <Route path="/booking"    element={
           <ProtectedRoute adminOnly>
             <BookingPage />

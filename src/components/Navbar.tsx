@@ -77,7 +77,9 @@ async function logout() {
             </NavLink>
           ))}
 
-          <Link
+          {/* temporaty disabled */}
+
+          {/* <Link
             to={otherPath}
             className="lang-switch"
             hrefLang={otherLang}
@@ -85,7 +87,7 @@ async function logout() {
             onClick={handleClick}
           >
             {t.ui.languageLabel}
-          </Link>
+          </Link> */}
             {isAdmin && (
     <>
       <Link to="/clients">
