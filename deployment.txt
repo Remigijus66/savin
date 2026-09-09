@@ -27,6 +27,13 @@ git push origin deploy
 git checkout main
 
 
+PRIEŠ PALEIDŽIANT: sustabdyti dev/preview serverius (npm run dev,
+npm run preview). Kitaip esbuild.exe ir rollup .node failai lieka
+užrakinti, node_modules neišsitrina ir "git add" gali įtraukti jo
+likučius. Jei taip nutiktų:
+    git add -A -- . ':(exclude)node_modules'
+
+
 Kodėl būtent taip (senoji versija turėjo tris klaidas):
 
 1. tempDeploy trinamas PRIEŠ "git add".

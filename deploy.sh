@@ -17,6 +17,8 @@ echo "==> dist -> tempDeploy"
 rm -rf tempDeploy
 cp -r dist tempDeploy
 
+# PRIEŠ PALEIDŽIANT: sustabdyti dev/preview serverius - kitaip liks
+# užrakinti esbuild/rollup failai node_modules kataloge
 echo "==> deploy šaka"
 git checkout deploy
 git pull --ff-only origin deploy
