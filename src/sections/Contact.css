@@ -1,0 +1,214 @@
+.contact-section {
+  padding: 120px 32px;
+
+  background: var(--bg-section-alt);
+}
+
+/* ---------- GRID ---------- */
+
+.contact-grid {
+  max-width: 1400px;
+  min-height: 60vh;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 40px;
+}
+
+/* RIGHT COLUMN STACK */
+
+.contact-right-column {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr;
+
+  gap: 40px;
+}
+
+/* ---------- CARD BASE ---------- */
+
+.contact-card {
+
+  background: var(--bg-card3);
+
+  border: 1px solid var(--card-border);
+  border-radius: 36px;
+
+  padding: 48px;
+
+  box-shadow: var(--shadow-soft);
+
+  overflow: hidden;
+}
+
+/* ---------- LEFT CARD ---------- */
+
+.contact-info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-title {
+  margin-bottom: 48px;
+
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+
+  color: var(--color-primary);
+}
+
+/* ITEMS */
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+
+  gap: 32px;
+}
+
+.contact-label {
+  margin: 0 0 10px;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: var(--color-accent);
+}
+
+.contact-value {
+  margin: 0;
+
+  font-size: 1.25rem;
+  line-height: 1.6;
+
+  color: var(--color-dark);
+}
+
+/* LINKS */
+
+.default-link {
+  color: rgb(0, 95, 219);
+  text-decoration: none;
+}
+
+.default-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- MAP ---------- */
+
+.contact-map {
+
+  min-height: 320px;
+  padding: 0 !important;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ---------- IMAGE ---------- */
+
+.contact-image {
+  min-height: 320px;
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------- LARGE TABLETS ---------- */
+
+@media (max-width: 1200px) {
+  .contact-card {
+    padding: 40px;
+    border-radius: 28px;
+  }
+}
+
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 1000px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-right-column {
+    grid-template-rows: auto;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 16px;
+  }
+
+  .contact-card {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .contact-title {
+    margin-bottom: 32px;
+  }
+
+  .contact-items {
+    gap: 24px;
+  }
+
+  .contact-value {
+    font-size: 1.1rem;
+  }
+
+  .contact-map,
+  .contact-image {
+    min-height: 260px;
+  }
+}
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 60px 12px;
+  }
+
+  .contact-card {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .contact-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+  }
+
+  .contact-label {
+    font-size: 0.8rem;
+  }
+
+  .contact-map,
+  .contact-image {
+    min-height: 220px;
+  }
+}
+/* puslapio antraste virs korteliu */
+.contact-eyebrow {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}

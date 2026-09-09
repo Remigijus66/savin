@@ -69,3 +69,6 @@ export default tseslint.config([
 ])
 ```
 # savin
+
+LocalHost dubliavimas: 
+ngrok http 5173   

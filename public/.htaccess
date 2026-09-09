@@ -1,0 +1,14 @@
+# Vienpuslapė programa (React Router): visi maršrutai grąžinami į index.html.
+# Be šito /kas-esu, /duk ir kiti adresai atidaryti tiesiogiai duotų 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # esami failai ir katalogai atiduodami kaip yra
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # visa kita - į index.html
+  RewriteRule ^ index.html [L]
+</IfModule>

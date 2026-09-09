@@ -1,68 +1,237 @@
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  /* display: flex; */
+  /* place-items: center; */
+  min-width: 320px;
+  /* min-height: 100vh; */
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* p {
+  font-family: "Inter", sans-serif;
+} */
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url("./fonts/NotoSans-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url("./fonts/NotoSans-Italic-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+
+@font-face {
+    font-family: 'Noto Serif Display';
+    src: url("./fonts/NotoSerifDisplay-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Serif Display';
+    src: url("./fonts/NotoSerifDisplay-Italic-VariableFont_wdth\,wght.ttf") format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
 :root {
+  --bg-section: #F2F1EA;
+  --bg-section-alt: #FBFAF6;
+
+  --bg-card1: #5A6A45;
+  --bg-card2: #E3E8D8;
+  --bg-card3: #F7F5EF;
+
+  --text-header: #232a17;
+  --text-main: #2C3320;
+  --text-muted: #787A6C;
+  --text-accent: #8A5A32;
+  --text-white: #F7F5EF;
+
+  --accent: #A8B48C;
+  --accent-soft: #C6CFB2;
+  --accent-active: #6B7A4E;
+
+  --card-border: #E1DFD4;
+
+  
+  
+  
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  
+  --container: 1280px;
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+.theme-experimental {
+  --bg-card1: #665c96 ;
+  --bg-card2: #dbeff2;
+  --bg-card3: #f9f7f4;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
+h1, h2, h3 {
+  font-family: "Noto Serif Display", serif;
+  letter-spacing: -0.02em;
 }
 
-h1 {
-  font-size: 3.2em;
+.nav-links a {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.heading-xl {
+  font-size: clamp(3rem, 5vw, 5rem);
   line-height: 1.1;
+  letter-spacing: -2.5px;
+  margin-bottom: 20px;
+  font-family: "Noto Serif Display", serif;
+  color: var(--text-header);
+  font-weight: 400;
+  text-align: center;
+}
+/* ---------- TABLETS ---------- */
+
+@media (max-width: 992px) { 
+
+  
+}
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) { 
+
+  .heading-xl {
+    letter-spacing: -1.5px;
+  }
+}  
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+  .heading-xl {
+    font-size: 2.2rem;
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+
+
+/* ---------- CTA mygtukas (bendras) ---------- */
+
+
+.page-cta {
+  display: flex;
+  justify-content: center;
+
+  margin: 48px 0 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.cta-button {
+  display: inline-block;
+
+  padding: 14px 40px;
+
+  border: 1px solid var(--accent-active);
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--accent-active);
+
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: var(--accent-active);
+  color: var(--text-white);
+}
+
+.cta-button-solid {
+  background: var(--accent-active);
+  color: var(--text-white);
+}
+
+.cta-button-solid:hover {
+  background: transparent;
+  color: var(--accent-active);
+}
+
+/* nuoroda teksto viduryje */
+.inline-link {
+  color: var(--accent-active);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.inline-link:hover {
+  color: var(--text-accent);
+  border-bottom-color: currentColor;
+}
+
+/* ---------- PUSLAPIO ANTRASTE (eyebrow) ---------- */
+/* Kiekvienam puslapiui reikia vieno <h1>. Cia jis mazas, isskirstytas
+   didziosiomis - matomas, bet netrukdo dizainui. */
+
+.page-eyebrow {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 1.6;
+
+  color: var(--accent-active);
+
+  margin: 0 0 28px;
+}
+
+.page-eyebrow::after {
+  content: "";
+
+  display: block;
+  width: 32px;
+  height: 1px;
+
+  background: var(--accent-soft);
+
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .page-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 20px;
   }
 }
