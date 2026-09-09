@@ -318,7 +318,7 @@ const duk = {
     {
       question: "How much does a session cost?",
       answer: [
-        "One 50-minute session costs 35 EUR on weekdays and 45 EUR at weekends.",
+        "One 50-minute session costs 35 EUR on weekdays, and 45 EUR at weekends and on public holidays.",
         "Payment can be made in cash or by bank transfer.",
       ],
     },

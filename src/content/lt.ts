@@ -318,7 +318,7 @@ const duk = {
     {
       question: "Kiek kainuoja konsultacija?",
       answer: [
-        "Vienos 50 minučių sesijos kaina darbo dienomis yra 35 EUR, savaitgaliais – 45 EUR.",
+        "Vienos 50 minučių sesijos kaina darbo dienomis yra 35 EUR, savaitgaliais ir švenčių dienomis – 45 EUR.",
         "Atsiskaityti galima grynaisiais arba bankiniu pavedimu.",
       ],
     },
