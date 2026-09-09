@@ -1,44 +1,59 @@
-Jolitos puslapio deploymentas: 
+Jolitos puslapio deploymentas
 
+
+PowerShell (šitą naudoti Windows'e). Tą patį daro ir ./deploy.sh iš Bash.
+
+$ErrorActionPreference = "Stop"
 
 git checkout main
 npm install
 npm run build
+if ($LASTEXITCODE -ne 0) { throw "BUILD FAILED - nieko nepublikuojama" }
 
 Remove-Item -Recurse -Force tempDeploy -ErrorAction Ignore
 Copy-Item dist tempDeploy -Recurse
 
-
-{
-jeigu kas nors pvz deployment.txt. buvo pakeistas 
-git add public/deployment.txt
-git commit -m "update deployment file"
-git checkout deploy}
-
 git checkout deploy
+git pull origin deploy
 
-Get-ChildItem -Exclude ".git","tempDeploy" | Remove-Item -Recurse -Force
+Get-ChildItem -Force -Exclude ".git","tempDeploy" | Remove-Item -Recurse -Force
 Copy-Item tempDeploy\* . -Recurse -Force
+Remove-Item -Recurse -Force tempDeploy
 
-git add .
-git commit -m "deploy"
+git add -A
+git commit -m "deploy $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
 git push origin deploy
 
-
-# Plesk:  ( jungtis prei J telia po to prisijungti prie https://hosting.telia.lt/
- po prie plesk  )
+git checkout main
 
 
-Git settings → set branch = deploy
+Kodėl būtent taip (senoji versija turėjo tris klaidas):
 
-Deployment path = /httpdocs
+1. tempDeploy trinamas PRIEŠ "git add".
+   Anksčiau jis likdavo kataloge ir patekdavo į commit'ą, todėl
+   svetainėje atsirasdavo antra puslapio kopija adresu
+   savin.lt/tempDeploy/... Be to, kitą kartą "git checkout deploy"
+   nutrūkdavo su klaida "untracked working tree files would be
+   overwritten".
 
-Click Pull Now
+2. Tikrinamas $LASTEXITCODE po build'o.
+   PowerShell nesustoja, kai krenta išorinė komanda. Be šito
+   patikrinimo sugedęs build'as vis tiek publikuodavo - būdavo
+   nukopijuojamas senas dist ir tyliai išleidžiama sena versija.
+
+3. Pabaigoje grįžtama į main.
+   Valymas ištrina viską, įskaitant node_modules ir visą src.
+   Anksčiau skriptas baigdavosi likus deploy šakoje su tuščiu katalogu.
 
 
+Po publikavimo
 
+Plesk: prisijungti prie https://hosting.telia.lt/ , tada prie Plesk.
+Git settings -> branch = deploy, Deployment path = /httpdocs
+Spausti "Pull Now".
 
-# Po deploymento gali tekti taisyti dependancies: 
-
-npm install
-npm run dev
+BŪTINAI patikrinti: atidaryti https://savin.lt/duk tiesiogiai (ne per
+meniu). Jei puslapis atsidaro - public/.htaccess veikia. Jei 404 -
+serveris .htaccess neskaito ir reikia nginx taisyklės Plesk'e:
+    try_files $uri /index.html;
+Be jos veikia tik pagrindinis adresas.

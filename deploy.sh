@@ -1,35 +1,48 @@
 #!/bin/bash
-# to start dev run: npm run dev
-# to start run:  ./deploy.sh 
+# Publikavimas. Paleisti: ./deploy.sh
+# PowerShell atitikmuo aprašytas deployment.txt - abu daro tą patį.
 
-set -e  # exit on error
+set -euo pipefail
 
-# Make sure we start on main
+echo "==> main"
 git checkout main
 
-echo "📦 Installing dependencies..."
+echo "==> npm install"
 npm install
 
-echo "🏗️  Building project..."
-npm run build
+echo "==> build"
+npm run build   # set -e nutraukia čia, jei build'as krenta
 
-echo "🚀 Switching to deploy branch..."
+echo "==> dist -> tempDeploy"
+rm -rf tempDeploy
+cp -r dist tempDeploy
+
+echo "==> deploy šaka"
 git checkout deploy
+git pull --ff-only origin deploy
 
-echo "🧹 Cleaning old files..."
-git rm -rf .
+echo "==> valomi seni failai"
+# viskas, išskyrus .git ir tempDeploy (taip pat ir node_modules -
+# jį atkuria kito publikavimo "npm install")
+find . -mindepth 1 -maxdepth 1 ! -name .git ! -name tempDeploy -exec rm -rf {} +
 
-echo "📂 Copying new build..."
-cp -r dist/* .
+echo "==> kopijuojamas naujas build'as"
+# "dist/." o ne "dist/*" - kitaip nebūtų nukopijuoti .htaccess ir kiti
+# taškiniai failai, o be .htaccess visi adresai išskyrus / duotų 404
+cp -r tempDeploy/. .
 
-echo "📝 Committing changes..."
-git add .
-git commit -m "Deploy $(date +'%Y-%m-%d %H:%M:%S')" || echo "⚠️ Nothing to commit"
+# svarbu: pašalinti PRIEŠ git add, kitaip tempDeploy pakliūna į commit'ą
+# ir svetainėje atsiranda antra kopija (savin.lt/tempDeploy/...)
+rm -rf tempDeploy
 
-echo "⬆️  Pushing to GitHub..."
+echo "==> commit + push"
+git add -A
+git commit -m "deploy $(date +'%Y-%m-%d %H:%M:%S')" || echo "   nieko nepasikeitė"
 git push origin deploy
 
-echo "🔙 Switching back to main..."
+echo "==> grįžtama į main"
 git checkout main
 
-echo "✅ Deployment finished! Go to Plesk and click 'Pull Now'."
+echo "✅ Baigta. Plesk -> Pull Now."
+echo "   Po to būtinai atidaryti https://savin.lt/duk tiesiogiai -"
+echo "   jei atsidaro, .htaccess veikia; jei 404 - serveris jo neskaito."
