@@ -6,11 +6,12 @@ import { useLang } from "../i18n";
 import "./Navbar.css";
 
 export default function Navbar() {
-  const { t, path, otherLang, otherPath } = useLang();
+  // otherLang / otherPath reikalingi kalbos jungikliui - grazinti kartu su EN
+  const { t, path } = useLang();
 
   const [open, setOpen] = useState(false);
 
-  const [user, setUser] = useState<any>(null);
+  const [, setUser] = useState<any>(null);
   const [isAdmin, setIsAdmin] = useState(false);
 
   const handleClick = () => setOpen(false);
@@ -129,6 +130,8 @@ async function logout() {
             </NavLink>
           ))}
 
+          {/* temporaty disabled */}
+          {/*
           <Link
             to={otherPath}
             className="lang-switch"
@@ -138,6 +141,7 @@ async function logout() {
           >
             {t.ui.languageLabel}
           </Link>
+          */}
            {isAdmin && (
     <>
       <Link to="/admin/availability">

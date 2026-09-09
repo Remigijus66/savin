@@ -1,5 +1,5 @@
 import CtaKurKvieciu from "../components/CtaKurKvieciu";
-import CtaSusisiekime from "../components/CtaSusisiekime";
+// import CtaSusisiekime from "../components/CtaSusisiekime";
 import RichText from "../components/RichText";
 import { useLang } from "../i18n";
 import "./Page.css";

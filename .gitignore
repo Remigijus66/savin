@@ -1,6 +1,5 @@
 # Logs
 public/google.json
-public/deployment.txt
 logs
 *.log
 npm-debug.log*

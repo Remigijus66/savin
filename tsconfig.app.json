@@ -24,5 +24,24 @@
     "noUncheckedSideEffectImports": true, 
       "incremental": true
   },
-  "include": ["src"]
+  "include": ["src"],
+
+  /* Uzsakymu / administravimo dalis laikinai isjungta (marsrutai
+     uzkomentuoti App.tsx). Failai paliekami repozitorijoje, bet
+     nekompiliuojami - kitaip senos ju klaidos stabdo build'a.
+     Grazinant funkcionaluma sitas sarasas istrinamas. */
+  "exclude": [
+    "src/pages/BookingPage.tsx",
+    "src/pages/AdmPage.tsx",
+    "src/pages/AdmLoginPage.tsx",
+    "src/pages/AdminAvailability.tsx",
+    "src/pages/ClientNotes.tsx",
+    "src/pages/ClientsPage.tsx",
+    "src/routes/ProtectedRoute.tsx",
+    "src/sections/Booking.tsx",
+    "src/sections/BookingCalendar.tsx",
+    "src/components/ScheduleSessionModal.tsx",
+    "src/components/WeeklyTemplateModal.tsx",
+    "src/utils/GenerateSlots.ts"
+  ]
 }

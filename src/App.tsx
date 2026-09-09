@@ -9,9 +9,9 @@ import KasEsu from "./pages/KasEsu";
 import KurKvieciu from "./pages/KurKvieciu";
 import DukPage from "./pages/DukPage";
 import Susisiekime from "./pages/Susisiekime";
-import BookingPage from "./pages/BookingPage";
-import AdminLoginPage from "./pages/AdmLoginPage";
-import AdminPage from "./pages/AdmPage";  
+// import BookingPage from "./pages/BookingPage";
+// import AdminLoginPage from "./pages/AdmLoginPage";
+// import AdminPage from "./pages/AdmPage";  
 
 import { Helmet } from "react-helmet-async";
 import { useLang } from "./i18n";
@@ -19,12 +19,12 @@ import { useLang } from "./i18n";
 import { useEffect } from "react";
 
 
-import { Route, Routes } from "react-router-dom";
-import ProtectedRoute from "./routes/ProtectedRoute";
-import AdminAvailability from "./pages/AdminAvailability";
+import { Navigate, Route, Routes } from "react-router-dom";
+// import ProtectedRoute from "./routes/ProtectedRoute";
+// import AdminAvailability from "./pages/AdminAvailability";
 import MainLayout from "./components/MainLayout";
-import ClientNotes from "./pages/ClientNotes";
-import ClientsPage from "./pages/ClientsPage";
+// import ClientNotes from "./pages/ClientNotes";
+// import ClientsPage from "./pages/ClientsPage";
 
 // type Theme = "theme-experimental" | "theme-forest" |"theme-ocean" | "theme-dark";
 
@@ -95,32 +95,33 @@ useEffect(() => {
       <Route path="/en/contact" element={<Susisiekime />} /> */}
     
     
-      <Route path="/booking"    element={
+      {/* <Route path="/booking"    element={
           <ProtectedRoute adminOnly>
             <BookingPage />
           </ProtectedRoute>
-        } />
+        } /> */}
 
 
 
-      <Route
+      {/* <Route
         path="/admin"
         element={
           <ProtectedRoute adminOnly>
             <AdminPage />
           </ProtectedRoute>
         }
-      />
+      /> */}
 
-<Route
+{/* <Route
    path="clients/:clientId/notes"
   element={
     <ProtectedRoute adminOnly>
       <ClientNotes />
     </ProtectedRoute>
   }
-/>
-      <Route
+/> */}
+
+      {/* <Route
   path="clients"
   element={
    <ProtectedRoute adminOnly>
@@ -128,15 +129,15 @@ useEffect(() => {
           </ProtectedRoute>
 
   }
-/>
-      <Route
+/> */}
+      {/* <Route
         path="/admin/availability"
         element={
           <ProtectedRoute adminOnly>
             <AdminAvailability />
           </ProtectedRoute>
         }
-      />
+      /> */}
       </Route>
    
 
@@ -145,7 +146,12 @@ useEffect(() => {
  
 
       
-            <Route path="/loooooogggiiiiiinnnnnn" element={<AdminLoginPage />} />
+            {/* <Route path="/loooooogggiiiiiinnnnnn" element={<AdminLoginPage />} /> */}
+
+      {/* Nezinomi adresai (taip pat laikinai isjungti /en ir /admin) - i pradzia,
+          kad vietoj tuscio puslapio butu nukreipiama. Grazinus marsrutus jie
+          turi pirmenybe pries si. */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   
         

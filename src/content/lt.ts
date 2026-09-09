@@ -195,6 +195,7 @@ const kurKvieciu = {
       "Asmeninė psichoterapija – tai dviejų žmonių susitikimas.",
       "Žinau, gali skambėti keistai – juk susitikti kavos galite su draugu, telefonu paplepėti su mama ar užsukti pas kaimynę. Ir tai nuostabu – branginkite šias akimirkas su artimais žmonėmis.",
       "Tačiau terapeuto kabinete gimsta kai kas daugiau nei tiesiog mielas pašnekesys. Čia, saugioje ir palaikančioje aplinkoje, jums priimtinu tempu, tyrinėjame jūsų poreikius, jausmus, mintis, kūno pojūčius. Keliame „nepatogius“ klausimus ir ieškome atsakymų. Neskubėdami vertinti ar keisti, mokomės geriau save suprasti, daryti sąmoningesnius pasirinkimus ir drąsiau prisiimti atsakomybę už savo gyvenimo patirtis.",
+      "Asmeninės psichoterapijos sesijos kaina darbo dienomis 35 EUR, savaitgaliais ir švenčių dienomis – 45 EUR. Atsiskaityti galima grynaisiais arba bankiniu pavedimu."
       // "Kaip ir kiekviename darbe, man kartais taip pat iškyla klausimų ar sunkumų. Todėl mano psichoterapinis darbas yra supervizuojamas – tai reiškia, kad praktikoje iškilusius klausimus reguliariai aptariu su didelę patirtį turinčia supervizore.",
     ],
   },
